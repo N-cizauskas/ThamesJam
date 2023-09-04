@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 470
     height: 947
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 15}
@@ -312,7 +312,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
-  progressMessageClearTime: -1
+  progressMessageClearTime: 1842.1545678
   notificationClearTime: -1
   timeSinceLastRotation: -1
   currentBranchAndRemoteHasUpdate: 0
@@ -320,8 +320,8 @@ MonoBehaviour:
   currentStatusEntriesHasUpdate: 0
   repositoryProgressHasUpdate: 0
   appManagerProgressHasUpdate: 0
-  changeTab: 2
-  activeTab: 2
+  changeTab: 5
+  activeTab: 5
   initProjectView:
     hasCompletedInitialCheck: 1
     isUserDataPresent: 1
@@ -1205,10 +1205,10 @@ MonoBehaviour:
         workTreeStatus: 0
     statusAhead: 0
     lastLogChangedEvent:
-      updatedTimeString: 2023-09-04T11:12:44.533+01:00
+      updatedTimeString: 2023-09-04T11:18:39.582+01:00
       cacheType: 3
     lastTrackingStatusChangedEvent:
-      updatedTimeString: 2023-09-04T11:17:46.053+01:00
+      updatedTimeString: 2023-09-04T11:18:39.573+01:00
       cacheType: 5
     historyControl:
       scroll: {x: 0, y: 0}
@@ -1508,19 +1508,19 @@ MonoBehaviour:
           indexStatus: 4
           workTreeStatus: 0
       statusAhead: 0
-      selectedIndex: 0
+      selectedIndex: -1
     selectedEntry:
-      commitID: 09196c96aa4fad7cb220d2fd78ecca766e5a33eb
+      commitID: 
       mergeA: 
       mergeB: 
-      authorName: Canpake
-      authorEmail: seeminglyobvioushuh@gmail.com
-      commitEmail: seeminglyobvioushuh@gmail.com
-      commitName: Canpake
-      summary: 'refactor: create script folder, add array extensions'
-      description: chungus
-      timeString: 2023-09-01T19:08:16.000+01:00
-      commitTimeString: 2023-09-01T19:08:16.000+01:00
+      authorName: 
+      authorEmail: 
+      commitEmail: 
+      commitName: 
+      summary: 
+      description: 
+      timeString: 0001-01-01T00:00:00.000+00:00
+      commitTimeString: 0001-01-01T00:00:00.000+00:00
       changes:
       - path: Assets\Scripts.meta
         fullPath: C:\Users\joeth\ThamesJam\Assets\Scripts.meta
@@ -1794,7 +1794,7 @@ MonoBehaviour:
       changingManually: 0
     hasRemote: 1
     lastCurrentRemoteChangedEvent:
-      updatedTimeString: 2023-09-04T11:09:47.956+01:00
+      updatedTimeString: 2023-09-04T11:48:48.293+01:00
       cacheType: 1
     newRepositoryRemoteUrl: https://github.com/N-cizauskas/ThamesJam.git
     repositoryRemoteName: origin
@@ -1807,7 +1807,7 @@ MonoBehaviour:
       newGitEmail: 141341728+Joehendev@users.noreply.github.com
       needsSaving: 0
       lastCheckUserChangedEvent:
-        updatedTimeString: 2023-09-04T11:12:49.365+01:00
+        updatedTimeString: 2023-09-04T11:19:20.673+01:00
         cacheType: 8
     webTimeout: 100000
     gitTimeout: 5000
@@ -1895,9 +1895,9 @@ MonoBehaviour:
   currentRemoteName: origin
   currentBranch: master
   currentRemoteUrl: https://github.com/N-cizauskas/ThamesJam.git
-  statusAhead: 0
+  statusAhead: 1
   statusBehind: 3
-  hasItemsToCommit: 1
+  hasItemsToCommit: 0
   isTrackingRemoteBranch: 1
   currentBranchContent:
     m_Text: master
@@ -1908,13 +1908,13 @@ MonoBehaviour:
     m_Image: {fileID: 0}
     m_Tooltip: Url of the origin remote
   lastCurrentBranchAndRemoteChangedEvent:
-    updatedTimeString: 2023-09-04T11:09:47.956+01:00
+    updatedTimeString: 2023-09-04T11:48:48.293+01:00
     cacheType: 1
   lastTrackingStatusChangedEvent:
-    updatedTimeString: 2023-09-04T11:17:46.053+01:00
+    updatedTimeString: 2023-09-04T11:48:49.585+01:00
     cacheType: 5
   lastStatusEntriesChangedEvent:
-    updatedTimeString: 2023-09-04T11:12:24.321+01:00
+    updatedTimeString: 2023-09-04T11:48:49.578+01:00
     cacheType: 6
   pullButtonContent:
     m_Text: Pull
@@ -1932,8 +1932,8 @@ MonoBehaviour:
     m_Text: Fetch
     m_Image: {fileID: 0}
     m_Tooltip: 
-  repositoryProgressValue: 0
-  repositoryProgressMessage: 
+  repositoryProgressValue: 1
+  repositoryProgressMessage: Fetched
   appManagerProgressValue: 1
   appManagerProgressMessage: 
   primaryConnectionUsername: 
@@ -2032,9 +2032,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 24630000
-    m_LastClickedID: 25380
-    m_ExpandedIDs: 000000002463000000ca9a3bffffff7f
+    m_SelectedIDs: 38630000
+    m_LastClickedID: 25400
+    m_ExpandedIDs: 000000003863000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2062,7 +2062,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000024630000
+    m_ExpandedIDs: 0000000038630000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2089,7 +2089,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
