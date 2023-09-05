@@ -15,9 +15,9 @@ MonoBehaviour:
   m_PixelRect:
     serializedVersion: 2
     x: 0
-    y: 43.2
-    width: 1536
-    height: 780.8
+    y: 43
+    width: 1920
+    height: 997
   m_ShowMode: 4
   m_Title: Git for Unity
   m_RootView: {fileID: 6}
@@ -43,12 +43,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
-    width: 1536
-    height: 730.8
+    width: 1920
+    height: 947
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 83
+  controlID: 106
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -64,12 +64,19 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1160
+    x: 1450
     y: 0
+<<<<<<< HEAD
     width: 376
     height: 730.8
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 4000, y: 4000}
+=======
+    width: 470
+    height: 947
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 15}
@@ -93,10 +100,17 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 287.2
     height: 432.8
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
+=======
+    width: 359
+    height: 561
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -118,9 +132,15 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 432.8
     width: 1160
     height: 298
+=======
+    y: 561
+    width: 1450
+    height: 386
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 14}
@@ -150,8 +170,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1536
-    height: 780.8
+    width: 1920
+    height: 997
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
@@ -175,7 +195,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1536
+    width: 1920
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -196,8 +216,8 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 760.8
-    width: 1536
+    y: 977
+    width: 1920
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -220,8 +240,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1160
-    height: 730.8
+    width: 1450
+    height: 947
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
@@ -245,8 +265,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1160
-    height: 432.8
+    width: 1450
+    height: 561
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
@@ -261,17 +281,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
+  m_Name: SceneView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 287.2
+    x: 359
     y: 0
+<<<<<<< HEAD
     width: 872.8
     height: 432.8
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
+=======
+    width: 1091
+    height: 561
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -298,10 +325,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: -24440
     y: -25569.6
     width: 375
     height: 709.8
+=======
+    x: 1450
+    y: 73
+    width: 469
+    height: 926
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -312,7 +346,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
-  progressMessageClearTime: -1
+  progressMessageClearTime: 1842.1545678
   notificationClearTime: -1
   timeSinceLastRotation: -1
   currentBranchAndRemoteHasUpdate: 0
@@ -320,8 +354,8 @@ MonoBehaviour:
   currentStatusEntriesHasUpdate: 0
   repositoryProgressHasUpdate: 0
   appManagerProgressHasUpdate: 0
-  changeTab: 4
-  activeTab: 4
+  changeTab: 5
+  activeTab: 5
   initProjectView:
     hasCompletedInitialCheck: 1
     isUserDataPresent: 1
@@ -441,6 +475,19 @@ MonoBehaviour:
         isActive: 0
         treeIsCheckable: 0
         checkState: 0
+<<<<<<< HEAD
+=======
+      - path: origin/HEAD
+        label: HEAD
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
       - path: origin/master
         label: master
         level: 2
@@ -468,10 +515,17 @@ MonoBehaviour:
     disableDelete: 1
     disableCreate: 0
     lastLocalAndRemoteBranchListChangedEvent:
+<<<<<<< HEAD
       updatedTimeString: 2023-09-01T19:13:20.217+01:00
       cacheType: 2
     lastCurrentBranchAndRemoteChange:
       updatedTimeString: 2023-09-01T19:06:38.536+01:00
+=======
+      updatedTimeString: 2023-09-04T11:12:38.989+01:00
+      cacheType: 2
+    lastCurrentBranchAndRemoteChange:
+      updatedTimeString: 2023-09-04T11:09:47.956+01:00
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
       cacheType: 1
     currentBranch:
       name: master
@@ -488,6 +542,11 @@ MonoBehaviour:
     - name: master
       tracking: origin/master
     remoteBranches:
+<<<<<<< HEAD
+=======
+    - name: origin/HEAD
+      tracking: '[None]'
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
     - name: origin/master
       tracking: '[None]'
   changesView:
@@ -500,11 +559,125 @@ MonoBehaviour:
     treeScroll: {x: 0, y: 0}
     treeChanges:
       assets:
-        keys: []
-        values: []
+        keys:
+        - 00000000000000001000000000000000
+        - 402c82fefe7aebe468e2adc0bd3c4fe3
+        values:
+        - path: Assets
+          label: Assets
+          level: 0
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Test.unity
+          label: Test.unity
+          level: 1
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Test.unity
+            fullPath: C:\Users\joeth\ThamesJam\Assets\Test.unity
+            projectPath: Assets\Test.unity
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
       folders:
-        keys: []
-        values: []
+        keys:
+        - Assets
+        - ProjectSettings
+        - UserSettings
+        - UserSettings\Layouts
+        values:
+        - path: Assets
+          label: Assets
+          level: 0
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: ProjectSettings
+          label: ProjectSettings
+          level: 0
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: UserSettings
+          label: UserSettings
+          level: 0
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: UserSettings\Layouts
+          label: Layouts
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
       checkedFileNodes:
         keys: []
         values: []
@@ -533,6 +706,198 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
+      - path: .vsconfig
+        label: .vsconfig
+        level: 0
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: .vsconfig
+          fullPath: C:\Users\joeth\ThamesJam\.vsconfig
+          projectPath: .vsconfig
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets
+        label: Assets
+        level: 0
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+<<<<<<< HEAD
+    gitStatusEntries: []
+    changedFilesText: No changed files
+    lastCurrentBranchChangedEvent:
+      updatedTimeString: 2023-09-01T17:52:21.565+01:00
+      cacheType: 1
+    lastStatusEntriesChangedEvent:
+      updatedTimeString: 2023-09-01T17:52:52.183+01:00
+      cacheType: 6
+    lastLocksChangedEvent:
+      updatedTimeString: 2023-09-01T17:52:41.862+01:00
+=======
+      - path: Assets\Test.unity
+        label: Test.unity
+        level: 1
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Test.unity
+          fullPath: C:\Users\joeth\ThamesJam\Assets\Test.unity
+          projectPath: Assets\Test.unity
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Test.unity.meta
+        label: Test.unity.meta
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Test.unity.meta
+          fullPath: C:\Users\joeth\ThamesJam\Assets\Test.unity.meta
+          projectPath: Assets\Test.unity.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: ProjectSettings
+        label: ProjectSettings
+        level: 0
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: ProjectSettings\SceneTemplateSettings.json
+        label: SceneTemplateSettings.json
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: ProjectSettings\SceneTemplateSettings.json
+          fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\SceneTemplateSettings.json
+          projectPath: ProjectSettings\SceneTemplateSettings.json
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: UserSettings
+        label: UserSettings
+        level: 0
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: UserSettings\EditorUserSettings.asset
+        label: EditorUserSettings.asset
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: UserSettings\EditorUserSettings.asset
+          fullPath: C:\Users\joeth\ThamesJam\UserSettings\EditorUserSettings.asset
+          projectPath: UserSettings\EditorUserSettings.asset
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: UserSettings\Layouts
+        label: Layouts
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: UserSettings\Layouts\default-2022.dwlt
+        label: default-2022.dwlt
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: UserSettings\Layouts\default-2022.dwlt
+          fullPath: C:\Users\joeth\ThamesJam\UserSettings\Layouts\default-2022.dwlt
+          projectPath: UserSettings\Layouts\default-2022.dwlt
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
       selectedNode:
         path: 
         label: 
@@ -552,16 +917,53 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
-    gitStatusEntries: []
-    changedFilesText: No changed files
+    gitStatusEntries:
+    - path: .vsconfig
+      fullPath: C:\Users\joeth\ThamesJam\.vsconfig
+      projectPath: .vsconfig
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Test.unity
+      fullPath: C:\Users\joeth\ThamesJam\Assets\Test.unity
+      projectPath: Assets\Test.unity
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Test.unity.meta
+      fullPath: C:\Users\joeth\ThamesJam\Assets\Test.unity.meta
+      projectPath: Assets\Test.unity.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: ProjectSettings\SceneTemplateSettings.json
+      fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\SceneTemplateSettings.json
+      projectPath: ProjectSettings\SceneTemplateSettings.json
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: UserSettings\EditorUserSettings.asset
+      fullPath: C:\Users\joeth\ThamesJam\UserSettings\EditorUserSettings.asset
+      projectPath: UserSettings\EditorUserSettings.asset
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: UserSettings\Layouts\default-2022.dwlt
+      fullPath: C:\Users\joeth\ThamesJam\UserSettings\Layouts\default-2022.dwlt
+      projectPath: UserSettings\Layouts\default-2022.dwlt
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    changedFilesText: 6 changed files
     lastCurrentBranchChangedEvent:
-      updatedTimeString: 2023-09-01T17:52:21.565+01:00
+      updatedTimeString: 2023-09-04T11:09:47.956+01:00
       cacheType: 1
     lastStatusEntriesChangedEvent:
-      updatedTimeString: 2023-09-01T17:52:52.183+01:00
+      updatedTimeString: 2023-09-04T11:12:24.321+01:00
       cacheType: 6
     lastLocksChangedEvent:
-      updatedTimeString: 2023-09-01T17:52:41.862+01:00
+      updatedTimeString: 2023-09-04T11:12:45.212+01:00
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
       cacheType: 7
   historyView:
     currentLogHasUpdate: 0
@@ -580,25 +982,41 @@ MonoBehaviour:
       commitTimeString: 2023-09-01T19:08:16.000+01:00
       changes:
       - path: Assets\Scripts.meta
+<<<<<<< HEAD
         fullPath: C:\Users\nicol\ThamesJam\Assets\Scripts.meta
+=======
+        fullPath: C:\Users\joeth\ThamesJam\Assets\Scripts.meta
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
         projectPath: Assets\Scripts.meta
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: Assets\Scripts\util.meta
+<<<<<<< HEAD
         fullPath: C:\Users\nicol\ThamesJam\Assets\Scripts\util.meta
+=======
+        fullPath: C:\Users\joeth\ThamesJam\Assets\Scripts\util.meta
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
         projectPath: Assets\Scripts\util.meta
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: Assets\Scripts\util\ArrayExtensions.cs
+<<<<<<< HEAD
         fullPath: C:\Users\nicol\ThamesJam\Assets\Scripts\util\ArrayExtensions.cs
+=======
+        fullPath: C:\Users\joeth\ThamesJam\Assets\Scripts\util\ArrayExtensions.cs
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
         projectPath: Assets\Scripts\util\ArrayExtensions.cs
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: Assets\Scripts\util\ArrayExtensions.cs.meta
+<<<<<<< HEAD
         fullPath: C:\Users\nicol\ThamesJam\Assets\Scripts\util\ArrayExtensions.cs.meta
+=======
+        fullPath: C:\Users\joeth\ThamesJam\Assets\Scripts\util\ArrayExtensions.cs.meta
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
         projectPath: Assets\Scripts\util\ArrayExtensions.cs.meta
         originalPath: 
         indexStatus: 4
@@ -616,7 +1034,11 @@ MonoBehaviour:
       commitTimeString: 2023-09-01T17:48:01.000+01:00
       changes:
       - path: UserSettings\Layouts\default-2022.dwlt
+<<<<<<< HEAD
         fullPath: C:\Users\nicol\ThamesJam\UserSettings\Layouts\default-2022.dwlt
+=======
+        fullPath: C:\Users\joeth\ThamesJam\UserSettings\Layouts\default-2022.dwlt
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
         projectPath: UserSettings\Layouts\default-2022.dwlt
         originalPath: 
         indexStatus: 3
@@ -634,7 +1056,11 @@ MonoBehaviour:
       commitTimeString: 2023-09-01T17:39:33.000+01:00
       changes:
       - path: UserSettings\Layouts\default-2022.dwlt
+<<<<<<< HEAD
         fullPath: C:\Users\nicol\ThamesJam\UserSettings\Layouts\default-2022.dwlt
+=======
+        fullPath: C:\Users\joeth\ThamesJam\UserSettings\Layouts\default-2022.dwlt
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
         projectPath: UserSettings\Layouts\default-2022.dwlt
         originalPath: 
         indexStatus: 4
@@ -652,181 +1078,225 @@ MonoBehaviour:
       commitTimeString: 2023-09-01T17:32:15.000+01:00
       changes:
       - path: Assets\Scenes.meta
+<<<<<<< HEAD
         fullPath: C:\Users\nicol\ThamesJam\Assets\Scenes.meta
+=======
+        fullPath: C:\Users\joeth\ThamesJam\Assets\Scenes.meta
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
         projectPath: Assets\Scenes.meta
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: Assets\Scenes\SampleScene.unity
+<<<<<<< HEAD
         fullPath: C:\Users\nicol\ThamesJam\Assets\Scenes\SampleScene.unity
+=======
+        fullPath: C:\Users\joeth\ThamesJam\Assets\Scenes\SampleScene.unity
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
         projectPath: Assets\Scenes\SampleScene.unity
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: Assets\Scenes\SampleScene.unity.meta
+<<<<<<< HEAD
         fullPath: C:\Users\nicol\ThamesJam\Assets\Scenes\SampleScene.unity.meta
+=======
+        fullPath: C:\Users\joeth\ThamesJam\Assets\Scenes\SampleScene.unity.meta
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
         projectPath: Assets\Scenes\SampleScene.unity.meta
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: Packages\manifest.json
+<<<<<<< HEAD
         fullPath: C:\Users\nicol\ThamesJam\Packages\manifest.json
+=======
+        fullPath: C:\Users\joeth\ThamesJam\Packages\manifest.json
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
         projectPath: Packages\manifest.json
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: Packages\packages-lock.json
+<<<<<<< HEAD
         fullPath: C:\Users\nicol\ThamesJam\Packages\packages-lock.json
+=======
+        fullPath: C:\Users\joeth\ThamesJam\Packages\packages-lock.json
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
         projectPath: Packages\packages-lock.json
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: ProjectSettings\AudioManager.asset
+<<<<<<< HEAD
         fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\AudioManager.asset
+=======
+        fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\AudioManager.asset
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
         projectPath: ProjectSettings\AudioManager.asset
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: ProjectSettings\ClusterInputManager.asset
+<<<<<<< HEAD
         fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\ClusterInputManager.asset
+=======
+        fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\ClusterInputManager.asset
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
         projectPath: ProjectSettings\ClusterInputManager.asset
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: ProjectSettings\DynamicsManager.asset
+<<<<<<< HEAD
         fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\DynamicsManager.asset
+=======
+        fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\DynamicsManager.asset
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
         projectPath: ProjectSettings\DynamicsManager.asset
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: ProjectSettings\EditorBuildSettings.asset
+<<<<<<< HEAD
         fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\EditorBuildSettings.asset
+=======
+        fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\EditorBuildSettings.asset
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
         projectPath: ProjectSettings\EditorBuildSettings.asset
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: ProjectSettings\EditorSettings.asset
+<<<<<<< HEAD
         fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\EditorSettings.asset
+=======
+        fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\EditorSettings.asset
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
         projectPath: ProjectSettings\EditorSettings.asset
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: ProjectSettings\GraphicsSettings.asset
+<<<<<<< HEAD
         fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\GraphicsSettings.asset
+=======
+        fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\GraphicsSettings.asset
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
         projectPath: ProjectSettings\GraphicsSettings.asset
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: ProjectSettings\InputManager.asset
-        fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\InputManager.asset
+        fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\InputManager.asset
         projectPath: ProjectSettings\InputManager.asset
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: ProjectSettings\MemorySettings.asset
-        fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\MemorySettings.asset
+        fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\MemorySettings.asset
         projectPath: ProjectSettings\MemorySettings.asset
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: ProjectSettings\NavMeshAreas.asset
-        fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\NavMeshAreas.asset
+        fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\NavMeshAreas.asset
         projectPath: ProjectSettings\NavMeshAreas.asset
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: ProjectSettings\NetworkManager.asset
-        fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\NetworkManager.asset
+        fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\NetworkManager.asset
         projectPath: ProjectSettings\NetworkManager.asset
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: ProjectSettings\PackageManagerSettings.asset
-        fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\PackageManagerSettings.asset
+        fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\PackageManagerSettings.asset
         projectPath: ProjectSettings\PackageManagerSettings.asset
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: ProjectSettings\Physics2DSettings.asset
-        fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\Physics2DSettings.asset
+        fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\Physics2DSettings.asset
         projectPath: ProjectSettings\Physics2DSettings.asset
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: ProjectSettings\PresetManager.asset
-        fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\PresetManager.asset
+        fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\PresetManager.asset
         projectPath: ProjectSettings\PresetManager.asset
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: ProjectSettings\ProjectSettings.asset
-        fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\ProjectSettings.asset
+        fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\ProjectSettings.asset
         projectPath: ProjectSettings\ProjectSettings.asset
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: ProjectSettings\ProjectVersion.txt
-        fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\ProjectVersion.txt
+        fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\ProjectVersion.txt
         projectPath: ProjectSettings\ProjectVersion.txt
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: ProjectSettings\QualitySettings.asset
-        fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\QualitySettings.asset
+        fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\QualitySettings.asset
         projectPath: ProjectSettings\QualitySettings.asset
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: ProjectSettings\TagManager.asset
-        fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\TagManager.asset
+        fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\TagManager.asset
         projectPath: ProjectSettings\TagManager.asset
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: ProjectSettings\TimeManager.asset
-        fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\TimeManager.asset
+        fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\TimeManager.asset
         projectPath: ProjectSettings\TimeManager.asset
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: ProjectSettings\UnityConnectSettings.asset
-        fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\UnityConnectSettings.asset
+        fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\UnityConnectSettings.asset
         projectPath: ProjectSettings\UnityConnectSettings.asset
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: ProjectSettings\VFXManager.asset
-        fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\VFXManager.asset
+        fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\VFXManager.asset
         projectPath: ProjectSettings\VFXManager.asset
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: ProjectSettings\VersionControlSettings.asset
-        fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\VersionControlSettings.asset
+        fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\VersionControlSettings.asset
         projectPath: ProjectSettings\VersionControlSettings.asset
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: ProjectSettings\XRSettings.asset
-        fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\XRSettings.asset
+        fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\XRSettings.asset
         projectPath: ProjectSettings\XRSettings.asset
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: UserSettings\EditorUserSettings.asset
-        fullPath: C:\Users\nicol\ThamesJam\UserSettings\EditorUserSettings.asset
+        fullPath: C:\Users\joeth\ThamesJam\UserSettings\EditorUserSettings.asset
         projectPath: UserSettings\EditorUserSettings.asset
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: UserSettings\Search.index
-        fullPath: C:\Users\nicol\ThamesJam\UserSettings\Search.index
+        fullPath: C:\Users\joeth\ThamesJam\UserSettings\Search.index
         projectPath: UserSettings\Search.index
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: UserSettings\Search.settings
-        fullPath: C:\Users\nicol\ThamesJam\UserSettings\Search.settings
+        fullPath: C:\Users\joeth\ThamesJam\UserSettings\Search.settings
         projectPath: UserSettings\Search.settings
         originalPath: 
         indexStatus: 4
@@ -844,34 +1314,42 @@ MonoBehaviour:
       commitTimeString: 2023-09-01T17:24:09.000+01:00
       changes:
       - path: .gitattributes
-        fullPath: C:\Users\nicol\ThamesJam\.gitattributes
+        fullPath: C:\Users\joeth\ThamesJam\.gitattributes
         projectPath: .gitattributes
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: .gitignore
-        fullPath: C:\Users\nicol\ThamesJam\.gitignore
+        fullPath: C:\Users\joeth\ThamesJam\.gitignore
         projectPath: .gitignore
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
       - path: Assets\.gitignore
-        fullPath: C:\Users\nicol\ThamesJam\Assets\.gitignore
+        fullPath: C:\Users\joeth\ThamesJam\Assets\.gitignore
         projectPath: Assets\.gitignore
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
     statusAhead: 0
     lastLogChangedEvent:
+<<<<<<< HEAD
       updatedTimeString: 2023-09-01T19:13:20.328+01:00
       cacheType: 3
     lastTrackingStatusChangedEvent:
       updatedTimeString: 2023-09-01T19:13:20.358+01:00
+=======
+      updatedTimeString: 2023-09-04T11:18:39.582+01:00
+      cacheType: 3
+    lastTrackingStatusChangedEvent:
+      updatedTimeString: 2023-09-04T11:18:39.573+01:00
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
       cacheType: 5
     historyControl:
       scroll: {x: 0, y: 0}
       entries:
       - commitID: 09196c96aa4fad7cb220d2fd78ecca766e5a33eb
+<<<<<<< HEAD
         mergeA: 
         mergeB: 
         authorName: Canpake
@@ -926,6 +1404,62 @@ MonoBehaviour:
           indexStatus: 3
           workTreeStatus: 0
       - commitID: 26d630e73cefb32e7a2a5f273547e7f9f234bbe2
+=======
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
+        mergeA: 
+        mergeB: 
+        authorName: Canpake
+        authorEmail: seeminglyobvioushuh@gmail.com
+        commitEmail: seeminglyobvioushuh@gmail.com
+        commitName: Canpake
+        summary: 'refactor: create script folder, add array extensions'
+        description: chungus
+        timeString: 2023-09-01T19:08:16.000+01:00
+        commitTimeString: 2023-09-01T19:08:16.000+01:00
+        changes:
+        - path: Assets\Scripts.meta
+          fullPath: C:\Users\joeth\ThamesJam\Assets\Scripts.meta
+          projectPath: Assets\Scripts.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scripts\util.meta
+          fullPath: C:\Users\joeth\ThamesJam\Assets\Scripts\util.meta
+          projectPath: Assets\Scripts\util.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scripts\util\ArrayExtensions.cs
+          fullPath: C:\Users\joeth\ThamesJam\Assets\Scripts\util\ArrayExtensions.cs
+          projectPath: Assets\Scripts\util\ArrayExtensions.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scripts\util\ArrayExtensions.cs.meta
+          fullPath: C:\Users\joeth\ThamesJam\Assets\Scripts\util\ArrayExtensions.cs.meta
+          projectPath: Assets\Scripts\util\ArrayExtensions.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - commitID: 1bd095af58bf6fbe4794f41eeec0bea3bb8ca1b4
+        mergeA: 
+        mergeB: 
+        authorName: Nicole Cizauskas
+        authorEmail: nicolecizauskas15@gmail.com
+        commitEmail: nicolecizauskas15@gmail.com
+        commitName: Nicole Cizauskas
+        summary: commit 3
+        description: nonsense
+        timeString: 2023-09-01T17:48:01.000+01:00
+        commitTimeString: 2023-09-01T17:48:01.000+01:00
+        changes:
+        - path: UserSettings\Layouts\default-2022.dwlt
+          fullPath: C:\Users\joeth\ThamesJam\UserSettings\Layouts\default-2022.dwlt
+          projectPath: UserSettings\Layouts\default-2022.dwlt
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - commitID: 26d630e73cefb32e7a2a5f273547e7f9f234bbe2
         mergeA: 
         mergeB: 
         authorName: Nicole Cizauskas
@@ -938,7 +1472,7 @@ MonoBehaviour:
         commitTimeString: 2023-09-01T17:39:33.000+01:00
         changes:
         - path: UserSettings\Layouts\default-2022.dwlt
-          fullPath: C:\Users\nicol\ThamesJam\UserSettings\Layouts\default-2022.dwlt
+          fullPath: C:\Users\joeth\ThamesJam\UserSettings\Layouts\default-2022.dwlt
           projectPath: UserSettings\Layouts\default-2022.dwlt
           originalPath: 
           indexStatus: 4
@@ -956,162 +1490,163 @@ MonoBehaviour:
         commitTimeString: 2023-09-01T17:32:15.000+01:00
         changes:
         - path: Assets\Scenes.meta
-          fullPath: C:\Users\nicol\ThamesJam\Assets\Scenes.meta
+          fullPath: C:\Users\joeth\ThamesJam\Assets\Scenes.meta
           projectPath: Assets\Scenes.meta
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
         - path: Assets\Scenes\SampleScene.unity
-          fullPath: C:\Users\nicol\ThamesJam\Assets\Scenes\SampleScene.unity
+          fullPath: C:\Users\joeth\ThamesJam\Assets\Scenes\SampleScene.unity
           projectPath: Assets\Scenes\SampleScene.unity
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
         - path: Assets\Scenes\SampleScene.unity.meta
-          fullPath: C:\Users\nicol\ThamesJam\Assets\Scenes\SampleScene.unity.meta
+          fullPath: C:\Users\joeth\ThamesJam\Assets\Scenes\SampleScene.unity.meta
           projectPath: Assets\Scenes\SampleScene.unity.meta
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
         - path: Packages\manifest.json
-          fullPath: C:\Users\nicol\ThamesJam\Packages\manifest.json
+          fullPath: C:\Users\joeth\ThamesJam\Packages\manifest.json
           projectPath: Packages\manifest.json
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
         - path: Packages\packages-lock.json
-          fullPath: C:\Users\nicol\ThamesJam\Packages\packages-lock.json
+          fullPath: C:\Users\joeth\ThamesJam\Packages\packages-lock.json
           projectPath: Packages\packages-lock.json
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
         - path: ProjectSettings\AudioManager.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\AudioManager.asset
+          fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\AudioManager.asset
           projectPath: ProjectSettings\AudioManager.asset
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
         - path: ProjectSettings\ClusterInputManager.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\ClusterInputManager.asset
+          fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\ClusterInputManager.asset
           projectPath: ProjectSettings\ClusterInputManager.asset
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
         - path: ProjectSettings\DynamicsManager.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\DynamicsManager.asset
+          fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\DynamicsManager.asset
           projectPath: ProjectSettings\DynamicsManager.asset
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
         - path: ProjectSettings\EditorBuildSettings.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\EditorBuildSettings.asset
+          fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\EditorBuildSettings.asset
           projectPath: ProjectSettings\EditorBuildSettings.asset
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
         - path: ProjectSettings\EditorSettings.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\EditorSettings.asset
+          fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\EditorSettings.asset
           projectPath: ProjectSettings\EditorSettings.asset
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
         - path: ProjectSettings\GraphicsSettings.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\GraphicsSettings.asset
+          fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\GraphicsSettings.asset
           projectPath: ProjectSettings\GraphicsSettings.asset
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
         - path: ProjectSettings\InputManager.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\InputManager.asset
+          fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\InputManager.asset
           projectPath: ProjectSettings\InputManager.asset
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
         - path: ProjectSettings\MemorySettings.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\MemorySettings.asset
+          fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\MemorySettings.asset
           projectPath: ProjectSettings\MemorySettings.asset
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
         - path: ProjectSettings\NavMeshAreas.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\NavMeshAreas.asset
+          fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\NavMeshAreas.asset
           projectPath: ProjectSettings\NavMeshAreas.asset
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
         - path: ProjectSettings\NetworkManager.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\NetworkManager.asset
+          fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\NetworkManager.asset
           projectPath: ProjectSettings\NetworkManager.asset
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
         - path: ProjectSettings\PackageManagerSettings.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\PackageManagerSettings.asset
+          fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\PackageManagerSettings.asset
           projectPath: ProjectSettings\PackageManagerSettings.asset
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
         - path: ProjectSettings\Physics2DSettings.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\Physics2DSettings.asset
+          fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\Physics2DSettings.asset
           projectPath: ProjectSettings\Physics2DSettings.asset
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
         - path: ProjectSettings\PresetManager.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\PresetManager.asset
+          fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\PresetManager.asset
           projectPath: ProjectSettings\PresetManager.asset
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
         - path: ProjectSettings\ProjectSettings.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\ProjectSettings.asset
+          fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\ProjectSettings.asset
           projectPath: ProjectSettings\ProjectSettings.asset
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
         - path: ProjectSettings\ProjectVersion.txt
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\ProjectVersion.txt
+          fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\ProjectVersion.txt
           projectPath: ProjectSettings\ProjectVersion.txt
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
         - path: ProjectSettings\QualitySettings.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\QualitySettings.asset
+          fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\QualitySettings.asset
           projectPath: ProjectSettings\QualitySettings.asset
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
         - path: ProjectSettings\TagManager.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\TagManager.asset
+          fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\TagManager.asset
           projectPath: ProjectSettings\TagManager.asset
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
         - path: ProjectSettings\TimeManager.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\TimeManager.asset
+          fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\TimeManager.asset
           projectPath: ProjectSettings\TimeManager.asset
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
         - path: ProjectSettings\UnityConnectSettings.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\UnityConnectSettings.asset
+          fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\UnityConnectSettings.asset
           projectPath: ProjectSettings\UnityConnectSettings.asset
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
         - path: ProjectSettings\VFXManager.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\VFXManager.asset
+          fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\VFXManager.asset
           projectPath: ProjectSettings\VFXManager.asset
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
         - path: ProjectSettings\VersionControlSettings.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\VersionControlSettings.asset
+          fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\VersionControlSettings.asset
           projectPath: ProjectSettings\VersionControlSettings.asset
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
         - path: ProjectSettings\XRSettings.asset
+<<<<<<< HEAD
           fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\XRSettings.asset
           projectPath: ProjectSettings\XRSettings.asset
           originalPath: 
@@ -1847,209 +2382,194 @@ MonoBehaviour:
           path: ProjectSettings\PackageManagerSettings.asset
           fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\PackageManagerSettings.asset
           projectPath: ProjectSettings\PackageManagerSettings.asset
-          originalPath: 
-          indexStatus: 4
-          workTreeStatus: 0
-      - path: ProjectSettings\Physics2DSettings.asset
-        label: Physics2DSettings.asset
-        level: 1
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 0
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: ProjectSettings\Physics2DSettings.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\Physics2DSettings.asset
-          projectPath: ProjectSettings\Physics2DSettings.asset
-          originalPath: 
-          indexStatus: 4
-          workTreeStatus: 0
-      - path: ProjectSettings\PresetManager.asset
-        label: PresetManager.asset
-        level: 1
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 0
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: ProjectSettings\PresetManager.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\PresetManager.asset
-          projectPath: ProjectSettings\PresetManager.asset
-          originalPath: 
-          indexStatus: 4
-          workTreeStatus: 0
-      - path: ProjectSettings\ProjectSettings.asset
-        label: ProjectSettings.asset
-        level: 1
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 0
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: ProjectSettings\ProjectSettings.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\ProjectSettings.asset
-          projectPath: ProjectSettings\ProjectSettings.asset
-          originalPath: 
-          indexStatus: 4
-          workTreeStatus: 0
-      - path: ProjectSettings\ProjectVersion.txt
-        label: ProjectVersion.txt
-        level: 1
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 0
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: ProjectSettings\ProjectVersion.txt
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\ProjectVersion.txt
-          projectPath: ProjectSettings\ProjectVersion.txt
-          originalPath: 
-          indexStatus: 4
-          workTreeStatus: 0
-      - path: ProjectSettings\QualitySettings.asset
-        label: QualitySettings.asset
-        level: 1
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 0
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: ProjectSettings\QualitySettings.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\QualitySettings.asset
-          projectPath: ProjectSettings\QualitySettings.asset
-          originalPath: 
-          indexStatus: 4
-          workTreeStatus: 0
-      - path: ProjectSettings\TagManager.asset
-        label: TagManager.asset
-        level: 1
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 0
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: ProjectSettings\TagManager.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\TagManager.asset
-          projectPath: ProjectSettings\TagManager.asset
-          originalPath: 
-          indexStatus: 4
-          workTreeStatus: 0
-      - path: ProjectSettings\TimeManager.asset
-        label: TimeManager.asset
-        level: 1
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 0
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: ProjectSettings\TimeManager.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\TimeManager.asset
-          projectPath: ProjectSettings\TimeManager.asset
-          originalPath: 
-          indexStatus: 4
-          workTreeStatus: 0
-      - path: ProjectSettings\UnityConnectSettings.asset
-        label: UnityConnectSettings.asset
-        level: 1
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 0
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: ProjectSettings\UnityConnectSettings.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\UnityConnectSettings.asset
-          projectPath: ProjectSettings\UnityConnectSettings.asset
-          originalPath: 
-          indexStatus: 4
-          workTreeStatus: 0
-      - path: ProjectSettings\VFXManager.asset
-        label: VFXManager.asset
-        level: 1
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 0
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: ProjectSettings\VFXManager.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\VFXManager.asset
-          projectPath: ProjectSettings\VFXManager.asset
-          originalPath: 
-          indexStatus: 4
-          workTreeStatus: 0
-      - path: ProjectSettings\VersionControlSettings.asset
-        label: VersionControlSettings.asset
-        level: 1
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 0
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: ProjectSettings\VersionControlSettings.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\VersionControlSettings.asset
-          projectPath: ProjectSettings\VersionControlSettings.asset
-          originalPath: 
-          indexStatus: 4
-          workTreeStatus: 0
-      - path: ProjectSettings\XRSettings.asset
-        label: XRSettings.asset
-        level: 1
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 0
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: ProjectSettings\XRSettings.asset
-          fullPath: C:\Users\nicol\ThamesJam\ProjectSettings\XRSettings.asset
+=======
+          fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\XRSettings.asset
           projectPath: ProjectSettings\XRSettings.asset
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
-      - path: UserSettings
-        label: UserSettings
+        - path: UserSettings\EditorUserSettings.asset
+          fullPath: C:\Users\joeth\ThamesJam\UserSettings\EditorUserSettings.asset
+          projectPath: UserSettings\EditorUserSettings.asset
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: UserSettings\Search.index
+          fullPath: C:\Users\joeth\ThamesJam\UserSettings\Search.index
+          projectPath: UserSettings\Search.index
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: UserSettings\Search.settings
+          fullPath: C:\Users\joeth\ThamesJam\UserSettings\Search.settings
+          projectPath: UserSettings\Search.settings
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - commitID: e7b1b788c436f58896608d0bee631fe1e0161562
+        mergeA: 
+        mergeB: 
+        authorName: Nicole Cizauskas
+        authorEmail: nicolecizauskas15@gmail.com
+        commitEmail: nicolecizauskas15@gmail.com
+        commitName: Nicole Cizauskas
+        summary: Initial commit
+        description: 
+        timeString: 2023-09-01T17:24:09.000+01:00
+        commitTimeString: 2023-09-01T17:24:09.000+01:00
+        changes:
+        - path: .gitattributes
+          fullPath: C:\Users\joeth\ThamesJam\.gitattributes
+          projectPath: .gitattributes
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: .gitignore
+          fullPath: C:\Users\joeth\ThamesJam\.gitignore
+          projectPath: .gitignore
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\.gitignore
+          fullPath: C:\Users\joeth\ThamesJam\Assets\.gitignore
+          projectPath: Assets\.gitignore
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      statusAhead: 0
+      selectedIndex: -1
+    selectedEntry:
+      commitID: 
+      mergeA: 
+      mergeB: 
+      authorName: 
+      authorEmail: 
+      commitEmail: 
+      commitName: 
+      summary: 
+      description: 
+      timeString: 0001-01-01T00:00:00.000+00:00
+      commitTimeString: 0001-01-01T00:00:00.000+00:00
+      changes:
+      - path: Assets\Scripts.meta
+        fullPath: C:\Users\joeth\ThamesJam\Assets\Scripts.meta
+        projectPath: Assets\Scripts.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scripts\util.meta
+        fullPath: C:\Users\joeth\ThamesJam\Assets\Scripts\util.meta
+        projectPath: Assets\Scripts\util.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scripts\util\ArrayExtensions.cs
+        fullPath: C:\Users\joeth\ThamesJam\Assets\Scripts\util\ArrayExtensions.cs
+        projectPath: Assets\Scripts\util\ArrayExtensions.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scripts\util\ArrayExtensions.cs.meta
+        fullPath: C:\Users\joeth\ThamesJam\Assets\Scripts\util\ArrayExtensions.cs.meta
+        projectPath: Assets\Scripts\util\ArrayExtensions.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+    treeChanges:
+      assets:
+        keys: []
+        values: []
+      folders:
+        keys:
+        - Assets
+        - Assets\Scripts
+        - Assets\Scripts\util
+        values:
+        - path: Assets
+          label: Assets
+          level: 0
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scripts
+          label: Scripts
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scripts\util
+          label: util
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+      checkedFileNodes:
+        keys: []
+        values: []
+      title: 
+      pathSeparator: \
+      displayRootNode: 0
+      isSelectable: 1
+      isCheckable: 0
+      isUsingGlobalSelection: 0
+      nodes:
+      - path: 
+        label: 
+        level: -1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets
+        label: Assets
         level: 0
         isFolder: 1
         isContainer: 0
@@ -2066,8 +2586,8 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
-      - path: UserSettings\EditorUserSettings.asset
-        label: EditorUserSettings.asset
+      - path: Assets\Scripts.meta
+        label: Scripts.meta
         level: 1
         isFolder: 0
         isContainer: 0
@@ -2078,15 +2598,33 @@ MonoBehaviour:
         checkState: 0
         isLocked: 0
         gitStatusEntry:
-          path: UserSettings\EditorUserSettings.asset
-          fullPath: C:\Users\nicol\ThamesJam\UserSettings\EditorUserSettings.asset
-          projectPath: UserSettings\EditorUserSettings.asset
+          path: Assets\Scripts.meta
+          fullPath: C:\Users\joeth\ThamesJam\Assets\Scripts.meta
+          projectPath: Assets\Scripts.meta
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
-      - path: UserSettings\Search.index
-        label: Search.index
+      - path: Assets\Scripts
+        label: Scripts
         level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Scripts\util.meta
+        label: util.meta
+        level: 2
         isFolder: 0
         isContainer: 0
         isCollapsed: 0
@@ -2096,15 +2634,51 @@ MonoBehaviour:
         checkState: 0
         isLocked: 0
         gitStatusEntry:
-          path: UserSettings\Search.index
-          fullPath: C:\Users\nicol\ThamesJam\UserSettings\Search.index
-          projectPath: UserSettings\Search.index
+          path: Assets\Scripts\util.meta
+          fullPath: C:\Users\joeth\ThamesJam\Assets\Scripts\util.meta
+          projectPath: Assets\Scripts\util.meta
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
-      - path: UserSettings\Search.settings
-        label: Search.settings
-        level: 1
+      - path: Assets\Scripts\util
+        label: util
+        level: 2
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Scripts\util\ArrayExtensions.cs
+        label: ArrayExtensions.cs
+        level: 3
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Scripts\util\ArrayExtensions.cs
+          fullPath: C:\Users\joeth\ThamesJam\Assets\Scripts\util\ArrayExtensions.cs
+          projectPath: Assets\Scripts\util\ArrayExtensions.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Scripts\util\ArrayExtensions.cs.meta
+        label: ArrayExtensions.cs.meta
+        level: 4
         isFolder: 0
         isContainer: 0
         isCollapsed: 0
@@ -2114,9 +2688,9 @@ MonoBehaviour:
         checkState: 0
         isLocked: 0
         gitStatusEntry:
-          path: UserSettings\Search.settings
-          fullPath: C:\Users\nicol\ThamesJam\UserSettings\Search.settings
-          projectPath: UserSettings\Search.settings
+          path: Assets\Scripts\util\ArrayExtensions.cs.meta
+          fullPath: C:\Users\joeth\ThamesJam\Assets\Scripts\util\ArrayExtensions.cs.meta
+          projectPath: Assets\Scripts\util\ArrayExtensions.cs.meta
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
@@ -2142,28 +2716,36 @@ MonoBehaviour:
     detailsScroll: {x: 0, y: 0}
   settingsView:
     gitPathView:
-      gitPath: C:\Users\nicol\AppData\Local\GitForUnity\git\cmd\git.exe
-      gitLfsPath: C:\Users\nicol\AppData\Local\GitForUnity\git\mingw64\libexec\git-core\git-lfs.exe
+      gitPath: C:\Users\joeth\AppData\Local\GitForUnity\git\cmd\git.exe
+      gitLfsPath: C:\Users\joeth\AppData\Local\GitForUnity\git\mingw64\libexec\git-core\git-lfs.exe
       errorMessage: 
       resetToBundled: 0
       resetToSystem: 0
       changingManually: 0
     hasRemote: 1
     lastCurrentRemoteChangedEvent:
+<<<<<<< HEAD
       updatedTimeString: 2023-09-01T19:06:38.536+01:00
+=======
+      updatedTimeString: 2023-09-04T11:48:48.293+01:00
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
       cacheType: 1
     newRepositoryRemoteUrl: https://github.com/N-cizauskas/ThamesJam.git
     repositoryRemoteName: origin
     repositoryRemoteUrl: https://github.com/N-cizauskas/ThamesJam.git
     scroll: {x: 0, y: 0}
     userSettingsView:
-      gitName: Nicole Cizauskas
-      gitEmail: nicolecizauskas15@gmail.com
-      newGitName: Nicole Cizauskas
-      newGitEmail: nicolecizauskas15@gmail.com
+      gitName: Joehendev
+      gitEmail: 141341728+Joehendev@users.noreply.github.com
+      newGitName: Joehendev
+      newGitEmail: 141341728+Joehendev@users.noreply.github.com
       needsSaving: 0
       lastCheckUserChangedEvent:
+<<<<<<< HEAD
         updatedTimeString: 0001-01-01T00:00:00.000+00:00
+=======
+        updatedTimeString: 2023-09-04T11:19:20.673+01:00
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
         cacheType: 8
     webTimeout: 100000
     gitTimeout: 5000
@@ -2192,6 +2774,7 @@ MonoBehaviour:
         gitFileStatus: 0
         lockedAt: 1 Jan 0001, 00:00
     lastCurrentRemoteChangedEvent:
+<<<<<<< HEAD
       updatedTimeString: 2023-09-01T19:06:38.536+01:00
       cacheType: 1
     lastLocksChangedEvent:
@@ -2199,9 +2782,54 @@ MonoBehaviour:
       cacheType: 7
     lastStatusEntriesChangedEvent:
       updatedTimeString: 2023-09-01T19:53:41.182+01:00
+=======
+      updatedTimeString: 2023-09-04T11:09:47.956+01:00
+      cacheType: 1
+    lastLocksChangedEvent:
+      updatedTimeString: 2023-09-04T11:12:45.212+01:00
+      cacheType: 7
+    lastStatusEntriesChangedEvent:
+      updatedTimeString: 2023-09-04T11:12:24.321+01:00
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
       cacheType: 6
     lockedFiles: []
-    gitStatusEntries: []
+    gitStatusEntries:
+    - path: .vsconfig
+      fullPath: C:\Users\joeth\ThamesJam\.vsconfig
+      projectPath: .vsconfig
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Test.unity
+      fullPath: C:\Users\joeth\ThamesJam\Assets\Test.unity
+      projectPath: Assets\Test.unity
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Test.unity.meta
+      fullPath: C:\Users\joeth\ThamesJam\Assets\Test.unity.meta
+      projectPath: Assets\Test.unity.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: ProjectSettings\SceneTemplateSettings.json
+      fullPath: C:\Users\joeth\ThamesJam\ProjectSettings\SceneTemplateSettings.json
+      projectPath: ProjectSettings\SceneTemplateSettings.json
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: UserSettings\EditorUserSettings.asset
+      fullPath: C:\Users\joeth\ThamesJam\UserSettings\EditorUserSettings.asset
+      projectPath: UserSettings\EditorUserSettings.asset
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: UserSettings\Layouts\default-2022.dwlt
+      fullPath: C:\Users\joeth\ThamesJam\UserSettings\Layouts\default-2022.dwlt
+      projectPath: UserSettings\Layouts\default-2022.dwlt
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
     currentUsername: 
     unlockFileMenuContent:
       m_Text: Release Lock
@@ -2215,8 +2843,8 @@ MonoBehaviour:
   currentRemoteName: origin
   currentBranch: master
   currentRemoteUrl: https://github.com/N-cizauskas/ThamesJam.git
-  statusAhead: 0
-  statusBehind: 0
+  statusAhead: 1
+  statusBehind: 3
   hasItemsToCommit: 0
   isTrackingRemoteBranch: 1
   currentBranchContent:
@@ -2228,6 +2856,7 @@ MonoBehaviour:
     m_Image: {fileID: 0}
     m_Tooltip: Url of the origin remote
   lastCurrentBranchAndRemoteChangedEvent:
+<<<<<<< HEAD
     updatedTimeString: 2023-09-01T19:06:38.536+01:00
     cacheType: 1
   lastTrackingStatusChangedEvent:
@@ -2235,6 +2864,15 @@ MonoBehaviour:
     cacheType: 5
   lastStatusEntriesChangedEvent:
     updatedTimeString: 2023-09-01T19:53:41.182+01:00
+=======
+    updatedTimeString: 2023-09-04T11:48:48.293+01:00
+    cacheType: 1
+  lastTrackingStatusChangedEvent:
+    updatedTimeString: 2023-09-04T11:48:49.585+01:00
+    cacheType: 5
+  lastStatusEntriesChangedEvent:
+    updatedTimeString: 2023-09-04T11:48:49.578+01:00
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
     cacheType: 6
   pullButtonContent:
     m_Text: Pull
@@ -2252,8 +2890,8 @@ MonoBehaviour:
     m_Text: Fetch
     m_Image: {fileID: 0}
     m_Tooltip: 
-  repositoryProgressValue: 0
-  repositoryProgressMessage: 
+  repositoryProgressValue: 1
+  repositoryProgressMessage: Fetched
   appManagerProgressValue: 1
   appManagerProgressMessage: 
   primaryConnectionUsername: 
@@ -2278,9 +2916,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 506.4
-    width: 1171.8
-    height: 277
+    y: 634
+    width: 1449
+    height: 365
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -2308,14 +2946,21 @@ MonoBehaviour:
   m_MaxSize: {x: 10000, y: 10000}
   m_TitleContent:
     m_Text: Project
-    m_Image: {fileID: -5179483145760003458, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -5467254957812901981, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: -25600
     y: -25136.8
     width: 1159
     height: 277
+=======
+    x: 0
+    y: 634
+    width: 1449
+    height: 365
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -2337,7 +2982,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Packages/com.spoiledcat.git
+    - Assets
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -2345,16 +2990,23 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Packages/com.spoiledcat.git
+  - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\nicol\ThamesJam
+  m_LastProjectPath: C:\Users\joeth\ThamesJam
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 95}
     m_SelectedIDs: 28640000
     m_LastClickedID: 25640
     m_ExpandedIDs: 000000003263000000ca9a3bffffff7f
+=======
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: 38630000
+    m_LastClickedID: 25400
+    m_ExpandedIDs: 000000003863000000ca9a3bffffff7f
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2382,7 +3034,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000032630000
+    m_ExpandedIDs: 0000000038630000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2454,7 +3106,7 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Inspector
-    m_Image: {fileID: -440750813802333266, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -2667387946076563598, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
@@ -2501,14 +3153,21 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Hierarchy
-    m_Image: {fileID: -3734745235275155857, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: 7966133145522015247, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: -25600
     y: -25569.6
     width: 286.2
     height: 411.8
+=======
+    x: 0
+    y: 73
+    width: 358
+    height: 540
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -2524,7 +3183,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 1afbffff
+      m_ExpandedIDs: 18fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -2540,7 +3199,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 0}
+        m_ClientGUIView: {fileID: 4}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -2564,14 +3223,21 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Scene
-    m_Image: {fileID: 8634526014445323508, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: 2593428753322112591, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: -25312.8
     y: -25569.6
     width: 870.8
     height: 411.8
+=======
+    x: 359
+    y: 73
+    width: 1089
+    height: 540
+>>>>>>> e274908ac97e4669af92a8d7b6859ed25057dac8
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -2587,7 +3253,7 @@ MonoBehaviour:
       collapsed: 0
       displayed: 1
       snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: -164.79999, y: -26.399994}
+      snapOffsetDelta: {x: -156, y: -26}
       snapCorner: 3
       id: Tool Settings
       index: 0
@@ -2917,9 +3583,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0, y: 0, z: 0}
+    m_Target: {x: -0.031430114, y: -0.12331057, z: 0.040104106}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0}
+    m_Value: {x: -0.031430114, y: -0.12331057, z: 0.040104106}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -2969,9 +3635,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 10
+    m_Target: 5.989576
     speed: 2
-    m_Value: 10
+    m_Value: 5.989576
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -3012,14 +3678,14 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Game
-    m_Image: {fileID: 4621777727084837110, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -6423792434712278376, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 507
-    y: 94
-    width: 1532
-    height: 790
+    x: 359
+    y: 73
+    width: 1089
+    height: 540
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -3036,10 +3702,10 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 1532, y: 769}
+  m_TargetSize: {x: 1089, y: 519}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
-  m_RenderIMGUI: 0
+  m_RenderIMGUI: 1
   m_EnterPlayModeBehavior: 0
   m_UseMipMap: 0
   m_VSyncEnabled: 0
@@ -3051,10 +3717,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -612.8
-    m_HBaseRangeMax: 612.8
-    m_VBaseRangeMin: -307.6
-    m_VBaseRangeMax: 307.6
+    m_HBaseRangeMin: -544.5
+    m_HBaseRangeMax: 544.5
+    m_VBaseRangeMin: -259.5
+    m_VBaseRangeMax: 259.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -3063,7 +3729,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -3072,23 +3738,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 1532
-      height: 769
+      width: 1089
+      height: 519
     m_Scale: {x: 1.25, y: 1.25}
-    m_Translation: {x: 766, y: 384.5}
+    m_Translation: {x: 544.5, y: 259.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -612.8
-      y: -307.6
-      width: 1225.6
-      height: 615.2
+      x: -435.6
+      y: -207.6
+      width: 871.2
+      height: 415.2
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 1915, y: 987.5}
+  m_LastWindowPixelSize: {x: 1089, y: 540}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -3110,14 +3776,14 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Console
-    m_Image: {fileID: -4950941429401207979, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -4327648978806127646, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 506.4
-    width: 1159
-    height: 277
+    y: 634
+    width: 1449
+    height: 365
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
