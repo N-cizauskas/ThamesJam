@@ -65,8 +65,8 @@ public class Scene1Dialogue : MonoBehaviour
             DialogueDisplay.SetActive(true);
             Char1name.text = "";
             Char1speech.text = "";
-            Char2name.text = "Jeda";
-            Char2speech.text = "Wakey wakey, human.";
+            Char2name.text = "Sai";
+            Char2speech.text = "If anyone is reading this then I know that pushing has succeeded :)";
         }
         else if (primeInt == 3)
         {
