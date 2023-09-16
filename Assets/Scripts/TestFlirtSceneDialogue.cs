@@ -28,6 +28,7 @@ public class TestFlirtSceneDialogue : MonoBehaviour
     public GameObject nextButton;
     public GameObject FlirtResult;
     public Text FlirtResultText;
+    public Text FlirtStatChangeText;
     //public AudioSource audioSource;
     private bool allowSpace = true;
     // Additional booleans to flag correct choices
@@ -35,7 +36,8 @@ public class TestFlirtSceneDialogue : MonoBehaviour
     private bool choice2Passed = false;
     // Placeholder for the charm stat
     public int playerCharm = 0;
-
+    // Variable to hold stat change (only for display purposes)
+    public int statChange = 0;
 
     // initial visibility settings. Any new images or buttons need to also be SetActive(false);
     void Start()
@@ -280,11 +282,15 @@ public class TestFlirtSceneDialogue : MonoBehaviour
                 FlirtResultText.text = "Flirt Successful!";
                 FlirtResultText.color = Color.green;
                 playerCharm += 1;
+                statChange += 1;
                 // Let's reward the player further for a really good flirt
                 if (choice1Passed == true)
                 {
                     playerCharm += 1;
+                    statChange += 1;
                 }
+                FlirtStatChangeText.text = "+" + statChange + " Charm";
+                FlirtStatChangeText.color = Color.green;
                 // Placeholder to display winning message here
             }
             else
@@ -292,6 +298,7 @@ public class TestFlirtSceneDialogue : MonoBehaviour
                 // Here your flirt has failed :(
                 FlirtResultText.text = "Flirt Failed.";
                 FlirtResultText.color = Color.red;
+                FlirtStatChangeText.text = "";
                 // The fish runs away
                 ArtChar2.SetActive(false);
                 // Placeholder to display defeat message here
