@@ -12,7 +12,8 @@ public class DialogueTrigger : MonoBehaviour
         // on [thing] occurring, call EnterDialogue.
     }
 
-    private void EnterDialogue()
+    // this method should usually be private, I think; making it public for testing purposes
+    public void EnterDialogue()
     {
         DialogueManager.instance.BeginDialogue(inkJSON);
     }
