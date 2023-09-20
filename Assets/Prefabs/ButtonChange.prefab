@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Choice Text
+  m_Text: Okay
 --- !u!1 &1019923041722895604
 GameObject:
   m_ObjectHideFlags: 0
