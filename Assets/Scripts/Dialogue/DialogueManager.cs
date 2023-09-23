@@ -21,6 +21,8 @@ public class DialogueManager : MonoBehaviour
     private TextMeshProUGUI[] choicesText;
     public bool dialogueIsPlaying { get; private set; } // use this to make decisions about how other things should interact
 
+    private int playerCharm; // Test to see if this can be integrated with the ink script's variable
+
     private void Awake()
     {
         if (instance != null)
@@ -41,6 +43,7 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         dialoguePanel.SetActive(false);
+        playerCharm = 5;
     }
 
     private void Update() 
@@ -57,6 +60,11 @@ public class DialogueManager : MonoBehaviour
     public void BeginDialogue(TextAsset inkJson)
     {
         currentStory = new Story(inkJson.text);
+
+        // Set player charm in the story
+
+        currentStory.variablesState["charm"] = playerCharm;
+
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
         ContinueDialogue();
@@ -82,6 +90,10 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
+
+        // Update the player charm after story
+        playerCharm = (int) currentStory.variablesState["charm"];
+        Debug.Log("current playerCharm: " + playerCharm);
     }
 
     private void UpdateChoices()
