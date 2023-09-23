@@ -28,12 +28,14 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("More than one DialogueManager exists");
         }
 
+        choicesText = new TextMeshProUGUI[choiceObjects.Length];
+        instance = this;
+        dialogueIsPlaying = false;
+
         for(int i = 0; i < choiceObjects.Length; i++)
         {
             choicesText[i] = choiceObjects[i].GetComponentInChildren<TextMeshProUGUI>();
         }
-        instance = this;
-        dialogueIsPlaying = false;
     }
 
     private void Start()
