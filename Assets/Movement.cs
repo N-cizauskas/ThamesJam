@@ -46,6 +46,8 @@ public class PlayerRun : MonoBehaviour
 	private void FixedUpdate()
 	{
 		Run();
+
+		//IdleCheck();
 	}
 
 	
@@ -93,8 +95,27 @@ public class PlayerRun : MonoBehaviour
 
 		IsFacingRight = !IsFacingRight;
 	}
-	
+	//private void IdleCheck()
+	//{
+		//if (RB.velocity.x < 0.1 && RB.velocity.y < 0.1)
+		//{
+			//yield return new WaitForSecondsRealtime(2);
+			//if (RB.velocity.x < 0.1 && RB.velocity.y < 0.1)
+			//{
+			//	Idle();
+			//}
+			//}
 
+
+	//}
+	//private void Idle()
+	//{ 
+	
+	
+	
+	
+	//}
+	
 
 	#region CHECK METHODS
 	public void CheckDirectionToFace(bool isMovingRight)
