@@ -5,6 +5,7 @@ using Ink.Runtime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -16,6 +17,10 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choiceObjects;
+
+    [Header("Character UI")]
+    [SerializeField] private GameObject characterPanel;
+    [SerializeField] private TextMeshProUGUI characterText;
 
     private Story currentStory;
     private TextMeshProUGUI[] choicesText;
@@ -43,7 +48,8 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         dialoguePanel.SetActive(false);
-        playerCharm = 5;
+        characterPanel.SetActive(false);
+        playerCharm = 5; // Take this from a global tracker or something
     }
 
     private void Update() 
@@ -65,8 +71,13 @@ public class DialogueManager : MonoBehaviour
 
         currentStory.variablesState["charm"] = playerCharm;
 
+        // Set also the current character to the story's starting character:
+
+        characterText.text = (string)currentStory.variablesState["current_char"];
+
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
+        characterPanel.SetActive(true);
         ContinueDialogue();
     }
 
@@ -75,6 +86,8 @@ public class DialogueManager : MonoBehaviour
         if (currentStory.canContinue)
         {
             dialogueText.text = currentStory.Continue();
+            // Update also the current character that's talking
+            characterText.text = (string)currentStory.variablesState["current_char"];
             UpdateChoices();
         }
         else
@@ -89,6 +102,7 @@ public class DialogueManager : MonoBehaviour
 
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
+        characterPanel.SetActive(false);
         dialogueText.text = "";
 
         // Update the player charm after story
