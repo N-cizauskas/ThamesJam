@@ -86,7 +86,8 @@ and ending up in between will leave your chances of success to your charm stat.
     you can declare a separate "charm gain" variable and increment it
     after every correct choice - I have commented out such a variable
     */
-    charm += choicespassed
+    ~ charm += choicespassed
+    Your charm has increased to {charm}!
 - else:
     Flirt failure dialogue here
     // Do you want to add some consolation charm? Not sure if it makes sense to do so
