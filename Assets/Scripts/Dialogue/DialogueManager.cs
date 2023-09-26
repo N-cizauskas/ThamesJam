@@ -5,6 +5,7 @@ using Ink.Runtime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
@@ -21,6 +22,10 @@ public class DialogueManager : MonoBehaviour
     [Header("Character UI")]
     [SerializeField] private GameObject characterPanel;
     [SerializeField] private TextMeshProUGUI characterText;
+
+    // The start and continue dialogue buttons
+    public GameObject startDialogueButton;
+    public GameObject continueDialogueButton;
 
     private Story currentStory;
     private TextMeshProUGUI[] choicesText;
@@ -47,6 +52,8 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
+        // Only the start button should be active
+        continueDialogueButton.SetActive(false);
         dialoguePanel.SetActive(false);
         characterPanel.SetActive(false);
         playerCharm = 5; // Take this from a global tracker or something
@@ -66,6 +73,11 @@ public class DialogueManager : MonoBehaviour
     public void BeginDialogue(TextAsset inkJson)
     {
         currentStory = new Story(inkJson.text);
+
+        // Disable the "start dialogue" button
+        startDialogueButton.SetActive(false);
+        // Enable the "continue dialogue" button (this may be overridden by choices in ContinueDialogue)
+        continueDialogueButton.SetActive(true);
 
         // Set player charm in the story
 
@@ -89,6 +101,7 @@ public class DialogueManager : MonoBehaviour
             // Update also the current character that's talking
             characterText.text = (string)currentStory.variablesState["current_char"];
             UpdateChoices();
+            UpdateCharbox();
         }
         else
         {
@@ -108,6 +121,10 @@ public class DialogueManager : MonoBehaviour
         // Update the player charm after story
         playerCharm = (int) currentStory.variablesState["charm"];
         Debug.Log("current playerCharm: " + playerCharm);
+
+        // Move to a new scene
+        // (Will Joe handle this part?)
+        // SceneManager.LoadScene("");
     }
 
     private void UpdateChoices()
@@ -134,6 +151,8 @@ public class DialogueManager : MonoBehaviour
 
         if (currentChoices.Count > 0)
         {
+            // Temporarily disable the continue button until user makes a choice
+            continueDialogueButton.SetActive(false);
             StartCoroutine(SelectChoiceObject());
         }
     }
@@ -141,6 +160,8 @@ public class DialogueManager : MonoBehaviour
     public void MakeChoice(int choiceIndex)
     {
         currentStory.ChooseChoiceIndex(choiceIndex);
+        // Re-enable the continue button
+        continueDialogueButton.SetActive(true);
         ContinueDialogue();
     }
 
@@ -149,5 +170,10 @@ public class DialogueManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         yield return new WaitForEndOfFrame();
         EventSystem.current.SetSelectedGameObject(choiceObjects[0].gameObject);
+    }
+
+    private void UpdateCharbox()
+    {
+        characterPanel.SetActive((bool)currentStory.variablesState["enable_charbox"]);
     }
 }
