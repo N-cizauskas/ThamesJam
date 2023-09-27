@@ -9,6 +9,8 @@ VAR choicespassed = 0
 // VAR charmgain = 0 // Tracks the amount of charm gained in the flirt
 // And this one tells us if the flirt has been passed
 VAR flirtpassed = false
+// This variable determines whether the character box is displayed
+VAR enable_charbox = true
 
 -> main
 == function swap_char() ==
@@ -86,7 +88,7 @@ and ending up in between will leave your chances of success to your charm stat.
 }
 { 
 - flirtpassed:
-    Flirt pass dialogue here
+    I'll see you around some time, ok?
     /* We can add charm proportional to how many choices we passed.
     Here we assume that every correct choice gains you 1 charm.
     If you would like to vary the amount of charm gained from each correct choice,
@@ -94,8 +96,12 @@ and ending up in between will leave your chances of success to your charm stat.
     after every correct choice - I have commented out such a variable
     */
     ~ charm += choicespassed
+    ~ enable_charbox = false // Disable the character box for this message
+    {NPC} has been charmed by your flirt!
     Your charm has increased to {charm}!
 - else:
-    Flirt failure dialogue here
+    I think I'm gonna swim very far away.
+    ~ enable_charbox = false
+    {NPC} has left.
 }
 -> END
