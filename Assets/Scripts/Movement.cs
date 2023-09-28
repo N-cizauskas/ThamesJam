@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerRun : MonoBehaviour
 {
@@ -15,10 +16,20 @@ public class PlayerRun : MonoBehaviour
 	public float runAccelAmount = 0.1F;
 	public float runDeccelAmount = 0.05F;
 	public float runMaxSpeed = 5F;
+	public float CurrentStrength = 1f;
 	public bool MvmOk = false;
 	public int SceneChange = 1;
 	public int LogicChange;
-	public GameObject EndBattleButton;
+	public GameObject FlightOrFlirt; //2 (Scene Change number) Normal game play is 1
+	public GameObject FightScreen; //3
+	public GameObject FlirtScreen; //4
+	public GameObject BossScreen; //5
+	public string Level_2;
+	public string Level_3;
+	public string Level_4;
+	public string Level_5;
+	public float SlowTimer = 0f;
+	public bool Slowed = false;
 
 	private void Awake()
 	{
@@ -31,29 +42,81 @@ public class PlayerRun : MonoBehaviour
 		SceneChange = 1;
 	}
 
-	public void EndBattle()
+	public void EndBattle() //Send all battle ending functions here
 	{
 		SceneChange = 1;
-		EndBattleButton.SetActive(false);
-		
-
+		FlightOrFlirt.SetActive(false);
 	}
-	private void OnTriggerEnter2D(Collider2D collision)
+
+	public void FightBattle()
 	{
-		if (collision.gameObject.layer == 6)
+		SceneChange = 3;
+		FlightOrFlirt.SetActive(false);
+		FightScreen.SetActive(true);
+	}
+
+	public void FlirtBattle()
+	{
+		SceneChange = 4;
+		FlightOrFlirt.SetActive(false);
+		FlirtScreen.SetActive(true);
+	}
+	public void BossBattle()
+	{
+		SceneChange = 1; //Replace These 2 lines with 5 when completed
+		FlightOrFlirt.SetActive(false);
+	}
+
+	private void OnTriggerEnter2D(Collider2D collision) //This solves collision with non enemy objects
+	{
+		if (collision.gameObject.layer == 6) //All non boss are to be layer 6
 		{
-			SceneChange++;
+			SceneChange = 2;
 		}
 
+		if (collision.gameObject.layer == 7) //All boss to be layer 7
+		{
+			SceneChange = 5;
+		}
+		if (collision.gameObject.layer == 8 == true) //Slow terrain
+		{
+
+			runMaxSpeed = 0.5F;
+
+		}
+		
+	}
+	private void OnTriggerExit2D(Collider2D collision)
+    {
+			runMaxSpeed = 5F;
 	}
 
-	void Update()
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+		if (collision.gameObject.layer == 9 == true) //Slow terrain
+		{
+
+			RB.velocity = Vector2.left * CurrentStrength;
+
+		}
+	}
+
+
+
+    void Update()
 	{
+     
 		
 
+		if (SceneChange == 0) //Menu
+		{
+			
+			MvmOk = false;
+			RB.velocity = new Vector2(0, 0);
+		}
 
 
-		if (SceneChange == 1)
+		if (SceneChange == 1) //Normal movement
 		{
 			MvmOk = true;
 			_moveInput.x = Input.GetAxisRaw("Horizontal");
@@ -61,15 +124,22 @@ public class PlayerRun : MonoBehaviour
 			if (_moveInput.x != 0)
 				CheckDirectionToFace(_moveInput.x > 0);
 		}
-		if (SceneChange >= 2)
+		if (SceneChange == 2) //Enemy
 		{
-			EndBattleButton.SetActive(true);
+			FlightOrFlirt.SetActive(true);
 			MvmOk = false;
 			RB.velocity = new Vector2(0, 0);
 		}
-		
 
 		
+		
+		if (SceneChange == 5) //Boss
+		{
+			BossScreen.SetActive(true);
+			MvmOk = false;
+			RB.velocity = new Vector2(0, 0);
+		}
+
 	}
 	
 	
@@ -123,11 +193,36 @@ public class PlayerRun : MonoBehaviour
 		IsFacingRight = !IsFacingRight;
 	}
 	
-	#region CHECK METHODS
+	
 	public void CheckDirectionToFace(bool isMovingRight)
 	{
 		if (isMovingRight != IsFacingRight)
 			Turn();
 	}
-	#endregion
+
+	public void NextLevel_2()
+    {
+		
+		SceneManager.LoadScene(Level_2);
+
+    }
+	public void NextLevel_3()
+	{
+
+		SceneManager.LoadScene(Level_3);
+
+	}
+	public void NextLevel_4()
+	{
+
+		SceneManager.LoadScene(Level_4);
+
+	}
+
+	public void NextLevel_5()
+	{
+
+		SceneManager.LoadScene(Level_5);
+
+	}
 }
