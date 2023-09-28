@@ -871,6 +871,10 @@ MonoBehaviour:
   runAccelAmount: 4
   runDeccelAmount: 3.5
   runMaxSpeed: 5
+  MvmOk: 0
+  SceneChange: 1
+  LogicChange: 0
+  EndBattleButton: {fileID: 0}
 --- !u!212 &785517030
 SpriteRenderer:
   m_ObjectHideFlags: 0
