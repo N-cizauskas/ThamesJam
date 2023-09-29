@@ -10,7 +10,8 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    public static DialogueManager instance { get; private set; }
+    // Singleton
+    public static DialogueManager Instance { get; private set; }
 
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
@@ -35,13 +36,13 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != null)
+        if (Instance != null)
         {
-            Debug.LogWarning("More than one DialogueManager exists");
+            Debug.LogError("More than one DialogueManager should not exist - it is a singleton");
         }
 
+        Instance = this;
         choicesText = new TextMeshProUGUI[choiceObjects.Length];
-        instance = this;
         dialogueIsPlaying = false;
 
         for(int i = 0; i < choiceObjects.Length; i++)
