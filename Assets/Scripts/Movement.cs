@@ -30,6 +30,7 @@ public class PlayerRun : MonoBehaviour
 	public string Level_5;
 	public float SlowTimer = 0f;
 	public bool Slowed = false;
+	public int tessieCharm = 0; // Used for flirt? Possible?
 
 	private void Awake()
 	{
@@ -40,12 +41,17 @@ public class PlayerRun : MonoBehaviour
 	{
 		IsFacingRight = true;
 		SceneChange = 1;
+		FlightOrFlirt.SetActive(false);
+		FightScreen.SetActive(false);
+		FlirtScreen.SetActive(false);
 	}
 
 	public void EndBattle() //Send all battle ending functions here
 	{
 		SceneChange = 1;
 		FlightOrFlirt.SetActive(false);
+		FightScreen.SetActive(false);
+		FlirtScreen.SetActive(false);
 	}
 
 	public void FightBattle()

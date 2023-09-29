@@ -56,9 +56,9 @@ public class DialogueManager : MonoBehaviour
         continueDialogueButton.SetActive(false);
         dialoguePanel.SetActive(false);
         characterPanel.SetActive(false);
-        playerCharm = 5; // Take this from a global tracker or something
+        playerCharm = 0; // Take this from a global tracker or something
     }
-
+    
     private void Update() 
     {
         if (!dialogueIsPlaying)
@@ -122,9 +122,9 @@ public class DialogueManager : MonoBehaviour
         playerCharm = (int) currentStory.variablesState["charm"];
         Debug.Log("current playerCharm: " + playerCharm);
 
-        // Move to a new scene
-        // (Will Joe handle this part?)
-        // SceneManager.LoadScene("");
+        // End the "battle"
+        // var PR = new PlayerRun();
+        // PR.EndBattle();
     }
 
     private void UpdateChoices()
