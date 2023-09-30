@@ -11,6 +11,7 @@ public class GameStateManager : MonoBehaviour
     public GameState GameState { get; private set; }
     private event EventHandler RaisePauseEvent;
     private event EventHandler RaiseUnpauseEvent;
+    public static bool canTurn = true;
 
     public static void RegisterPauseHandler(EventHandler handler)
     {
@@ -75,6 +76,7 @@ public class GameStateManager : MonoBehaviour
 
         // not an elegant method, but better than nothing
         GameState = (GameState == GameState.OVERWORLD_PLAYING) ? GameState.OVERWORLD_PAUSED : GameState.FIGHT_PAUSED;
+        canTurn = false;
     }
 
     private void UnpauseGame()
@@ -83,5 +85,6 @@ public class GameStateManager : MonoBehaviour
         Time.timeScale = 1f;
 
         GameState = (GameState == GameState.OVERWORLD_PAUSED) ? GameState.OVERWORLD_PLAYING : GameState.FIGHT_PLAYING;
+        canTurn = true;
     }
 }

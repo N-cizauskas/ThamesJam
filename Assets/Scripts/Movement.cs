@@ -198,12 +198,14 @@ public class PlayerRun : MonoBehaviour
 
 		IsFacingRight = !IsFacingRight;
 	}
-	
-	
+
+
 	public void CheckDirectionToFace(bool isMovingRight)
 	{
-		if (isMovingRight != IsFacingRight)
-			Turn();
+		if (isMovingRight != IsFacingRight && GameStateManager.canTurn == true)
+			{
+				Turn();
+            }
 	}
 
 	public void NextLevel_2()
