@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GameStateManager : MonoBehaviour
@@ -8,7 +9,16 @@ public class GameStateManager : MonoBehaviour
     // Singleton
     public static GameStateManager Instance { get; private set; }
 
+    public static GameState[] PAUSED_GAME_STATES =  {GameState.OVERWORLD_PAUSED, GameState.FIGHT_PAUSED};
+
     public GameState GameState { get; private set; }
+    public bool IsPaused 
+    {
+        get {
+            return PAUSED_GAME_STATES.Contains(GameState);
+        }
+    }
+
     private event EventHandler RaisePauseEvent;
     private event EventHandler RaiseUnpauseEvent;
     public static bool canTurn = true;
@@ -71,6 +81,8 @@ public class GameStateManager : MonoBehaviour
 
     private void PauseGame()
     {
+        if (IsPaused) return;
+
         RaisePauseEvent?.Invoke(this, EventArgs.Empty);
         Time.timeScale = 0f;
 
@@ -81,6 +93,8 @@ public class GameStateManager : MonoBehaviour
 
     private void UnpauseGame()
     {
+        if (!IsPaused) return;
+
         RaiseUnpauseEvent?.Invoke(this, EventArgs.Empty);
         Time.timeScale = 1f;
 
