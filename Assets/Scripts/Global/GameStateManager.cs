@@ -9,7 +9,10 @@ public class GameStateManager : MonoBehaviour
     // Singleton
     public static GameStateManager Instance { get; private set; }
 
-    public static GameState[] PAUSED_GAME_STATES =  {GameState.OVERWORLD_PAUSED, GameState.FIGHT_PAUSED};
+    private static readonly GameState[] PAUSED_GAME_STATES = {GameState.OVERWORLD_PAUSED, GameState.FIGHT_PAUSED};
+    private static readonly GameState[] BATTLE_GAME_STATES = {GameState.FIGHT_PLAYING, GameState.FIGHT_PAUSED};
+
+    public static bool canTurn = true;
 
     public GameState GameState { get; private set; }
     public bool IsPaused 
@@ -18,11 +21,20 @@ public class GameStateManager : MonoBehaviour
             return PAUSED_GAME_STATES.Contains(GameState);
         }
     }
+    public bool IsInBattle
+    {
+        get {
+            return BATTLE_GAME_STATES.Contains(GameState);
+        }
+    }
 
     private event EventHandler RaisePauseEvent;
     private event EventHandler RaiseUnpauseEvent;
-    public static bool canTurn = true;
-
+    private event EventHandler RaisePrepareBattleEvent; // TODO: placeholder atm; this should be published to switch to the battle screen
+                                                        // TODO: it may be worth attaching custom event info for the enemy 
+    private event EventHandler RaiseStartBattleEvent;   // this is raised to begin the actual flounder minigame
+    private event EventHandler RaiseEndBattleEvent;
+    
     public static void RegisterPauseHandler(EventHandler handler)
     {
         Instance.RaisePauseEvent += handler;
@@ -30,6 +42,18 @@ public class GameStateManager : MonoBehaviour
     public static void RegisterUnpauseHandler(EventHandler handler)
     {
         Instance.RaiseUnpauseEvent += handler;
+    }
+    public static void RegisterPrepareBattleHandler(EventHandler handler)
+    {
+        Instance.RaisePrepareBattleEvent += handler;
+    }
+    public static void RegisterStartBattleHandler(EventHandler handler)
+    {
+        Instance.RaiseStartBattleEvent += handler;
+    }
+    public static void RegisterEndBattleHandler(EventHandler handler)
+    {
+        Instance.RaiseEndBattleEvent += handler;
     }
 
     void Awake()
@@ -100,5 +124,13 @@ public class GameStateManager : MonoBehaviour
 
         GameState = (GameState == GameState.OVERWORLD_PAUSED) ? GameState.OVERWORLD_PLAYING : GameState.FIGHT_PLAYING;
         canTurn = true;
+    }
+
+    // TODO: remove, used for debugging purposes
+    public void DebugStartBattle()
+    {
+        Debug.Log("debug start battle pressed");
+        GameState = GameState.FIGHT_PLAYING;
+        RaiseStartBattleEvent?.Invoke(this, EventArgs.Empty);
     }
 }
