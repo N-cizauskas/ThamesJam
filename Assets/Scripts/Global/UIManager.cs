@@ -1,10 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.ConstrainedExecution;
 using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
 
 public class UIManager : MonoBehaviour
@@ -28,10 +30,17 @@ public class UIManager : MonoBehaviour
     [Header("UI Elements - Debug")]
     public GameObject GameStateText;
 
+
     private RectTransform PlayerTugPullRangeTransform;
     private RectTransform PlayerTugCritRangeTransform;
     private RectTransform BattleLeverageIndicatorTransform;
     private Image PlayerTugGaugeImage;
+
+    // additional flair for the battle leverage indicator to make it 'swing' between values
+    private static readonly float MAX_LEVERAGE_MOVE_SPEED = 500f;
+    private static readonly float LEVERAGE_BOBBING_HEIGHT = 10f;
+    private static readonly float LEVERAGE_BOBBING_PERIOD = 1.5f;
+    private float leveragePosition;
 
     void Awake()
     {
@@ -70,7 +79,7 @@ public class UIManager : MonoBehaviour
             
             UpdateCritRange();  // TODO: crit range should only need to run when the player starts a new tug
             UpdateTugGauge();
-            UpdateBattleLeverage();
+            UpdateBattleLeverageTarget();
         }
     }
 
@@ -87,6 +96,7 @@ public class UIManager : MonoBehaviour
     void OnStartBattle(object sender, EventArgs e)
     {
         BattleParentGameObject.SetActive(true);
+        ResetBattleLeverage();
         UpdatePullRange();
     }
 
@@ -110,9 +120,21 @@ public class UIManager : MonoBehaviour
         PlayerTugGaugeImage.fillAmount = BattleManager.Instance.playerTugValue / 100f;
     }
 
-    private void UpdateBattleLeverage()
+    private void UpdateBattleLeverageTarget()
     {
-        float transformX = LeverageWidth * (1 - BattleManager.Instance.battleLeverage / 100f);
-        BattleLeverageIndicatorTransform.SetX(Mathf.Clamp(transformX, 0, LeverageWidth));
+        float leverageCurrent = BattleLeverageIndicatorTransform.anchoredPosition.x;
+        float leverageTarget = LeverageWidth * (1 - BattleManager.Instance.battleLeverage / 100f);
+        float leverageSpeed = Mathf.Min((leverageTarget - leverageCurrent) * 5, MAX_LEVERAGE_MOVE_SPEED);
+        leveragePosition += Time.deltaTime * leverageSpeed;
+        BattleLeverageIndicatorTransform.SetX(Mathf.Clamp(leveragePosition, 0, LeverageWidth));
+
+        // for flair, let's bob it up and down as well
+        BattleLeverageIndicatorTransform.SetY(LEVERAGE_BOBBING_HEIGHT * (float) Math.Sin(Time.time * Mathf.PI / LEVERAGE_BOBBING_PERIOD));
+    }
+
+    private void ResetBattleLeverage()
+    {
+        leveragePosition = LeverageWidth * (1 - BattleManager.BASE_BATTLE_LEVERAGE / 100f);
+        BattleLeverageIndicatorTransform.SetX(Mathf.Clamp(leveragePosition, 0, LeverageWidth));
     }
 }

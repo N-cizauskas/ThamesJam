@@ -21,6 +21,8 @@ public class BattleManager : MonoBehaviour
 
     // Constants
     // NOTE: Tug ranges are defined out of 100 for full bar width. This makes it flexible enough to apply to a bar of any width
+    public static readonly int BASE_BATTLE_LEVERAGE = 50;       // the default position at battle start. maybe tune this to make it easier/harder?
+
     private static readonly int TUG_BASE_RANGE = 20;            // base width of the tug bar
     private static readonly int TUG_BASE_CRIT_RANGE = 5;        // base width of the crit bar
     private static readonly int TUG_FINESSE_NORM_MODIFIER = 3;  // how much each point of finesse widens the normal tug bar
