@@ -58,10 +58,22 @@ The river is better this way! Humans are smart enough to know what's right and w
     Better? How can it be better?
     Look around you. This place is completely barren.
     The river isn't dying, it's dead.
-    
+    {swap_char()}
+    It's not like it really matters.
+    What's a stinking river to humans?
+    {swap_char()}
+    ...
+    I don't think you really believe that.
 
 * ["That's not true"]
-    Dialogue 1b
+    {swap_char()}
+    Humans? They couldn't tell right from wrong even if you labelled them.
+    All they know is greed.
+    {swap_char()}
+    What do you mean?
+    {swap_char()}
+    Look at the wars they fight/
+    Look how many of them are in poverty
 * ["Says who?"]
     Dialogue 1c
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 1
