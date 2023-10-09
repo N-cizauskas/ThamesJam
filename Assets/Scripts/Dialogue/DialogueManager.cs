@@ -57,7 +57,7 @@ public class DialogueManager : MonoBehaviour
         continueDialogueButton.SetActive(false);
         dialoguePanel.SetActive(false);
         characterPanel.SetActive(false);
-        playerCharm = 0; // Take this from a global tracker or something
+        playerCharm = PlayerRun.tessieCharm; // Take this from a global tracker or something
     }
     
     private void Update() 
@@ -120,7 +120,7 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
 
         // Update the player charm after story
-        playerCharm = (int) currentStory.variablesState["charm"];
+        PlayerRun.tessieCharm = (int) currentStory.variablesState["charm"];
         Debug.Log("current playerCharm: " + playerCharm);
 
         // End the "battle"
