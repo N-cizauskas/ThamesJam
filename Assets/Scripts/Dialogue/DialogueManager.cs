@@ -10,7 +10,8 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    public static DialogueManager instance { get; private set; }
+    // Singleton
+    public static DialogueManager Instance { get; private set; }
 
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
@@ -35,13 +36,13 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != null)
+        if (Instance != null)
         {
-            Debug.LogWarning("More than one DialogueManager exists");
+            Debug.LogError("More than one DialogueManager should not exist - it is a singleton");
         }
 
+        Instance = this;
         choicesText = new TextMeshProUGUI[choiceObjects.Length];
-        instance = this;
         dialogueIsPlaying = false;
 
         for(int i = 0; i < choiceObjects.Length; i++)
@@ -56,9 +57,9 @@ public class DialogueManager : MonoBehaviour
         continueDialogueButton.SetActive(false);
         dialoguePanel.SetActive(false);
         characterPanel.SetActive(false);
-        playerCharm = 5; // Take this from a global tracker or something
+        playerCharm = PlayerRun.tessieCharm; // Take this from a global tracker or something
     }
-
+    
     private void Update() 
     {
         if (!dialogueIsPlaying)
@@ -119,12 +120,12 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
 
         // Update the player charm after story
-        playerCharm = (int) currentStory.variablesState["charm"];
+        PlayerRun.tessieCharm = (int) currentStory.variablesState["charm"];
         Debug.Log("current playerCharm: " + playerCharm);
 
-        // Move to a new scene
-        // (Will Joe handle this part?)
-        // SceneManager.LoadScene("");
+        // End the "battle"
+        // var PR = new PlayerRun();
+        // PR.EndBattle();
     }
 
     private void UpdateChoices()

@@ -80,7 +80,7 @@ failing all three choices is an automatic failure,
 and ending up in between will leave your chances of success to your charm stat.
 */
 { 
-- choicespassed >= 3: // If you decide that some options are worth more than others
+- choicespassed == 3:
     ~ flirtpassed = true
 - choicespassed == 2 && charm >= threshold2:
     ~ flirtpassed = true

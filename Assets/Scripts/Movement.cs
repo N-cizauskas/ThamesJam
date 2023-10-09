@@ -30,6 +30,8 @@ public class PlayerRun : MonoBehaviour
 	public string Level_5;
 	public float SlowTimer = 0f;
 	public bool Slowed = false;
+	public static int tessieCharm = 0; // Used for flirt? Possible?
+	public static string collidedMob;
 
 	private void Awake()
 	{
@@ -40,12 +42,17 @@ public class PlayerRun : MonoBehaviour
 	{
 		IsFacingRight = true;
 		SceneChange = 1;
+		FlightOrFlirt.SetActive(false);
+		FightScreen.SetActive(false);
+		FlirtScreen.SetActive(false);
 	}
 
 	public void EndBattle() //Send all battle ending functions here
 	{
 		SceneChange = 1;
 		FlightOrFlirt.SetActive(false);
+		FightScreen.SetActive(false);
+		FlirtScreen.SetActive(false);
 	}
 
 	public void FightBattle()
@@ -71,6 +78,9 @@ public class PlayerRun : MonoBehaviour
 	{
 		if (collision.gameObject.layer == 6) //All non boss are to be layer 6
 		{
+			// Determine the mob that you collided with
+			// This is useful for loading the correct objects and scripts
+			collidedMob = collision.gameObject.name;
 			SceneChange = 2;
 		}
 
@@ -192,12 +202,14 @@ public class PlayerRun : MonoBehaviour
 
 		IsFacingRight = !IsFacingRight;
 	}
-	
-	
+
+
 	public void CheckDirectionToFace(bool isMovingRight)
 	{
-		if (isMovingRight != IsFacingRight)
-			Turn();
+		if (isMovingRight != IsFacingRight && GameStateManager.canTurn == true)
+			{
+				Turn();
+            }
 	}
 
 	public void NextLevel_2()
