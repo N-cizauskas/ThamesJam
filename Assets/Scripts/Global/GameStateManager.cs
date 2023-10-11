@@ -10,15 +10,25 @@ public class GameStateManager : MonoBehaviour
     public static GameStateManager Instance { get; private set; }
 
     private static readonly GameState[] PAUSED_GAME_STATES = {GameState.OVERWORLD_PAUSED, GameState.FIGHT_PAUSED};
+    private static readonly GameState[] PRE_BATTLE_GAME_STATES = {GameState.PRE_FIGHT, GameState.FIGHT_PAUSED};
     private static readonly GameState[] BATTLE_GAME_STATES = {GameState.FIGHT_PLAYING, GameState.FIGHT_PAUSED};
 
     public static bool canTurn = true;
+
+    [Tooltip("Pause the game on losing focus - disable for easier debugging.")]
+    public bool pauseOnFocusLoss = false;
 
     public GameState GameState { get; private set; }
     public bool IsPaused 
     {
         get {
             return PAUSED_GAME_STATES.Contains(GameState);
+        }
+    }
+    public bool IsInPreBattle
+    {
+        get {
+            return PRE_BATTLE_GAME_STATES.Contains(GameState);
         }
     }
     public bool IsInBattle
@@ -30,9 +40,9 @@ public class GameStateManager : MonoBehaviour
 
     private event EventHandler RaisePauseEvent;
     private event EventHandler RaiseUnpauseEvent;
-    private event EventHandler RaisePrepareBattleEvent; // TODO: placeholder atm; this should be published to switch to the battle screen
-                                                        // TODO: it may be worth attaching custom event info for the enemy 
+    private event EventHandler<EnemyEventArgs> RaisePrepareBattleEvent;
     private event EventHandler RaiseStartBattleEvent;   // this is raised to begin the actual flounder minigame
+                                                        // TODO: update to maybe take in some event args with enemy?
     private event EventHandler RaiseEndBattleEvent;
     
     public static void RegisterPauseHandler(EventHandler handler)
@@ -43,7 +53,7 @@ public class GameStateManager : MonoBehaviour
     {
         Instance.RaiseUnpauseEvent += handler;
     }
-    public static void RegisterPrepareBattleHandler(EventHandler handler)
+    public static void RegisterPrepareBattleHandler(EventHandler<EnemyEventArgs> handler)
     {
         Instance.RaisePrepareBattleEvent += handler;
     }
@@ -69,7 +79,7 @@ public class GameStateManager : MonoBehaviour
 
     void OnApplicationFocus(bool isFocused)
     {
-        if (!isFocused)
+        if (!isFocused && pauseOnFocusLoss)
         {
             PauseGame();
         }
@@ -77,10 +87,23 @@ public class GameStateManager : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetButtonDown("Submit"))
+        {
+            switch(GameState)
+            {
+                case GameState.PRE_FIGHT:
+                {
+                    GameState = GameState.FIGHT_PLAYING;
+                    RaiseStartBattleEvent?.Invoke(this, EventArgs.Empty);
+                    break;
+                }
+            }
+        }
+
         // As of writing this, 'cancel' is mapped to 'ESC'.
         // Go to Edit > Project Settings > Input Manager to find out if that's changed.
         // Alternatively just use Input.GetKeyDown(KeyCode.Escape)
-        if (Input.GetButtonDown("Cancel")) {
+        else if (Input.GetButtonDown("Cancel")) {
             switch(GameState)
             {
                 case GameState.CUTSCENE:
@@ -124,6 +147,12 @@ public class GameStateManager : MonoBehaviour
 
         GameState = (GameState == GameState.OVERWORLD_PAUSED) ? GameState.OVERWORLD_PLAYING : GameState.FIGHT_PLAYING;
         canTurn = true;
+    }
+
+    public void DebugStartPrebattle()
+    {
+        GameState = GameState.PRE_FIGHT;
+        RaisePrepareBattleEvent?.Invoke(this, new EnemyEventArgs("shrimpy"));
     }
 
     // TODO: remove, used for debugging purposes

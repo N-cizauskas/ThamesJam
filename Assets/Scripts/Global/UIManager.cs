@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using System.Runtime.ConstrainedExecution;
 using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
@@ -8,6 +9,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
+using Quaternion = UnityEngine.Quaternion;
+using Unity.Mathematics;
 
 public class UIManager : MonoBehaviour
 {
@@ -17,9 +20,18 @@ public class UIManager : MonoBehaviour
     [Header("UI Elements - General")]
     public GameObject pauseBox;
 
+    [Header("UI Elements - Pre-battle")]
+    [Tooltip("The parent game object that houses all the pre-battle UI elements.")]
+    public GameObject PreBattleParent;
+    public GameObject PlayerTitleText;
+    public GameObject EnemyTitleText;
+    public GameObject Divider;
+    public GameObject Hook;
+    public GameObject Overlay;
+
     [Header("UI Elements - Battle")]
     [Tooltip("The parent game object that houses all the battle UI elements.")]
-    public GameObject BattleParentGameObject;
+    public GameObject BattleParent;
     public GameObject PlayerTugGauge;
     public GameObject PlayerTugPullRange;
     public GameObject PlayerTugCritRange;
@@ -35,6 +47,11 @@ public class UIManager : MonoBehaviour
     private RectTransform PlayerTugCritRangeTransform;
     private RectTransform BattleLeverageIndicatorTransform;
     private Image PlayerTugGaugeImage;
+
+    // constants for pre-battle screen animation
+    private static readonly float MAX_DIVIDER_TILT = 20f;
+    private static readonly float HOOK_DIVIDER_BOBBING_PERIOD = 2f;
+    private static readonly float MAX_HOOK_X = 90;
 
     // additional flair for the battle leverage indicator to make it 'swing' between values
     private static readonly float MAX_LEVERAGE_MOVE_SPEED = 500f;
@@ -54,13 +71,15 @@ public class UIManager : MonoBehaviour
         }
 
         Instance = this;
-        BattleParentGameObject.SetActive(false);
+        PreBattleParent.SetActive(false);
+        BattleParent.SetActive(false);
     }
 
     void Start()
     {
         GameStateManager.RegisterPauseHandler(OnPause);
         GameStateManager.RegisterUnpauseHandler(OnUnpause);
+        GameStateManager.RegisterPrepareBattleHandler(OnPrepareBattle);
         GameStateManager.RegisterStartBattleHandler(OnStartBattle);
 
         PlayerTugPullRangeTransform = PlayerTugPullRange.GetComponent<RectTransform>();
@@ -73,7 +92,11 @@ public class UIManager : MonoBehaviour
     {
         GameStateText.GetComponent<TextMeshProUGUI>().text = "Game State: " + GameStateManager.Instance.GameState.ToString();
 
-        if (GameStateManager.Instance.IsInBattle)
+        if (GameStateManager.Instance.IsInPreBattle)
+        {
+            UpdateHookAndDivider();
+        }
+        else if (GameStateManager.Instance.IsInBattle)
         {
             // BattleManager.Instance.playerTugValue
             
@@ -93,14 +116,39 @@ public class UIManager : MonoBehaviour
         pauseBox.SetActive(false);
     }
 
+    void OnPrepareBattle(object sender, EnemyEventArgs e)
+    {
+        PreBattleParent.SetActive(true);
+        BattleParent.SetActive(false);
+        Overlay.GetComponent<OverlayFlash>().Flash(Color.white, 1);
+        EnemyTitleText.GetComponent<TextMeshProUGUI>().text = e.EnemyName;
+    }
+
     void OnStartBattle(object sender, EventArgs e)
     {
-        BattleParentGameObject.SetActive(true);
+        PreBattleParent.SetActive(false);
+        BattleParent.SetActive(true);
         ResetBattleLeverage();
         UpdatePullRange();
     }
 
     // TODO: Respond to RaiseEndBattleEvent
+
+    private void UpdateHookAndDivider()
+    {
+        RectTransform hookTransform = Hook.GetComponent<RectTransform>();
+        RectTransform dividerTransform = Divider.GetComponent<RectTransform>();
+        float tilt = Mathf.Sin(Time.time * Mathf.PI / HOOK_DIVIDER_BOBBING_PERIOD);
+
+        float z = math.remap(-1, 1, -MAX_DIVIDER_TILT, MAX_DIVIDER_TILT, tilt);
+        dividerTransform.rotation = Quaternion.Euler(new UnityEngine.Vector3(0, 0, z));
+
+        float y = math.remap(-1, 1, -180, 180, tilt);
+        hookTransform.rotation = Quaternion.Euler(new UnityEngine.Vector3(0, y, 0));
+
+        float x = math.remap(-1, 1, MAX_HOOK_X, -MAX_HOOK_X, tilt);  // inverted; positive divider z means negative hook y
+        hookTransform.anchoredPosition = new UnityEngine.Vector2(x, hookTransform.anchoredPosition.y);
+    }
 
     private void UpdatePullRange()
     {
@@ -129,7 +177,7 @@ public class UIManager : MonoBehaviour
         BattleLeverageIndicatorTransform.SetX(Mathf.Clamp(leveragePosition, 0, LeverageWidth));
 
         // for flair, let's bob it up and down as well
-        BattleLeverageIndicatorTransform.SetY(LEVERAGE_BOBBING_HEIGHT * (float) Math.Sin(Time.time * Mathf.PI / LEVERAGE_BOBBING_PERIOD));
+        BattleLeverageIndicatorTransform.SetY(LEVERAGE_BOBBING_HEIGHT * Mathf.Sin(Time.time * Mathf.PI / LEVERAGE_BOBBING_PERIOD));
     }
 
     private void ResetBattleLeverage()
