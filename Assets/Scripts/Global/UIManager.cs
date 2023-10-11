@@ -81,6 +81,7 @@ public class UIManager : MonoBehaviour
         GameStateManager.RegisterUnpauseHandler(OnUnpause);
         GameStateManager.RegisterPrepareBattleHandler(OnPrepareBattle);
         GameStateManager.RegisterStartBattleHandler(OnStartBattle);
+        GameStateManager.RegisterEndBattleHandler(OnEndBattle);
 
         PlayerTugPullRangeTransform = PlayerTugPullRange.GetComponent<RectTransform>();
         PlayerTugCritRangeTransform = PlayerTugCritRange.GetComponent<RectTransform>();
@@ -130,6 +131,13 @@ public class UIManager : MonoBehaviour
         BattleParent.SetActive(true);
         ResetBattleLeverage();
         UpdatePullRange();
+    }
+
+    void OnEndBattle(object sender, EventArgs e)
+    {
+        PreBattleParent.SetActive(false);
+        BattleParent.SetActive(false);
+        ResetBattleLeverage();
     }
 
     // TODO: Respond to RaiseEndBattleEvent

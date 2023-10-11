@@ -87,9 +87,22 @@ public class GameStateManager : MonoBehaviour
 
     void Update()
     {
+        switch (GameState)
+        {
+            case GameState.FIGHT_PLAYING:
+            {
+                if (BattleManager.Instance.IsBattleLeverageAtThreshold)
+                {
+                    Debug.Log("Battle end");
+                    RaiseEndBattleEvent?.Invoke(this, EventArgs.Empty);
+                }
+                break;
+            }
+        }
+
         if (Input.GetButtonDown("Submit"))
         {
-            switch(GameState)
+            switch (GameState)
             {
                 case GameState.PRE_FIGHT:
                 {
@@ -104,7 +117,7 @@ public class GameStateManager : MonoBehaviour
         // Go to Edit > Project Settings > Input Manager to find out if that's changed.
         // Alternatively just use Input.GetKeyDown(KeyCode.Escape)
         else if (Input.GetButtonDown("Cancel")) {
-            switch(GameState)
+            switch (GameState)
             {
                 case GameState.CUTSCENE:
                 {
@@ -161,5 +174,10 @@ public class GameStateManager : MonoBehaviour
         Debug.Log("debug start battle pressed");
         GameState = GameState.FIGHT_PLAYING;
         RaiseStartBattleEvent?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void asd()
+    {
+        RaiseEndBattleEvent?.Invoke(this, EventArgs.Empty);
     }
 }
