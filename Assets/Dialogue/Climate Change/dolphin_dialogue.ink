@@ -51,15 +51,18 @@ Why hello there... What brings a rare specimen such as yourself to these parts? 
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 1
 - Perhaps you can help me with this riddle: what is one, but also two, is always awake, but always asleep? // Prompt 2
 * [Low-effort]
+    {swap_char()}
     Me.
     {swap_char()}
     Not quite.
 * [Flattering]
+    {swap_char()}
     Your brain.
     {swap_char()}
     Well, well. You seem to know your stuff.
     ~ choicespassed += 1
 * [Confused]
+    {swap_char()}
     Uh, what? Sorry... what?
     {swap_char()}
     Ugh... Associating wtih the ignorant brings me nothing.
@@ -67,14 +70,17 @@ Why hello there... What brings a rare specimen such as yourself to these parts? 
 - Things seem to be nice here, but I've noticed things. The winters do not get as cold as they once did.  The water tastes
 more and more like acid.  Do you think something strange is afoot? // Prompt 3
 * [Optimistic]
+   {swap_char()}
    If things seem okay, then they probably are okay! I wouldn't worry too much.
    {swap_char()}
     It is indeed easier to be a fool.
 * [Nihilistic]
+   {swap_char()}
    I've sensed that as well, but I fear there's nothing we can do.  Why should we anyway?
    {swap_char()}
     Ignorance is bless, I suppose...
 * [Curious]
+   {swap_char()}
    I am concerned as well. I can't quite figure out what's happening here.
    {swap_char()}
     Well, I am happy to hear someone else is thinking about it.  I was perplexed as to why I was the only one noticing these matters.

@@ -33,15 +33,18 @@ VAR enable_charbox = true
 
 Woah, woah, woah. What kind of tiny creature are you supposed to be? No offense! // Prompt 1
 * [Hype]
+    {swap_char()}
     Yoooo, your gains are crazy!
     {swap_char()}
     Heck yeah!  It's fin day everyday!
     ~ choicespassed += 1
 * [Honest]
+    {swap_char()}
     My breathern, you are much more tiny than I.
     {swap_char()}
     Don't start with me, mate. You won't like what's coming. I'll let it slide this once.
 * [Neutral]
+    {swap_char()}
     Hi, I'm Tessie, a plesiosaur!
     {swap_char()}
     Hi! I am a seahorse, named after large land animals called horses - probably because I am so large!
@@ -49,29 +52,35 @@ Woah, woah, woah. What kind of tiny creature are you supposed to be? No offense!
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 1
 I excerise all the time, to keep my height up.  What's your favourite wokrout, mate?// Prompt 2
 * [Lazy]
+    {swap_char()}
     Oh, I don't exercise.  Swimming around and saving the day is enough to keep me fit!
     {swap_char()}
     You are going to die.
 * [Buff]
+    {swap_char()}
     All at once.
     {swap_char()}
     Heck yeah! That is it!
     ~ choicespassed += 1
 * [Realistic]
+    {swap_char()}
     Tail-presses!
     {swap_char()}
     I can do 1,000 of those right now.
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 2
 You know, if something happens to this river, I won't be able to keep fit.  Is there anything I can do to help? // Prompt 3
 * [Corporate]
+    {swap_char()}
     Reuse, Reduce, Recycle! Everyone do your bit! We are all a small part of the solution!
     {swap_char()}
     Who are you calling "small part", eh? You want to bring this outside?
 * [Depressing]
+    {swap_char()}
     No individual has that much influence.
     {swap_char()}
     With my thick fins, I can do anything.
 * [Supportive]
+   {swap_char()}
    There's a lot you can do! Maybe you can help me monitor the changes in your area?
    {swap_char()}
     Yes, mate! We can do this!
