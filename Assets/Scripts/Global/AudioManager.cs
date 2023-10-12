@@ -14,6 +14,14 @@ public class AudioManager : MonoBehaviour
     public AudioClip PauseClip;
     public AudioClip UnpauseClip;
 
+    void OnValidate()
+    {
+        if (EffectAudioSource == null || BackgroundAudioSource == null)
+        {
+            Debug.LogWarning("AudioManager has at least one audio source not set yet; some sounds might not play");
+        }
+    }
+
     void Awake()
     {
         if (Instance != null)
@@ -32,15 +40,31 @@ public class AudioManager : MonoBehaviour
 
     void OnPause(object sender, EventArgs e)
     {
-        EffectAudioSource.clip = PauseClip;
-        EffectAudioSource.Play();
-        BackgroundAudioSource.Pause();
+        PlayEffect(PauseClip);
+        
+        if (BackgroundAudioSource != null)
+        {
+            BackgroundAudioSource.Pause();
+        }
     }
 
     void OnUnpause(object sender, EventArgs e)
     {
-        EffectAudioSource.clip = UnpauseClip;
-        EffectAudioSource.Play();
-        BackgroundAudioSource.UnPause();
+        PlayEffect(UnpauseClip);
+
+        if (BackgroundAudioSource != null)
+        {
+            BackgroundAudioSource.UnPause();
+        }
+    }
+
+    private void PlayEffect(AudioClip clip)
+    {
+        // Cannot use null propagation with unity objects; EffectAudioSource?.Play() would cause unintended behaviour
+        if (EffectAudioSource != null)
+        {
+            EffectAudioSource.clip = clip;
+            EffectAudioSource.Play();
+        }
     }
 }

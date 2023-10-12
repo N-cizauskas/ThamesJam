@@ -136,8 +136,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.382, y: -0.556, z: 0.040104106}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.18, y: 0.18, z: 0.18}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6577306387789050908}
   m_Father: {fileID: 0}
@@ -236,7 +236,20 @@ MonoBehaviour:
   runAccelAmount: 4
   runDeccelAmount: 3.5
   runMaxSpeed: 5
-  SceneGlobal: 0
+  CurrentStrength: 0.5
+  MvmOk: 0
+  SceneChange: 1
+  LogicChange: 0
+  FlightOrFlirt: {fileID: 0}
+  FightScreen: {fileID: 0}
+  FlirtScreen: {fileID: 0}
+  BossScreen: {fileID: 0}
+  Level_2: 
+  Level_3: 
+  Level_4: 
+  Level_5: 
+  SlowTimer: 0
+  Slowed: 0
 --- !u!60 &4676155881215709140
 PolygonCollider2D:
   m_ObjectHideFlags: 0

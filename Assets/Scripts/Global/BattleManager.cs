@@ -37,7 +37,7 @@ public class BattleManager : MonoBehaviour
     private static readonly float CRIT_MULTIPLIER = 1.5f;       // how much a 'critical' tug (yellow zone) affects leverage increase
 
     [field: Header("Battle State (values are only for visibility; changing them does nothing!)")]
-    [field: SerializeField] public bool battleOngoing { get; private set; }     // if the battle is happening at the moment (if false, then still on the 'get ready' screen)
+    [field: SerializeField] public bool battleOngoing { get; private set; }     // if the battle is happening at the moment (if false, then still on the 'get ready' screen or ended)
     [field: SerializeField] public int battleLeverage { get; private set; }     // 0 - 100. see battle explanation above
     [field: SerializeField] public float playerTugValue { get; private set; }   // 0 - 100. the player's current position on the tug gauge
     [field: SerializeField] public int playerTugRangeMin { get; private set; }  // 0 - 100. tug range on the tug gauge (this should stay static)
@@ -45,6 +45,15 @@ public class BattleManager : MonoBehaviour
     [field: SerializeField] public int playerTugCritRangeMin { get; private set; }  // 0 - 100. critical tug range on the tug range (this should jump around)
     [field: SerializeField] public int playerTugCritRangeMax { get; private set; }
     [field: SerializeField] public bool playerTugging { get; private set; }         // for the UI to hide the critical range
+
+    public bool IsBattleLeverageAtThreshold
+    {
+        get {
+            // TODO: As sai pointed out, maybe we want to prevent battles lasting forever, so we could consider narrowing this threshold as well
+            // A visual indicator to go with this would be nice
+            return battleLeverage <= 0 || battleLeverage >= 100;
+        }
+    }
 
     // NOTE: these should NOT be where the player's stats are held! they should be on the player itself.
     // we keep track of them here separately to prevent them from changing mid-battle, and allow potential temporary modifiers to base stats if required.
@@ -70,6 +79,7 @@ public class BattleManager : MonoBehaviour
         GameStateManager.RegisterPauseHandler(OnPause);
         GameStateManager.RegisterUnpauseHandler(OnUnpause);
         GameStateManager.RegisterStartBattleHandler(OnStartBattle);
+        GameStateManager.RegisterEndBattleHandler(OnEndBattle);
 
         UpdatePlayerTugRange();
         UpdatePlayerCritPosition();
@@ -100,13 +110,7 @@ public class BattleManager : MonoBehaviour
             playerTugValue = 0;
         }
 
-        // At any point if the leverage value hits the threshold, mark the battle as ended - this will stop updates
-        // TODO: GameStateManager should be notified by this - can broadcast a PlayerWin/PlayerLose event
-        if (IsBattleLeverageAtThreshold())
-        {
-            battleOngoing = false;
-            Debug.Log("Battle end");
-        }
+        // At any point if the leverage value hits the threshold, battle manager will update state and broadcast the EndBattle event
     }
 
     void OnStartBattle(object sender, EventArgs e)
@@ -118,6 +122,11 @@ public class BattleManager : MonoBehaviour
         battleOngoing = true;
     }
 
+    void OnEndBattle(object sender, EventArgs e)
+    {
+        battleOngoing = false;
+    }
+
     void OnPause(object sender, EventArgs e)
     {
         // TODO: something that pauses battle - maybe not necessary
@@ -126,13 +135,6 @@ public class BattleManager : MonoBehaviour
     void OnUnpause(object sender, EventArgs e)
     {
         // TODO: something that unpauses battle - maybe not necessary
-    }
-
-    private bool IsBattleLeverageAtThreshold()
-    {
-        // TODO: As sai pointed out, maybe we want to prevent battles lasting forever, so we could consider narrowing this threshold as well
-        // A visual indicator to go with this would be nice
-        return battleLeverage <= 0 || battleLeverage >= 100;
     }
 
     private void UpdatePlayerTugRange()
