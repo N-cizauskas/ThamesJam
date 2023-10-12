@@ -40,7 +40,7 @@ Woah, woah, woah. What kind of tiny creature are you supposed to be? No offense!
     ~ choicespassed += 1
 * [Honest]
     {swap_char()}
-    My breathern, you are much more tiny than I.
+    My brethren, you are much more tiny than I.
     {swap_char()}
     Don't start with me, mate. You won't like what's coming. I'll let it slide this once.
 * [Neutral]
@@ -50,7 +50,7 @@ Woah, woah, woah. What kind of tiny creature are you supposed to be? No offense!
     Hi! I am a seahorse, named after large land animals called horses - probably because I am so large!
 
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 1
-I excerise all the time, to keep my height up.  What's your favourite wokrout, mate?// Prompt 2
+I excerise all the time, to keep my height up.  What's your favourite workout, mate?// Prompt 2
 * [Lazy]
     {swap_char()}
     Oh, I don't exercise.  Swimming around and saving the day is enough to keep me fit!

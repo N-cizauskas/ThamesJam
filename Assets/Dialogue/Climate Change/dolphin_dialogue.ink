@@ -78,7 +78,7 @@ more and more like acid.  Do you think something strange is afoot? // Prompt 3
    {swap_char()}
    I've sensed that as well, but I fear there's nothing we can do.  Why should we anyway?
    {swap_char()}
-    Ignorance is bless, I suppose...
+    Ignorance is bliss, I suppose...
 * [Curious]
    {swap_char()}
    I am concerned as well. I can't quite figure out what's happening here.
@@ -103,7 +103,7 @@ and ending up in between will leave your chances of success to your charm stat.
 }
 { 
 - flirtpassed:
-    You are quite the curious speciem indeed. I am blessed to have encountered you.
+    You are quite the curious specimen indeed. I am blessed to have encountered you.
     ~ charm += choicespassed
     ~ enable_charbox = false // Disable the character box for this message
     {NPC} has been charmed by your flirt!

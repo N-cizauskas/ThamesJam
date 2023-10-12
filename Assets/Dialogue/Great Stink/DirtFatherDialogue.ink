@@ -140,9 +140,16 @@ The river is better this way! Humans are smart enough to know what's right and w
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 2
 - This is your last chance to turn back, Tessie. // Prompt 3
 * ["I'm ready to fight."]
-    Dialogue 3a
+    {swap_char()}
+    
 * ["This is your last chance."]
-    Dialogue 3b
+    {swap_char()}
+    No, this is YOUR last chance! 
+    Go back to the way you once were, or I'll make you.
+    {swap_char()}
+    Ahahaha. 
+    That's cute, Tessie. Am I supposed to be intimidated?
+    You don't scare me at all.
 * ["I won't give up."]
    Dialogue 3c
 {force_char(NPC)} // The NPC will be having the final say
