@@ -25,6 +25,8 @@ public class UIManager : MonoBehaviour
     public GameObject PreBattleParent;
     public GameObject PlayerTitleText;
     public GameObject EnemyTitleText;
+    public GameObject PlayerBar;
+    public GameObject EnemyBar;
     public GameObject Divider;
     public GameObject Hook;
     public GameObject Overlay;
@@ -151,7 +153,7 @@ public class UIManager : MonoBehaviour
         float z = math.remap(-1, 1, -MAX_DIVIDER_TILT, MAX_DIVIDER_TILT, tilt);
         dividerTransform.rotation = Quaternion.Euler(new UnityEngine.Vector3(0, 0, z));
 
-        float y = math.remap(-1, 1, -180, 180, tilt);
+        float y = math.remap(-1, 1, -180, 360, tilt);
         hookTransform.rotation = Quaternion.Euler(new UnityEngine.Vector3(0, y, 0));
 
         float x = math.remap(-1, 1, MAX_HOOK_X, -MAX_HOOK_X, tilt);  // inverted; positive divider z means negative hook y

@@ -89,7 +89,7 @@ public class BattleManager : MonoBehaviour
     {
         if (!battleOngoing) return;
 
-        if (Input.GetButton("Submit") && GameStateManager.Instance.GameState == GameState.FIGHT_PLAYING)
+        if (Input.GetButton("Submit") && GameStateManager.Instance.GameState == GameState.BATTLING)
         {
             if (!playerTugging) // if this is the first frame of the pull
             {

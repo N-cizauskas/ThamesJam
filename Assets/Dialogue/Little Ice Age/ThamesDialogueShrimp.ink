@@ -45,13 +45,23 @@ H-Hi. Don’t think I’ve seen you around here before.
     I’m shrimply here to have a good time!
     {swap_char()}
    Well I’ve certainly never heard THAT one before…
-- Insert dialogue to prompt choice 2 here // Yes, please do
-* [Choice 2a]
-    Dialogue 2a
-* [Choice 2b]
-    Dialogue 2b
-* [Choice 2c]
-    Dialogue 2c
+- S-so... What brings you here? // Yes, please do
+* [Honest]
+    {swap_char()}
+    I just suddenly woke up here! 
+    {swap_char()}
+    Shouldn't you be freaking out right now?!
+* [Casual]
+    {swap_char()}
+    I'm not really sure yet! For now, I'm just trying to figure out what's going on.
+    {swap_char()}
+    Oh, me too!
+    ~ choicespassed += 1 // Choice passed
+* [Aggressive]
+    {swap_char()}
+    I don't know, what brings anyone anywhere?
+    {swap_char()}
+    Eek! Sorry for asking!
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 2
 - All this ice in the river is so strange. I wonder what’s causing it?
 * [Reassure the shrimp]

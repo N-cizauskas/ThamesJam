@@ -9,9 +9,9 @@ public class GameStateManager : MonoBehaviour
     // Singleton
     public static GameStateManager Instance { get; private set; }
 
-    private static readonly GameState[] PAUSED_GAME_STATES = {GameState.OVERWORLD_PAUSED, GameState.FIGHT_PAUSED};
-    private static readonly GameState[] PRE_BATTLE_GAME_STATES = {GameState.PRE_FIGHT, GameState.FIGHT_PAUSED};
-    private static readonly GameState[] BATTLE_GAME_STATES = {GameState.FIGHT_PLAYING, GameState.FIGHT_PAUSED};
+    private static readonly GameState[] PAUSED_GAME_STATES = {GameState.PAUSED};
+    private static readonly GameState[] PRE_BATTLE_GAME_STATES = {GameState.PRE_BATTLE};
+    private static readonly GameState[] BATTLE_GAME_STATES = {GameState.BATTLING};
 
     public static bool canTurn = true;
 
@@ -19,6 +19,8 @@ public class GameStateManager : MonoBehaviour
     public bool pauseOnFocusLoss = false;
 
     public GameState GameState { get; private set; }
+    private GameState previousGameState;    // used for pausing
+
     public bool IsPaused 
     {
         get {
@@ -74,7 +76,8 @@ public class GameStateManager : MonoBehaviour
         }
 
         Instance = this;
-        GameState = GameState.OVERWORLD_PLAYING;    // todo: maybe set this to something else on scene load
+        GameState = GameState.OVERWORLD;    // todo: maybe set this to something else on scene load
+        previousGameState = GameState.OVERWORLD;
     }
 
     void OnApplicationFocus(bool isFocused)
@@ -89,7 +92,7 @@ public class GameStateManager : MonoBehaviour
     {
         switch (GameState)
         {
-            case GameState.FIGHT_PLAYING:
+            case GameState.BATTLING:
             {
                 if (BattleManager.Instance.IsBattleLeverageAtThreshold)
                 {
@@ -104,9 +107,9 @@ public class GameStateManager : MonoBehaviour
         {
             switch (GameState)
             {
-                case GameState.PRE_FIGHT:
+                case GameState.PRE_BATTLE:
                 {
-                    GameState = GameState.FIGHT_PLAYING;
+                    GameState = GameState.BATTLING;
                     RaiseStartBattleEvent?.Invoke(this, EventArgs.Empty);
                     break;
                 }
@@ -124,8 +127,7 @@ public class GameStateManager : MonoBehaviour
                     // do nothing
                     break;
                 }
-                case GameState.OVERWORLD_PAUSED:
-                case GameState.FIGHT_PAUSED:
+                case GameState.PAUSED:
                 {
                     UnpauseGame();
                     break;
@@ -146,8 +148,8 @@ public class GameStateManager : MonoBehaviour
         RaisePauseEvent?.Invoke(this, EventArgs.Empty);
         Time.timeScale = 0f;
 
-        // not an elegant method, but better than nothing
-        GameState = (GameState == GameState.OVERWORLD_PLAYING) ? GameState.OVERWORLD_PAUSED : GameState.FIGHT_PAUSED;
+        previousGameState = GameState;
+        GameState = GameState.PAUSED;
         canTurn = false;
     }
 
@@ -158,13 +160,13 @@ public class GameStateManager : MonoBehaviour
         RaiseUnpauseEvent?.Invoke(this, EventArgs.Empty);
         Time.timeScale = 1f;
 
-        GameState = (GameState == GameState.OVERWORLD_PAUSED) ? GameState.OVERWORLD_PLAYING : GameState.FIGHT_PLAYING;
+        GameState = previousGameState;
         canTurn = true;
     }
 
     public void DebugStartPrebattle()
     {
-        GameState = GameState.PRE_FIGHT;
+        GameState = GameState.PRE_BATTLE;
         RaisePrepareBattleEvent?.Invoke(this, new EnemyEventArgs("shrimpy"));
     }
 
@@ -172,7 +174,7 @@ public class GameStateManager : MonoBehaviour
     public void DebugStartBattle()
     {
         Debug.Log("debug start battle pressed");
-        GameState = GameState.FIGHT_PLAYING;
+        GameState = GameState.BATTLING;
         RaiseStartBattleEvent?.Invoke(this, EventArgs.Empty);
     }
 
