@@ -1,7 +1,5 @@
 ﻿// Define some variables we will be using
-VAR charm = 0 // The idea is to get the charm from the game stat (somehow)
-CONST threshold1 = 5 // Threshold charm for passing if you passed only one choice
-CONST threshold2 = 3 // The same, but for passing two choices
+VAR battlebonus = 0 // This will track the bonus gained for the boss battle
 CONST NPC = "Dirty Father Thames" // This is the character you are talking to.
 VAR current_char = NPC // This variable tracks the currently talking character. It will be passed to the "current talker" box every time dialogue is continued
 VAR choicespassed = 0 // Flags the number of times we make the correct choice
@@ -141,7 +139,10 @@ The river is better this way! Humans are smart enough to know what's right and w
 - This is your last chance to turn back, Tessie. // Prompt 3
 * ["I'm ready to fight."]
     {swap_char()}
-    
+    I'm not backing down. I'm ready to fight you.
+    I will save this river.
+    {swap_char()}
+    I doubt that. Say your last words.
 * ["This is your last chance."]
     {swap_char()}
     No, this is YOUR last chance! 
@@ -151,33 +152,37 @@ The river is better this way! Humans are smart enough to know what's right and w
     That's cute, Tessie. Am I supposed to be intimidated?
     You don't scare me at all.
 * ["I won't give up."]
-   Dialogue 3c
+   {swap_char()}
+   I won't give up on you.
+   I know you need help, and you're isolating yourself because you're scared.
+   It's okay to hurt. It's okay to be in pain.
+   {swap_char()}
+   I'm not-
+   I'm not-
+   {swap_char()}
+   I'm here for you. 
+   Even if it's one small thing I can do, that's so important.
+   The journey of a thousand miles starts with a single step.
+   {swap_char()}
+   I-
+   How dare you!
+   I won't let you get away with trying to humiliate me! 
 {force_char(NPC)} // The NPC will be having the final say
 - /* Flirt decision here (the hyphen acts as a gather - please don't remove)
 I'll assume that passing all three choices is an automatic success,
 failing all three choices is an automatic failure,
 and ending up in between will leave your chances of success to your charm stat.
 */
+~ battlebonus += choicespassed
+~ enable_charbox = false
 { 
-- choicespassed >= 3: // If you decide that some options are worth more than others
-    ~ flirtpassed = true
-- choicespassed == 2 && charm >= threshold2:
-    ~ flirtpassed = true
-- choicespassed == 1 && charm >= threshold1:
-    ~ flirtpassed = true
+- choicespassed == 3: // If you decide that some options are worth more than others
+    {NPC}'s guard is down!
+- choicespassed == 2:
+    {NPC} is off balance!
+- choicespassed == 1:
+    {NPC} is looking distracted!
 - else:
-    ~ flirtpassed = false
-}
-{ 
-- flirtpassed:
-    Flirt pass dialogue here
-    ~ charm += choicespassed
-    ~ enable_charbox = false // Disable the character box for this message
-    {NPC} has been charmed by your flirt!
-    Your charm has increased to {charm}!
-- else:
-    Flirt failure dialogue here
-    ~ enable_charbox = false
-    {NPC} has left.
+    {NPC} steels himself for battle!
 }
 -> END
