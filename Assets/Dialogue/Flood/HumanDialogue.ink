@@ -31,29 +31,58 @@ VAR enable_charbox = true
 }
 == main ==
 
-Insert dialogue to prompt choice 1 here // Prompt 1
-* [Choice 1a]
-    Dialogue 1a
-* [Choice 1b]
-    Dialogue 1b
-* [Choice 1c]
-    Dialogue 1c
+Gluuuug! Glug! \(AAAAAAAAAAA! I'm gonna drown!\) // Prompt 1
+* [Soothe]
+    {swap_char()}
+    Hey, hey, hey. It's ok. I'm not sure there's anything we can do to save you, but if you panic that will make things worse.
+    {swap_char()}
+    Glug... Glug? \(You mean... this is really the end?\)
+* [Reassure]
+    {swap_char()}
+    Listen, listen, we'll rescue you, ok? Just stay calm.
+    {swap_char()}
+    Glug? Glug! \(How? The river is raging too fast!\)
+* [Condemn]
+    {swap_char()}
+    A human asking me for help? Do you remember how humans ruined this river during the Great Stink?
+    {swap_char()}
+    Glug! Glug glug... \(I didn't do anything! I just work in the civil service...\)
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 1
-- Insert dialogue to prompt choice 2 here // Prompt 2
-* [Choice 2a]
-    Dialogue 2a
-* [Choice 2b]
-    Dialogue 2b
-* [Choice 2c]
-    Dialogue 2c
+- Glug glug? (What about my family?) // Prompt 2
+* [Truthful]
+    {swap_char()}
+    I think you're going to have to face that you probably won't see them again. 
+    {swap_char()}
+    Gl-glug... Glug. \(I- ok... At least I lived a good life with them.\)
+    ~ choicespassed += 1
+* [Optimistic]
+    {swap_char()}
+    It's ok, you'll see them soon! Think about home and you'll be there in no time!
+    {swap_char()}
+    Glug! Glug! \(It's too hard to think! All I can hear is the water rushing around me!\)
+* [Pessimistic]
+    {swap_char()}
+    They'll have to carry on without you.
+    {swap_char()}
+    Glug! Glug... \(No! My poor wife will miss me so much...\)
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 2
-- Insert dialogue to prompt choice 3 here // Prompt 3
-* [Choice 3a]
-    Dialogue 3a
-* [Choice 3b]
-    Dialogue 3b
-* [Choice 3c]
-   Dialogue 3c
+- Glug. Glug... \(I think I'm fading. I can't stay under much longer...\) // Prompt 3
+* [Calm]
+    {swap_char()}
+    This is it. Just relax and it'll make it easier when you go...
+    {swap_char()}
+    Glug. \(This really is it, huh. Alright, I'll be calm.\)
+* [Practical]
+    {swap_char()}
+    Maybe you can try grab onto a tree branch or something?!
+    {swap_char()}
+    Glug. Glug... (It's too late. My strength is gone...)
+* [Sad]
+    {swap_char()}
+    No! Just hold your breath a little longer and you'll make it!
+    {swap_char()}
+    Glug... (I don't think I can last...) 
+   
 {force_char(NPC)} // The NPC will be having the final say
 - /* Flirt decision here (the hyphen acts as a gather - please don't remove)
 I'll assume that passing all three choices is an automatic success,
@@ -72,13 +101,13 @@ and ending up in between will leave your chances of success to your charm stat.
 }
 { 
 - flirtpassed:
-    Flirt pass dialogue here
+    Glug! Glug... (Thank you Tessie! I'm not as scared anymore...)
     ~ charm += choicespassed
     ~ enable_charbox = false // Disable the character box for this message
     {NPC} has been charmed by your flirt!
     Your charm has increased to {charm}!
 - else:
-    Flirt failure dialogue here
+    Glug! \(I don't wanna die!\)
     ~ enable_charbox = false
     {NPC} has left.
 }
