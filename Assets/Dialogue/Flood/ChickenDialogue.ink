@@ -72,16 +72,31 @@ Aaa! A creature! // Prompt 1
     {swap_char()}
     AAAAAAAAAAAAAA!
     -> scared
-* []
-    Dialogue 2c
+* [Protect]
+    {swap_char()}
+    I'll make sure no one can hurt you while you're here in the river, ok?
+    {swap_char()}
+    Well, that's mighty reassuring. Thank you, friend.
+    ~ choicespassed += 1
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 2
-- Insert dialogue to prompt choice 3 here // Prompt 3
-* [Choice 3a]
-    Dialogue 3a
-* [Choice 3b]
-    Dialogue 3b
-* [Choice 3c]
-   Dialogue 3c
+- How d'you think we'll get outta this flood? // Prompt 3
+* [Hunger]
+    {swap_char()}
+    You'll probably get out of it by being my dinner!
+    {swap_char()}
+    AAAAAAAAAAAA!
+    -> scared
+* [Practical]
+    {swap_char()}
+    Once the storm is over, the flood will pass soon after.
+    {swap_char()}
+    If you say so...
+* [Reassuring]
+   {swap_char()}
+   It'll be over soon, don't worry.
+   {swap_char()}
+   That's good to hear, thank you.
+   ~ choicespassed += 1
 {force_char(NPC)} // The NPC will be having the final say
 - /* Flirt decision here (the hyphen acts as a gather - please don't remove)
 I'll assume that passing all three choices is an automatic success,
@@ -100,13 +115,13 @@ and ending up in between will leave your chances of success to your charm stat.
 }
 { 
 - flirtpassed:
-    Flirt pass dialogue here
+    I'm feeling a lot better after talking to you, friend. Thank you.
     ~ charm += choicespassed
     ~ enable_charbox = false // Disable the character box for this message
     {NPC} has been charmed by your flirt!
     Your charm has increased to {charm}!
 - else:
-    Flirt failure dialogue here
+    I'm still feeling all ruffled. See ya!
     ~ enable_charbox = false
     {NPC} has left.
 }
