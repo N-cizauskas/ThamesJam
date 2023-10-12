@@ -78,6 +78,7 @@ public class BattleManager : MonoBehaviour
     {
         GameStateManager.RegisterPauseHandler(OnPause);
         GameStateManager.RegisterUnpauseHandler(OnUnpause);
+        GameStateManager.RegisterCountdownBattleHandler(OnCountdownBattle);
         GameStateManager.RegisterStartBattleHandler(OnStartBattle);
         GameStateManager.RegisterEndBattleHandler(OnEndBattle);
 
@@ -113,12 +114,15 @@ public class BattleManager : MonoBehaviour
         // At any point if the leverage value hits the threshold, battle manager will update state and broadcast the EndBattle event
     }
 
-    void OnStartBattle(object sender, EventArgs e)
+    void OnCountdownBattle(object sender, EventArgs e)
     {
         battleLeverage = 50;
         playerTugValue = 0;
-        UpdatePlayerTugRange();
+    }
 
+    void OnStartBattle(object sender, EventArgs e)
+    {
+        UpdatePlayerTugRange();
         battleOngoing = true;
     }
 
