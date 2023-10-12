@@ -9,9 +9,9 @@ public class GameStateManager : MonoBehaviour
     // Singleton
     public static GameStateManager Instance { get; private set; }
 
+    public static readonly float BATTLE_COUNTDOWN_PERIOD_SECONDS = 3f;
+
     private static readonly GameState[] PAUSED_GAME_STATES = {GameState.PAUSED};
-    private static readonly GameState[] PRE_BATTLE_GAME_STATES = {GameState.PRE_BATTLE};
-    private static readonly GameState[] BATTLE_GAME_STATES = {GameState.BATTLING};
 
     public static bool canTurn = true;
 
@@ -27,22 +27,18 @@ public class GameStateManager : MonoBehaviour
             return PAUSED_GAME_STATES.Contains(GameState);
         }
     }
-    public bool IsInPreBattle
-    {
+
+    public float SecondsUntilBattle {
         get {
-            return PRE_BATTLE_GAME_STATES.Contains(GameState);
+            return BattleBeginTime - Time.time;
         }
     }
-    public bool IsInBattle
-    {
-        get {
-            return BATTLE_GAME_STATES.Contains(GameState);
-        }
-    }
+    private float BattleBeginTime;
 
     private event EventHandler RaisePauseEvent;
     private event EventHandler RaiseUnpauseEvent;
     private event EventHandler<EnemyEventArgs> RaisePrepareBattleEvent;
+    private event EventHandler RaiseCountdownBattleEvent;   // player has hit the button after the 'get ready' screen
     private event EventHandler RaiseStartBattleEvent;   // this is raised to begin the actual flounder minigame
                                                         // TODO: update to maybe take in some event args with enemy?
     private event EventHandler RaiseEndBattleEvent;
@@ -58,6 +54,10 @@ public class GameStateManager : MonoBehaviour
     public static void RegisterPrepareBattleHandler(EventHandler<EnemyEventArgs> handler)
     {
         Instance.RaisePrepareBattleEvent += handler;
+    }
+    public static void RegisterCountdownBattleHandler(EventHandler handler)
+    {
+        Instance.RaiseCountdownBattleEvent += handler;
     }
     public static void RegisterStartBattleHandler(EventHandler handler)
     {
@@ -97,6 +97,7 @@ public class GameStateManager : MonoBehaviour
                 if (BattleManager.Instance.IsBattleLeverageAtThreshold)
                 {
                     Debug.Log("Battle end");
+                    GameState = GameState.BATTLE_END;
                     RaiseEndBattleEvent?.Invoke(this, EventArgs.Empty);
                 }
                 break;
@@ -109,8 +110,10 @@ public class GameStateManager : MonoBehaviour
             {
                 case GameState.PRE_BATTLE:
                 {
-                    GameState = GameState.BATTLING;
-                    RaiseStartBattleEvent?.Invoke(this, EventArgs.Empty);
+                    GameState = GameState.BATTLE_COUNTDOWN;
+                    RaiseCountdownBattleEvent?.Invoke(this, EventArgs.Empty);
+                    StartCoroutine(RaiseDelayedStartBattleEvent(BATTLE_COUNTDOWN_PERIOD_SECONDS));
+                    BattleBeginTime = Time.time + BATTLE_COUNTDOWN_PERIOD_SECONDS;
                     break;
                 }
             }
@@ -164,6 +167,19 @@ public class GameStateManager : MonoBehaviour
         canTurn = true;
     }
 
+    private IEnumerator RaiseDelayedStartBattleEvent(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        GameState = GameState.BATTLING;
+        RaiseStartBattleEvent?.Invoke(this, EventArgs.Empty);
+    }
+
+
+    /**
+     * DEBUG FUNCTIONS
+     * The idea is that these should get called as a result of some easily controllable action, e.g. button press
+    **/
+
     public void DebugStartPrebattle()
     {
         GameState = GameState.PRE_BATTLE;
@@ -176,10 +192,5 @@ public class GameStateManager : MonoBehaviour
         Debug.Log("debug start battle pressed");
         GameState = GameState.BATTLING;
         RaiseStartBattleEvent?.Invoke(this, EventArgs.Empty);
-    }
-
-    public void asd()
-    {
-        RaiseEndBattleEvent?.Invoke(this, EventArgs.Empty);
     }
 }

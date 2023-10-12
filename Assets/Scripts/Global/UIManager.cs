@@ -11,6 +11,7 @@ using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
 using Quaternion = UnityEngine.Quaternion;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 
 public class UIManager : MonoBehaviour
 {
@@ -20,20 +21,19 @@ public class UIManager : MonoBehaviour
     [Header("UI Elements - General")]
     public GameObject pauseBox;
 
-    [Header("UI Elements - Pre-battle")]
+    [Header("UI Elements - Flounder")]
     [Tooltip("The parent game object that houses all the pre-battle UI elements.")]
-    public GameObject PreBattleParent;
+    public GameObject FlounderParent;
     public GameObject PlayerTitleText;
     public GameObject EnemyTitleText;
+    public TextMeshProUGUI CenterTitle;
+    public TextMeshProUGUI CenterSubtitle;
     public GameObject PlayerBar;
     public GameObject EnemyBar;
     public GameObject Divider;
     public GameObject Hook;
     public GameObject Overlay;
-
-    [Header("UI Elements - Battle")]
-    [Tooltip("The parent game object that houses all the battle UI elements.")]
-    public GameObject BattleParent;
+    public GameObject LeverageBar;
     public GameObject PlayerTugGauge;
     public GameObject PlayerTugPullRange;
     public GameObject PlayerTugCritRange;
@@ -45,21 +45,35 @@ public class UIManager : MonoBehaviour
     public GameObject GameStateText;
 
 
+    private GameObject[] PreBattleElements = {};
+    private GameObject[] BattleElements = {};
+
     private RectTransform PlayerTugPullRangeTransform;
     private RectTransform PlayerTugCritRangeTransform;
     private RectTransform BattleLeverageIndicatorTransform;
     private Image PlayerTugGaugeImage;
+    private float leveragePosition;
 
     // constants for pre-battle screen animation
+    private static readonly String CENTER_TITLE_DEFAULT = "Get ready...";
+    private static readonly String CENTER_SUBTITLE_DEFAULT = "(ENTER to continue)";
     private static readonly float MAX_DIVIDER_TILT = 20f;
     private static readonly float HOOK_DIVIDER_BOBBING_PERIOD = 2f;
     private static readonly float MAX_HOOK_X = 90;
+    private static readonly float HOOK_HEIGHT = 500;
+    private static readonly float PLAYER_BAR_FIXED_Y = -50;
+    private static readonly float PLAYER_BAR_INITIAL_X = -200;  // negate value for enemy x values
+    private static readonly float PLAYER_BAR_FINAL_X = 50;      // negate value for enemy x values
 
     // additional flair for the battle leverage indicator to make it 'swing' between values
     private static readonly float MAX_LEVERAGE_MOVE_SPEED = 500f;
     private static readonly float LEVERAGE_BOBBING_HEIGHT = 10f;
     private static readonly float LEVERAGE_BOBBING_PERIOD = 1.5f;
-    private float leveragePosition;
+
+    // constants across both
+    private static readonly float LEVERAGE_PRE_BATTLE_Y = -80;
+    private static readonly float LEVERAGE_BATTLE_Y = 30;
+
 
     void Awake()
     {
@@ -73,8 +87,7 @@ public class UIManager : MonoBehaviour
         }
 
         Instance = this;
-        PreBattleParent.SetActive(false);
-        BattleParent.SetActive(false);
+        FlounderParent.SetActive(false);
     }
 
     void Start()
@@ -82,6 +95,7 @@ public class UIManager : MonoBehaviour
         GameStateManager.RegisterPauseHandler(OnPause);
         GameStateManager.RegisterUnpauseHandler(OnUnpause);
         GameStateManager.RegisterPrepareBattleHandler(OnPrepareBattle);
+        GameStateManager.RegisterCountdownBattleHandler(OnCountdownBattle);
         GameStateManager.RegisterStartBattleHandler(OnStartBattle);
         GameStateManager.RegisterEndBattleHandler(OnEndBattle);
 
@@ -95,17 +109,29 @@ public class UIManager : MonoBehaviour
     {
         GameStateText.GetComponent<TextMeshProUGUI>().text = "Game State: " + GameStateManager.Instance.GameState.ToString();
 
-        if (GameStateManager.Instance.IsInPreBattle)
+        switch (GameStateManager.Instance.GameState)
         {
-            UpdateHookAndDivider();
-        }
-        else if (GameStateManager.Instance.IsInBattle)
-        {
-            // BattleManager.Instance.playerTugValue
-            
-            UpdateCritRange();  // TODO: crit range should only need to run when the player starts a new tug
-            UpdateTugGauge();
-            UpdateBattleLeverageTarget();
+            case GameState.PRE_BATTLE:
+            {
+                UpdateHookPreBattlePosition();
+                UpdateHookRotation();
+                UpdateDividerPreBattleRotation();
+                break;
+            }
+            case GameState.BATTLE_COUNTDOWN:
+            {
+                UpdateHookRotation();
+                UpdateDividerCountdownRotation();
+                UpdateCenterText();
+                break;
+            }
+            case GameState.BATTLING:
+            {
+                UpdateCritRange();  // TODO: crit range should only need to run when the player starts a new tug
+                UpdateTugGauge();
+                UpdateBattleLeverageTarget();
+                break;
+            } 
         }
     }
 
@@ -121,43 +147,126 @@ public class UIManager : MonoBehaviour
 
     void OnPrepareBattle(object sender, EnemyEventArgs e)
     {
-        PreBattleParent.SetActive(true);
-        BattleParent.SetActive(false);
+        CenterTitle.color = Color.white;
+        CenterTitle.text = CENTER_TITLE_DEFAULT;
+        CenterSubtitle.text = CENTER_SUBTITLE_DEFAULT;
+
+        PlayerTugGauge.SetActive(false);
+        PlayerTugPullRange.SetActive(false);
+        PlayerTugCritRange.SetActive(false);
+
+        FlounderParent.SetActive(true);
         Overlay.GetComponent<OverlayFlash>().Flash(Color.white, 1);
         EnemyTitleText.GetComponent<TextMeshProUGUI>().text = e.EnemyName;
+
+        LeverageBar.GetComponent<AdvancedUIMovement>().MoveTo(new UnityEngine.Vector2(0, LEVERAGE_PRE_BATTLE_Y));
+        PlayerBar.GetComponent<AdvancedUIMovement>().MoveTo(new UnityEngine.Vector2(PLAYER_BAR_INITIAL_X, PLAYER_BAR_FIXED_Y));
+        EnemyBar.GetComponent<AdvancedUIMovement>().MoveTo(new UnityEngine.Vector2(-PLAYER_BAR_INITIAL_X, PLAYER_BAR_FIXED_Y));
+        Hook.GetComponent<AdvancedUIMovement>().MoveTo(new UnityEngine.Vector2(0, 0));
     }
+
+    void OnCountdownBattle(object sender, EventArgs e)
+    {
+        CenterSubtitle.text = "";
+
+        PlayerBar.GetComponent<AdvancedUIMovement>().MoveTo(
+            new UnityEngine.Vector2(PLAYER_BAR_FINAL_X, PLAYER_BAR_FIXED_Y), 
+            GameStateManager.BATTLE_COUNTDOWN_PERIOD_SECONDS, 
+            AdvancedUIMovement.MoveType.EASE_OUT
+        );
+
+        EnemyBar.GetComponent<AdvancedUIMovement>().MoveTo(
+            new UnityEngine.Vector2(-PLAYER_BAR_FINAL_X, PLAYER_BAR_FIXED_Y), 
+            GameStateManager.BATTLE_COUNTDOWN_PERIOD_SECONDS, 
+            AdvancedUIMovement.MoveType.EASE_OUT
+        );
+
+        Hook.GetComponent<AdvancedUIMovement>().MoveTo(
+            new UnityEngine.Vector2(0, HOOK_HEIGHT),
+            GameStateManager.BATTLE_COUNTDOWN_PERIOD_SECONDS * 0.6f,
+            AdvancedUIMovement.MoveType.EASE_OUT
+        );
+
+        LeverageBar.GetComponent<AdvancedUIMovement>().MoveTo(
+            new UnityEngine.Vector2(0, LEVERAGE_BATTLE_Y),
+            GameStateManager.BATTLE_COUNTDOWN_PERIOD_SECONDS * 0.6f,
+            AdvancedUIMovement.MoveType.EASE_OUT
+        );
+    }
+
 
     void OnStartBattle(object sender, EventArgs e)
     {
-        PreBattleParent.SetActive(false);
-        BattleParent.SetActive(true);
+        PlayerTugGauge.SetActive(true);
+        PlayerTugPullRange.SetActive(true);
+        PlayerTugCritRange.SetActive(true);
         ResetBattleLeverage();
         UpdatePullRange();
+        
+        CenterTitle.text = "Flounder!";     // TODO: constant?
+        StartCoroutine(FadeCenterTitleText());
     }
 
     void OnEndBattle(object sender, EventArgs e)
     {
-        PreBattleParent.SetActive(false);
-        BattleParent.SetActive(false);
+        FlounderParent.SetActive(false);
         ResetBattleLeverage();
     }
 
     // TODO: Respond to RaiseEndBattleEvent
 
-    private void UpdateHookAndDivider()
+    private IEnumerator FadeCenterTitleText()
+    {
+        float alpha = 1;
+        while (alpha > 0) {
+            alpha -= Mathf.Max(0, Time.deltaTime);
+            CenterTitle.color = new Color(CenterTitle.color.r, CenterTitle.color.g, CenterTitle.color.b, alpha);
+            yield return null;
+        }
+    }
+
+
+    private void UpdateHookRotation()
     {
         RectTransform hookTransform = Hook.GetComponent<RectTransform>();
+        float tilt = Mathf.Sin(Time.time * Mathf.PI / HOOK_DIVIDER_BOBBING_PERIOD);
+
+        float y = math.remap(-1, 1, -180, 360, tilt);
+        hookTransform.rotation = Quaternion.Euler(new UnityEngine.Vector3(0, y, 0));
+    }
+
+    private void UpdateHookPreBattlePosition()
+    {
+        RectTransform hookTransform = Hook.GetComponent<RectTransform>();
+        float tilt = Mathf.Sin(Time.time * Mathf.PI / HOOK_DIVIDER_BOBBING_PERIOD);
+
+        float x = math.remap(-1, 1, MAX_HOOK_X, -MAX_HOOK_X, tilt);  // inverted; positive divider z means negative hook y
+        hookTransform.anchoredPosition = new UnityEngine.Vector2(x, hookTransform.anchoredPosition.y);
+    }
+
+    private void UpdateDividerPreBattleRotation()
+    {
         RectTransform dividerTransform = Divider.GetComponent<RectTransform>();
         float tilt = Mathf.Sin(Time.time * Mathf.PI / HOOK_DIVIDER_BOBBING_PERIOD);
 
         float z = math.remap(-1, 1, -MAX_DIVIDER_TILT, MAX_DIVIDER_TILT, tilt);
         dividerTransform.rotation = Quaternion.Euler(new UnityEngine.Vector3(0, 0, z));
+    }
 
-        float y = math.remap(-1, 1, -180, 360, tilt);
-        hookTransform.rotation = Quaternion.Euler(new UnityEngine.Vector3(0, y, 0));
+    private void UpdateDividerCountdownRotation()
+    {
+        RectTransform dividerTransform = Divider.GetComponent<RectTransform>();
+        // remap how close we are to battle to -1 to 0
+        float countdownPosition = math.remap(GameStateManager.BATTLE_COUNTDOWN_PERIOD_SECONDS, 0, -1, 0, GameStateManager.Instance.SecondsUntilBattle);
+        // ease-out rotation that ends at 90y, i.e. invisible
+        float rotationY = 720 * Mathf.Pow(countdownPosition, 2) + 90; 
 
-        float x = math.remap(-1, 1, MAX_HOOK_X, -MAX_HOOK_X, tilt);  // inverted; positive divider z means negative hook y
-        hookTransform.anchoredPosition = new UnityEngine.Vector2(x, hookTransform.anchoredPosition.y);
+        dividerTransform.rotation = Quaternion.Euler(new UnityEngine.Vector3(0, rotationY, dividerTransform.rotation.eulerAngles.z));
+    }
+
+    private void UpdateCenterText()
+    {
+        CenterTitle.text = Mathf.Ceil(GameStateManager.Instance.SecondsUntilBattle).ToString() + "...";
     }
 
     private void UpdatePullRange()
