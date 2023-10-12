@@ -64,7 +64,11 @@ The river is better this way! Humans are smart enough to know what's right and w
     {swap_char()}
     ...
     I don't think you really believe that.
-
+    {swap_char()}
+    I-
+    I-
+    You be careful what you say.
+    ~ choicespassed += 1 
 * ["That's not true"]
     {swap_char()}
     Humans? They couldn't tell right from wrong even if you labelled them.
@@ -72,25 +76,74 @@ The river is better this way! Humans are smart enough to know what's right and w
     {swap_char()}
     What do you mean?
     {swap_char()}
-    Look at the wars they fight/
-    Look how many of them are in poverty
+    Look at the wars they fight.
+    Look how many of them are in poverty.
+    And you mean to say that they know best?
+    Don't make me laugh.
+    {swap_char()}
+    Who's to say that they don't? You?
+    The last creature of a species long since extinct?
+    Where are the plesiosaur cities? Where are the flounder-built factories?
+    {swap_char()}
+    ...
+    {swap_char()}
+    That's what I thought.
+    {swap_char()}
+    To be fair, I think I have an aunty in Scotland.
+    {swap_char()}
+    That proves my point even further, somehow.
 * ["Says who?"]
-    Dialogue 1c
+    {swap_char()}
+    Who are you to say that about the river?
+    What about all the fish that didn't get a choice in what was best for the river before they died off?
+    {swap_char()}
+    Tessie, Tessie. Don't you know that I AM the river?
+    Dirty Father Thames. As in the river Thames? I think I know what is best for myself.
+    {swap_char()}
+    Well, I guess you are qualified...
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 1
-- Insert dialogue to prompt choice 2 here // Prompt 2
-* [Choice 2a]
-    Dialogue 2a
-* [Choice 2b]
-    Dialogue 2b
-* [Choice 2c]
-    Dialogue 2c
+- Who are you to even stop me? // Prompt 2
+* ["Stop you?"]
+    {swap_char()}
+    Stop you? I'm trying to help you.
+    You know this isn't right. You know that you aren't healthy.
+    You can't go on like this.
+    {swap_char()}
+    I'm doing just fine as is!
+    {swap_char()}
+    You aren't. You can't even hide it anymore.
+    I want to help you. I know you can get better.
+    {swap_char()}
+    ...
+    I don't need your help!
+    Just leave me alone...
+    ~ choicespassed += 1
+* ["An advocate."]
+    {swap_char()}
+    I'm a voice, here to tell you what is truly right.
+    I'm an advocate for all of the fish that once lived in the river.
+    {swap_char()}
+    They're gone now. You're a voice for nothing that exists anymore.
+    {swap_char()}
+    But the lives in the river deserved to live - they deserved to be heard!
+    {swap_char()}
+    If they're not here now, I don't care.
+* ["A warrior."]
+    I'm a warrior, here to defeat you, and return this river to what it once was.
+    {swap_char()}
+    Defeat me? You, a single fish, think you could defeat a whole river?
+    Heh, seems pretty unlikely to me.
+    {swap_char()}
+    Don't underestimate me! I'm stronger than you think.
+    {swap_char()}
+    I doubt that, Tessie. You won't even be able to stop yourself being washed away.
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 2
-- Insert dialogue to prompt choice 3 here // Prompt 3
-* [Choice 3a]
+- This is your last chance to turn back, Tessie. // Prompt 3
+* ["I'm ready to fight."]
     Dialogue 3a
-* [Choice 3b]
+* ["This is your last chance."]
     Dialogue 3b
-* [Choice 3c]
+* ["I won't give up."]
    Dialogue 3c
 {force_char(NPC)} // The NPC will be having the final say
 - /* Flirt decision here (the hyphen acts as a gather - please don't remove)
