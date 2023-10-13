@@ -157,7 +157,7 @@ public class UIManager : MonoBehaviour
 
         FlounderParent.SetActive(true);
         Overlay.GetComponent<OverlayFlash>().Flash(Color.white, 1);
-        EnemyTitleText.GetComponent<TextMeshProUGUI>().text = e.EnemyName;
+        EnemyTitleText.GetComponent<TextMeshProUGUI>().text = e.EnemyData.Name;
 
         LeverageBar.GetComponent<AdvancedUIMovement>().MoveTo(new UnityEngine.Vector2(0, LEVERAGE_PRE_BATTLE_Y));
         PlayerBar.GetComponent<AdvancedUIMovement>().MoveTo(new UnityEngine.Vector2(PLAYER_BAR_INITIAL_X, PLAYER_BAR_FIXED_Y));
