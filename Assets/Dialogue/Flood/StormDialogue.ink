@@ -42,10 +42,6 @@ I bet you want to change me too.
 Is this really who you are?
 {swap_char()}
 If you don't like me at my worst, you don't deserve me at my best.
-
-
-
-
 {force_char(NPC)}
 - So what if I caused a flood! I was having a bad day, okay? // Prompt 1
 * ["Spill the tea!"]
@@ -61,7 +57,6 @@ If you don't like me at my worst, you don't deserve me at my best.
     Go on!
     {swap_char()}
     Wait, why am I telling you this? Get lost!
-
 * ["We all have bad days"]
     {swap_char()}
     Was it really that bad of a day?
@@ -93,10 +88,6 @@ If you don't like me at my worst, you don't deserve me at my best.
     Oh, yeah. I guess.
     {swap_char()}
     Lol.
-    
-
-
-
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 1
 - Haven't you ever gotten so frustrated you hurt someone? // Prompt 2
 * ["No, I would never do that."]
@@ -133,7 +124,6 @@ If you don't like me at my worst, you don't deserve me at my best.
     {swap_char()}
     You make it sound easy....
     ~ choicespassed += 1
-    
 * ["But not like this!"]
     {swap_char()}
     Probably. But not like this!
@@ -149,10 +139,6 @@ If you don't like me at my worst, you don't deserve me at my best.
     They could have prepared better. It's not my fault they handled it so badly.
     {swap_char()}
     You're so toxic!
-    
-
-
-
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 2
 - Ugh, I'm geting angry again...! // Prompt 3
 * ["Just calm down!"]
@@ -160,7 +146,6 @@ If you don't like me at my worst, you don't deserve me at my best.
     Just calm down!
     {swap_char()}
     Don't tell me to calm down!
-    
 * ["Take a deep breath."]
     {swap_char()}
     Take a deep breath.
@@ -170,18 +155,11 @@ If you don't like me at my worst, you don't deserve me at my best.
     The rage is building...
     ...
     ~ choicespassed += 1
-    
 * ["Why?"]
    {swap_char()}
    Why? What is there for you to be angry about right now?
    {swap_char()}
    You! You're making me angry!
-   
-   
-
-
-
-
 {force_char(NPC)} // The NPC will be having the final say
 - /* Flirt decision here (the hyphen acts as a gather - please don't remove)
 I'll assume that passing all three choices is an automatic success,

@@ -58,7 +58,7 @@ I may not belong here, but I respect the Thames and everyone living inside of it
     {swap_char()}
     Happiness is a luxury.
     {swap_char()}
-    It's easily attainable in your absense, though.
+    It's easily attainable in your absence, though.
     {swap_char()}
     So I should die to make others happier?
     {swap_char()}
@@ -70,6 +70,7 @@ I may not belong here, but I respect the Thames and everyone living inside of it
     Because sometimes we need to show others kindness even though we haven't been shown it ourselves.
     {swap_char()}
     It's not fair. Why do I need to be the one to leave every time?
+    {swap_char()}
     I know that it's not fair. You don't deserve to be kicked out of your home in the North.
     But the life in the Thames is at your mercy. 
     {swap_char()}
@@ -106,15 +107,6 @@ I may not belong here, but I respect the Thames and everyone living inside of it
     Why can't you be more emo when it's suitable for the plot?
     {swap_char()}
     You're terrible!
-
-    
-
-
-
-
-
-
-
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 1
 - I don't want to die. Is that so hard to understand? // Prompt 2
 * ["Nobody wants to die!"]
@@ -146,7 +138,8 @@ I may not belong here, but I respect the Thames and everyone living inside of it
     But will it be painful? Will I be at peace?
     Will I have moments of panic as I melt away into nothing, where I want to go back, but it's too late?
     {swap_char()}
-    Dying is always like that. You don't get special rights to abuse others because you're facing the same suffering we all eventually do.
+    Dying is always like that. 
+    You don't get special rights to abuse others because you're facing the same suffering we all eventually do.
     {swap_char()}
     Even so! I don't want to!
 * ["The unknown is scary."]
@@ -171,15 +164,6 @@ I may not belong here, but I respect the Thames and everyone living inside of it
     {swap_char()}
     I know...
     ~ choicespassed += 1
-
-
-
-
-
-
-
-
-
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 2
 - Prove to me that you, like a god, can determine who lives and who dies. // Prompt 3
 * ["Let's find out."]
