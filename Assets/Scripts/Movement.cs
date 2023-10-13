@@ -1,4 +1,4 @@
-
+using System;
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
@@ -6,7 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class PlayerRun : MonoBehaviour
 {
+    private static event EventHandler<EnemyEventArgs> RaiseEncounterEvent;     // Event raised upon colliding with an enemy
 
+	public static void RegisterEncounterHandler(EventHandler<EnemyEventArgs> handler)
+    {
+        RaiseEncounterEvent += handler;
+    }
 
 
 
@@ -81,7 +86,13 @@ public class PlayerRun : MonoBehaviour
 			// Determine the mob that you collided with
 			// This is useful for loading the correct objects and scripts
 			collidedMob = collision.gameObject.name;
-			SceneChange = 2;
+
+			if (GameStateManager.Instance.GameState == GameState.OVERWORLD)
+			{
+				EnemyData enemyData = collision.gameObject.GetComponent<Enemy>().EnemyData;
+				RaiseEncounterEvent?.Invoke(this, new EnemyEventArgs(enemyData));
+			}
+			// SceneChange = 2;			
 		}
 
 		if (collision.gameObject.layer == 7) //All boss to be layer 7

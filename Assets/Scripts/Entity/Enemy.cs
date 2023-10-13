@@ -7,6 +7,11 @@ using UnityEngine;
 **/
 public class Enemy : MonoBehaviour
 {
+    void Start()
+    {
+        EnemyData.OverworldPosition = transform.position;   // TODO: If we expect enemies to move, this should be in Update() instead
+    }
+
     [field: SerializeField]
     public EnemyData EnemyData {get; private set;}
 }

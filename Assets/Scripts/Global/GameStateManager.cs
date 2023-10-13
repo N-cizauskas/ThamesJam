@@ -6,17 +6,22 @@ using UnityEngine;
 
 public class GameStateManager : MonoBehaviour
 {
+    // values set in editor
+    [Tooltip("Pause the game on losing focus - disable for easier debugging.")]
+    public bool PauseOnFocusLoss = false;
+    [Tooltip("Player GameObject - used to keep track of collisions with enemies.")]
+
     // Singleton
     public static GameStateManager Instance { get; private set; }
 
+    // Constants
+    public static readonly float ENCOUNTER_DELAY_SECONDS = 1.5f;
     public static readonly float BATTLE_COUNTDOWN_PERIOD_SECONDS = 3f;
 
     private static readonly GameState[] PAUSED_GAME_STATES = {GameState.PAUSED};
 
     public static bool canTurn = true;
 
-    [Tooltip("Pause the game on losing focus - disable for easier debugging.")]
-    public bool pauseOnFocusLoss = false;
 
     public GameState GameState { get; private set; }
     private GameState previousGameState;    // used for pausing
@@ -37,7 +42,7 @@ public class GameStateManager : MonoBehaviour
 
     private event EventHandler RaisePauseEvent;
     private event EventHandler RaiseUnpauseEvent;
-    private event EventHandler<EnemyEventArgs> RaiseEncounterEvent;     // upon encounter
+    private event EventHandler<EnemyEventArgs> RaiseEncounterMainEvent;
     private event EventHandler<EnemyEventArgs> RaisePrepareBattleEvent;
     private event EventHandler RaiseCountdownBattleEvent;   // player has hit the button after the 'get ready' screen
     private event EventHandler RaiseStartBattleEvent;   // this is raised to begin the actual flounder minigame
@@ -51,10 +56,6 @@ public class GameStateManager : MonoBehaviour
     public static void RegisterUnpauseHandler(EventHandler handler)
     {
         Instance.RaiseUnpauseEvent += handler;
-    }
-    public static void RegisterEncounterHandler(EventHandler<EnemyEventArgs> handler)
-    {
-        Instance.RaiseEncounterEvent += handler;
     }
     public static void RegisterPrepareBattleHandler(EventHandler<EnemyEventArgs> handler)
     {
@@ -85,9 +86,14 @@ public class GameStateManager : MonoBehaviour
         previousGameState = GameState.OVERWORLD;
     }
 
+    void Start()
+    {
+        PlayerRun.RegisterEncounterHandler(OnEnemyEncounter);
+    }
+
     void OnApplicationFocus(bool isFocused)
     {
-        if (!isFocused && pauseOnFocusLoss)
+        if (!isFocused && PauseOnFocusLoss)
         {
             PauseGame();
         }
@@ -149,6 +155,13 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
+    private void OnEnemyEncounter(object sender, EnemyEventArgs enemyEventArgs)
+    {
+        // Player has collided with an enemy, begin animations and transition
+        GameState = GameState.ENCOUNTER_START;
+        StartCoroutine(RaiseDelayedEncounterMainEvent(ENCOUNTER_DELAY_SECONDS, enemyEventArgs));
+    }
+
     private void PauseGame()
     {
         if (IsPaused) return;
@@ -177,6 +190,13 @@ public class GameStateManager : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         GameState = GameState.BATTLING;
         RaiseStartBattleEvent?.Invoke(this, EventArgs.Empty);
+    }
+
+    private IEnumerator RaiseDelayedEncounterMainEvent(float seconds, EnemyEventArgs enemyEventArgs)
+    {
+        yield return new WaitForSeconds(seconds);
+        GameState = GameState.ENCOUNTER_MAIN;
+        RaiseEncounterMainEvent?.Invoke(this, enemyEventArgs);
     }
 
 

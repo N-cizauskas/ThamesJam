@@ -21,6 +21,9 @@ public class UIManager : MonoBehaviour
     [Header("UI Elements - General")]
     public GameObject pauseBox;
 
+    [Header("UI Elements - Overworld")]
+    public GameObject encounterSprite;
+
     [Header("UI Elements - Flounder")]
     [Tooltip("The parent game object that houses all the pre-battle UI elements.")]
     public GameObject FlounderParent;
@@ -98,6 +101,8 @@ public class UIManager : MonoBehaviour
         GameStateManager.RegisterCountdownBattleHandler(OnCountdownBattle);
         GameStateManager.RegisterStartBattleHandler(OnStartBattle);
         GameStateManager.RegisterEndBattleHandler(OnEndBattle);
+
+        PlayerRun.RegisterEncounterHandler(OnEnemyEncounter);
 
         PlayerTugPullRangeTransform = PlayerTugPullRange.GetComponent<RectTransform>();
         PlayerTugCritRangeTransform = PlayerTugCritRange.GetComponent<RectTransform>();
@@ -211,6 +216,21 @@ public class UIManager : MonoBehaviour
     {
         FlounderParent.SetActive(false);
         ResetBattleLeverage();
+    }
+
+    void OnEnemyEncounter(object sender, EnemyEventArgs e)
+    {
+        FlounderParent.SetActive(false);
+        ResetBattleLeverage();
+        // TODO: set animation length values as defined constants based on GameStateManager.ENCOUNTER_DELAY_SECONDS
+        encounterSprite.GetComponent<AdvancedSpriteMovement>().Pop(e.EnemyData.OverworldPosition, 0.5f, 0.5f);
+        StartCoroutine(StartDelayedScreenFadeInOut(0.5f));
+    }
+
+    private IEnumerator StartDelayedScreenFadeInOut(float delayInSeconds)
+    {
+        yield return new WaitForSeconds(delayInSeconds);
+        Overlay.GetComponent<OverlayFlash>().FadeInOut(Color.white, 0.5f, 1f);  // TODO: define as constants
     }
 
     // TODO: Respond to RaiseEndBattleEvent
