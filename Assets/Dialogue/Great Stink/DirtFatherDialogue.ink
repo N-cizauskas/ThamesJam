@@ -167,6 +167,7 @@ The river is better this way! Humans are smart enough to know what's right and w
    I-
    How dare you!
    I won't let you get away with trying to humiliate me! 
+   ~choicespassed += 1
 {force_char(NPC)} // The NPC will be having the final say
 - /* Flirt decision here (the hyphen acts as a gather - please don't remove)
 I'll assume that passing all three choices is an automatic success,
