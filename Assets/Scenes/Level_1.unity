@@ -535,6 +535,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Icicle (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 4699763241448998747, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalScale.x
       value: -1.047168
@@ -549,11 +553,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 49.66
+      value: 46.26
       objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.03
+      value: -5.45
       objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1159,6 +1163,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Icicle (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 4699763241448998747, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.4806
@@ -1724,6 +1732,10 @@ PrefabInstance:
     - target: {fileID: 3840401179250298098, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_Name
       value: Icicle (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699763241448998747, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
+      propertyPath: m_Constraints
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalScale.x
@@ -2380,6 +2392,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Icicle
       objectReference: {fileID: 0}
+    - target: {fileID: 4699763241448998747, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.36189598
@@ -2869,6 +2885,10 @@ PrefabInstance:
     - target: {fileID: 3840401179250298098, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_Name
       value: Icicle (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699763241448998747, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
+      propertyPath: m_Constraints
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalScale.x
@@ -3862,7 +3882,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &657787830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3960,6 +3980,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Icicle (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 4699763241448998747, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalScale.x
       value: -0.65987
@@ -3974,11 +3998,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 58.87
+      value: 61.38
       objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.08
+      value: -6.37
       objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4112,6 +4136,10 @@ PrefabInstance:
     - target: {fileID: 3840401179250298098, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_Name
       value: Icicle (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699763241448998747, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
+      propertyPath: m_Constraints
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalScale.x
@@ -5202,6 +5230,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Icicle (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 4699763241448998747, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalScale.x
       value: -1.507503
@@ -5844,6 +5876,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Icicle (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 4699763241448998747, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.4806
@@ -5958,6 +5994,10 @@ PrefabInstance:
     - target: {fileID: 3840401179250298098, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_Name
       value: Icicle (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699763241448998747, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
+      propertyPath: m_Constraints
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6739,6 +6779,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Icicle (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 4699763241448998747, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.44887775
@@ -6809,6 +6853,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Icicle (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 4699763241448998747, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalScale.x
       value: -0.8637042
@@ -6823,7 +6871,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 57.47
+      value: 58.76
       objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7099,6 +7147,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Icicle (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 4699763241448998747, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalScale.x
       value: -1.507503
@@ -7113,11 +7165,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 51.7
+      value: 49.87
       objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.94
+      value: -5.01
       objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7167,6 +7219,10 @@ PrefabInstance:
     - target: {fileID: 3840401179250298098, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_Name
       value: Icicle (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699763241448998747, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
+      propertyPath: m_Constraints
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalScale.y
@@ -7303,6 +7359,10 @@ PrefabInstance:
     - target: {fileID: 3840401179250298098, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_Name
       value: Icicle (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699763241448998747, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
+      propertyPath: m_Constraints
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalScale.x
@@ -7604,6 +7664,10 @@ PrefabInstance:
     - target: {fileID: 3840401179250298098, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_Name
       value: Icicle (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699763241448998747, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
+      propertyPath: m_Constraints
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10213,6 +10277,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Icicle (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 4699763241448998747, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.36363834
@@ -10925,6 +10993,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Icicle (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 4699763241448998747, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5075028
@@ -11377,75 +11449,6 @@ PolygonCollider2D:
       - {x: -3.3999999, y: 4.97}
       - {x: -3.27, y: 4.98}
   m_UseDelaunayMesh: 0
---- !u!1001 &1944789843
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3840401179250298098, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
-      propertyPath: m_Name
-      value: Icicle (22)
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
-      propertyPath: m_LocalScale.x
-      value: -1.047168
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
-      propertyPath: m_LocalScale.y
-      value: -0.639672
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
-      propertyPath: m_LocalScale.z
-      value: -0.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 54.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -6.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.06741313
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.99103
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.13364027
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -15.36
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
 --- !u!1 &1951042215
 GameObject:
   m_ObjectHideFlags: 0
@@ -12327,6 +12330,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Icicle (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 4699763241448998747, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.356964
@@ -12662,17 +12669,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseBox: {fileID: 710739676}
-  FlounderParent: {fileID: 834739876}
+  FlounderParent: {fileID: 0}
   PlayerTitleText: {fileID: 583333589}
   EnemyTitleText: {fileID: 974359416}
-  CenterTitle: {fileID: 916979001}
-  CenterSubtitle: {fileID: 929428812}
+  CenterTitle: {fileID: 0}
+  CenterSubtitle: {fileID: 0}
   PlayerBar: {fileID: 1571720572}
   EnemyBar: {fileID: 1809998805}
   Divider: {fileID: 193562803}
   Hook: {fileID: 226685170}
   Overlay: {fileID: 1566715342}
-  LeverageBar: {fileID: 968783201}
+  LeverageBar: {fileID: 0}
   PlayerTugGauge: {fileID: 1308463044}
   PlayerTugPullRange: {fileID: 1619424659}
   PlayerTugCritRange: {fileID: 273865287}
@@ -12691,6 +12698,10 @@ PrefabInstance:
     - target: {fileID: 3840401179250298098, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_Name
       value: Icicle (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699763241448998747, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
+      propertyPath: m_Constraints
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalScale.x
@@ -13206,6 +13217,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Icicle (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 4699763241448998747, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 9007425181984077021, guid: 82edae1c8c58bb549a1ee2f6740fd590, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.33737653
@@ -13402,7 +13417,6 @@ SceneRoots:
   - {fileID: 2036026200}
   - {fileID: 607851134}
   - {fileID: 574363664}
-  - {fileID: 1944789843}
   - {fileID: 108751041}
   - {fileID: 1207451430}
   - {fileID: 660523805}
