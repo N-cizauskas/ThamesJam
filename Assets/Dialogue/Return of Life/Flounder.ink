@@ -2,7 +2,7 @@
 VAR charm = 0 // The idea is to get the charm from the game stat (somehow)
 CONST threshold1 = 5 // Threshold charm for passing if you passed only one choice
 CONST threshold2 = 3 // The same, but for passing two choices
-CONST NPC = "Mayfly" // This is the character you are talking to.
+CONST NPC = "Flounder" // This is the character you are talking to.
 VAR current_char = NPC // This variable tracks the currently talking character. It will be passed to the "current talker" box every time dialogue is continued
 VAR choicespassed = 0 // Flags the number of times we make the correct choice
 // VAR charmgain = 0 // Tracks the amount of charm gained in the flirt
@@ -31,59 +31,59 @@ VAR enable_charbox = true
 }
 == main ==
 
-What is up, broski! // Prompt 1
-* [Chill]
+I'm so confused. What is going on? // Prompt 1
+* [Optimistic]
     {swap_char()}
-    Vibes, man!
+    Everyone has returned to the Thames! It's great!
     {swap_char()}
-    Ayyyy! Let's go! The vibes!
+    I didn't even notice that we left?
+* [Confusing]
+    {swap_char()}
+    I thought you were supposed to help me understand?
+    {swap_char()}
+    W-was I?
+* [Honest]
+    {swap_char()}
+    Well, I just got here. I'm not entirely sure. It looks like quite a few species have returned. Is that right?
+    {swap_char()}
+    Oh yeah! That is what happened, now that I think about it. We all came back since the water is cleaner!
     ~ choicespassed += 1
-* [Sarcastic]
-    {swap_char()}
-    The sky.
-    {swap_char()}
-    Chill, broski.
-* [Emotional]
-    {swap_char()}
-    The average global temperature...
-    {swap_char()}
-    ... You're ruining the vibe.
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 1
-I am just having such a good time right now. Literally nothing could stop me from having a good time right now. You feel? // Prompt 2
-* [Relatable]
+Why can't I see you right now? // Prompt 2
+* [Honest]
     {swap_char()}
-    I feel you so much, broski.
+    Both your eyes are on the same side of your head, so...
     {swap_char()}
-    I know, broski. We all feel it. That's a vibe.
-* [Emotional]
+    What? I never noticed...
+* [Helpful]
     {swap_char()}
-    Climate change could stop you from having a good time.
+    Hm, I'll move so you can see me!
     {swap_char()}
-    Yeah, I guess, but that's not really what I want to think about right now, Broski.
-* [Energetic]
-    {swap_char()}
-    Yessss, let's get this party started! Turn up the music!
-    {swap_char()}
-    Yeah, now we're talking! Let's get moving!
+    Oh thanks! I see you now!
     ~ choicespassed += 1
+* [Gaslight]
+    {swap_char()}
+    You were never able to see anyone. What are you talking about? What's "seeing"?
+    {swap_char()}
+    Stop, I'm already so confused... what is happening?!
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 2
-I'm kinda worried something is vibe checking me lately. You feel? // Prompt 3
-* [Partying]
-   {swap_char()}
-    Can't hear you, broski. Music is too loud!
+Are things really okay right now? // Prompt 3
+* [Simple]
     {swap_char()}
-    Nevermind, Broski! This beat is sick!
+    Yeah, I think so.
+    {swap_char()}
+    Ok good.
     ~ choicespassed += 1
-* [Serious]
+* [Realistic]
     {swap_char()}
-    Yeah, I've been worrying about that, too, lately...
+    The Thames has just survived a major disaster, and is in fragile recovery.
     {swap_char()}
-    I don't want to think this deeply.
-* [Dancing]
+    Oh... fragile...
+* [Mean]
    {swap_char()}
-   ... (dancing)
+   No.
    {swap_char()}
-   ...Broski? You good?
+   ...(cries)
 {force_char(NPC)} // The NPC will be having the final say
 - /* Flirt decision here (the hyphen acts as a gather - please don't remove)
 I'll assume that passing all three choices is an automatic success,
@@ -102,13 +102,13 @@ and ending up in between will leave your chances of success to your charm stat.
 }
 { 
 - flirtpassed:
-    There's a party round my place later tonight if you're down.
+    Thanks for helping me! I'm always so lost! I appreciate it.
     ~ charm += choicespassed
     ~ enable_charbox = false // Disable the character box for this message
     {NPC} has been charmed by your flirt!
     Your charm has increased to {charm}!
 - else:
-    Bad vibes.
+    I'm still so confused...
     ~ enable_charbox = false
     {NPC} has left.
 }

@@ -2,7 +2,7 @@
 VAR charm = 0 // The idea is to get the charm from the game stat (somehow)
 CONST threshold1 = 5 // Threshold charm for passing if you passed only one choice
 CONST threshold2 = 3 // The same, but for passing two choices
-CONST NPC = "Mayfly" // This is the character you are talking to.
+CONST NPC = "Bass" // This is the character you are talking to.
 VAR current_char = NPC // This variable tracks the currently talking character. It will be passed to the "current talker" box every time dialogue is continued
 VAR choicespassed = 0 // Flags the number of times we make the correct choice
 // VAR charmgain = 0 // Tracks the amount of charm gained in the flirt
@@ -31,59 +31,59 @@ VAR enable_charbox = true
 }
 == main ==
 
-What is up, broski! // Prompt 1
-* [Chill]
+Hey there. What kind of music do you like?// Prompt 1
+* [Refined]
     {swap_char()}
-    Vibes, man!
+    Classical, orchestral stuff, and opera.
     {swap_char()}
-    Ayyyy! Let's go! The vibes!
+    Ok nerd.
+* [Normie]
+    {swap_char()}
+    Just pop and top 100s.
+    {swap_char()}
+    Ok normie.
+* [Hardcore]
+    {swap_char()}
+    Underground metalpipecore. The heavy stuff.
+    {swap_char()}
+    Wow, you're the real deal!
     ~ choicespassed += 1
-* [Sarcastic]
-    {swap_char()}
-    The sky.
-    {swap_char()}
-    Chill, broski.
-* [Emotional]
-    {swap_char()}
-    The average global temperature...
-    {swap_char()}
-    ... You're ruining the vibe.
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 1
-I am just having such a good time right now. Literally nothing could stop me from having a good time right now. You feel? // Prompt 2
-* [Relatable]
+What's your favourite instrument? // Prompt 2
+* [Hardcore]
     {swap_char()}
-    I feel you so much, broski.
+    The metal pipe.
     {swap_char()}
-    I know, broski. We all feel it. That's a vibe.
-* [Emotional]
+    Guess it's got to be someone's favourite.
+* [People-pleaser]
     {swap_char()}
-    Climate change could stop you from having a good time.
+    Bass.
     {swap_char()}
-    Yeah, I guess, but that's not really what I want to think about right now, Broski.
-* [Energetic]
-    {swap_char()}
-    Yessss, let's get this party started! Turn up the music!
-    {swap_char()}
-    Yeah, now we're talking! Let's get moving!
+    Yes! (headbangs)
     ~ choicespassed += 1
+* [Normie]
+    {swap_char()}
+    Piano.
+    {swap_char()}
+    Ok. I like bass.
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 2
-I'm kinda worried something is vibe checking me lately. You feel? // Prompt 3
-* [Partying]
+I'm so glad I can be rocking here again. I sure hope nothing uncool happens. // Prompt 3
+* [Cool]
    {swap_char()}
-    Can't hear you, broski. Music is too loud!
+    Uncool things are so normie.
     {swap_char()}
-    Nevermind, Broski! This beat is sick!
-    ~ choicespassed += 1
+    Exactly!
 * [Serious]
     {swap_char()}
-    Yeah, I've been worrying about that, too, lately...
+    I'm a bit worried, too. I hope nothing bad happens again.
     {swap_char()}
-    I don't want to think this deeply.
-* [Dancing]
+    You're not helping my worries much.
+* [Guitar riff]
    {swap_char()}
-   ... (dancing)
+   ... (guitar riff)
    {swap_char()}
-   ...Broski? You good?
+   ... (headbangs)
+   ~ choicespassed += 1
 {force_char(NPC)} // The NPC will be having the final say
 - /* Flirt decision here (the hyphen acts as a gather - please don't remove)
 I'll assume that passing all three choices is an automatic success,
@@ -102,13 +102,13 @@ and ending up in between will leave your chances of success to your charm stat.
 }
 { 
 - flirtpassed:
-    There's a party round my place later tonight if you're down.
+    Come rock out with me sometime!
     ~ charm += choicespassed
     ~ enable_charbox = false // Disable the character box for this message
     {NPC} has been charmed by your flirt!
     Your charm has increased to {charm}!
 - else:
-    Bad vibes.
+    Go listen to three of my albums.
     ~ enable_charbox = false
     {NPC} has left.
 }
