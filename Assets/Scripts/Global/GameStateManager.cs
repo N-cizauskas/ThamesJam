@@ -37,6 +37,7 @@ public class GameStateManager : MonoBehaviour
 
     private event EventHandler RaisePauseEvent;
     private event EventHandler RaiseUnpauseEvent;
+    private event EventHandler<EnemyEventArgs> RaiseEncounterEvent;     // upon encounter
     private event EventHandler<EnemyEventArgs> RaisePrepareBattleEvent;
     private event EventHandler RaiseCountdownBattleEvent;   // player has hit the button after the 'get ready' screen
     private event EventHandler RaiseStartBattleEvent;   // this is raised to begin the actual flounder minigame
@@ -50,6 +51,10 @@ public class GameStateManager : MonoBehaviour
     public static void RegisterUnpauseHandler(EventHandler handler)
     {
         Instance.RaiseUnpauseEvent += handler;
+    }
+    public static void RegisterEncounterHandler(EventHandler<EnemyEventArgs> handler)
+    {
+        Instance.RaiseEncounterEvent += handler;
     }
     public static void RegisterPrepareBattleHandler(EventHandler<EnemyEventArgs> handler)
     {
@@ -180,17 +185,16 @@ public class GameStateManager : MonoBehaviour
      * The idea is that these should get called as a result of some easily controllable action, e.g. button press
     **/
 
-    public void DebugStartPrebattle()
+    public void DebugStartPrebattle(EnemyData enemy)
     {
         GameState = GameState.PRE_BATTLE;
-        RaisePrepareBattleEvent?.Invoke(this, new EnemyEventArgs("shrimpy"));
+        RaisePrepareBattleEvent?.Invoke(this, new EnemyEventArgs(enemy));
     }
 
-    // TODO: remove, used for debugging purposes
-    public void DebugStartBattle()
+    public void DebugStartEncounter(EnemyData enemy)
     {
         Debug.Log("debug start battle pressed");
-        GameState = GameState.BATTLING;
-        RaiseStartBattleEvent?.Invoke(this, EventArgs.Empty);
+        GameState = GameState.ENCOUNTER_START;
+        RaiseStartBattleEvent?.Invoke(this, new EnemyEventArgs(enemy));
     }
 }

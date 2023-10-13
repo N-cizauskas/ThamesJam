@@ -5,11 +5,10 @@ using UnityEngine;
 
 public class EnemyEventArgs : EventArgs
 {
-    public String EnemyName {get; private set;} // placeholder; should instead be some enemy object that holds more information like subtext and battle stats
+    public EnemyData EnemyData {get; private set;}
 
-    public EnemyEventArgs(String enemy)
+    public EnemyEventArgs(EnemyData enemyData)
     {
-        this.EnemyName = enemy;
+        this.EnemyData = enemyData;
     }
-    
 }
