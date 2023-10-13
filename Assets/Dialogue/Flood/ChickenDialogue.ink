@@ -1,4 +1,4 @@
-﻿// Define some variables we will be using
+// Define some variables we will be using
 VAR charm = 0 // The idea is to get the charm from the game stat (somehow)
 CONST threshold1 = 5 // Threshold charm for passing if you passed only one choice
 CONST threshold2 = 3 // The same, but for passing two choices
@@ -48,7 +48,7 @@ Aaa! A creature! // Prompt 1
     -> scared
 * [Laugh]
     {swap_char()}
-    Hahaha! A creature, that's funny. I'm Tessie, and I'm a plesiosaur
+    Hahaha! A creature, that's funny. I'm Tessie, and I'm a plesiosaur.
     {swap_char()}
     That sounds scary! Never heard've a Plesiosaur before, I haven't!
 * [Soothe]

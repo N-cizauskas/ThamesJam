@@ -1,4 +1,4 @@
-﻿// Define some variables we will be using
+// Define some variables we will be using
 VAR battlebonus = 0 // This will track the bonus gained for the boss battle
 CONST NPC = "Dirty Father Thames" // This is the character you are talking to.
 VAR current_char = NPC // This variable tracks the currently talking character. It will be passed to the "current talker" box every time dialogue is continued
@@ -127,6 +127,7 @@ The river is better this way! Humans are smart enough to know what's right and w
     {swap_char()}
     If they're not here now, I don't care.
 * ["A warrior."]
+    {swap_char()}
     I'm a warrior, here to defeat you, and return this river to what it once was.
     {swap_char()}
     Defeat me? You, a single fish, think you could defeat a whole river?
