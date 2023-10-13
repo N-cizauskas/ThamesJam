@@ -1,5 +1,6 @@
 /**
- * A component to more conveniently handle complex-ish movement over time for sprites.
+ * A component to more conveniently handle complex-ish movement over time for entities in the game world (not in canvas).
+ * Requires a SpriteRenderer on the GameObject.
 **/
 
 using System.Collections;

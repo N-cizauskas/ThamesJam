@@ -48,6 +48,7 @@ public class GameStateManager : MonoBehaviour
     private event EventHandler RaiseStartBattleEvent;   // this is raised to begin the actual flounder minigame
                                                         // TODO: update to maybe take in some event args with enemy?
     private event EventHandler RaiseEndBattleEvent;
+    private event EventHandler RaiseEndEncounterEvent;  // TODO: placeholder event for use after post-battle dialogue etc.
     
     public static void RegisterPauseHandler(EventHandler handler)
     {
@@ -56,6 +57,10 @@ public class GameStateManager : MonoBehaviour
     public static void RegisterUnpauseHandler(EventHandler handler)
     {
         Instance.RaiseUnpauseEvent += handler;
+    }
+    public static void RegisterEncounterMainHandler(EventHandler<EnemyEventArgs> handler)
+    {
+        Instance.RaiseEncounterMainEvent += handler;
     }
     public static void RegisterPrepareBattleHandler(EventHandler<EnemyEventArgs> handler)
     {
