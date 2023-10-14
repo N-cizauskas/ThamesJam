@@ -1,4 +1,4 @@
-﻿// Define some variables we will be using
+// Define some variables we will be using
 VAR charm = 0 // The idea is to get the charm from the game stat (somehow)
 CONST threshold1 = 5 // Threshold charm for passing if you passed only one choice
 CONST threshold2 = 3 // The same, but for passing two choices
@@ -96,6 +96,7 @@ How will you control your energy during this time of turbulence?
    I think I'll try to make peace with those around me, and help anyone who needs it.
    {swap_char()}
    Very good, very good. It is through togetherness that we find true peace.
+   ~ choicespassed += 1
 {force_char(NPC)} // The NPC will be having the final say
 - /* Flirt decision here (the hyphen acts as a gather - please don't remove)
 I'll assume that passing all three choices is an automatic success,

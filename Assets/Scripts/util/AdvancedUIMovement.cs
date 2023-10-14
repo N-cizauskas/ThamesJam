@@ -1,5 +1,5 @@
 /**
- * A component to more conveniently handle complex-ish movement over time.
+ * A component to more conveniently handle complex-ish movement over time for UI elements.
 **/
 
 using System.Collections;

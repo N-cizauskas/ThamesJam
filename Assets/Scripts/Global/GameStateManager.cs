@@ -6,21 +6,26 @@ using UnityEngine;
 
 public class GameStateManager : MonoBehaviour
 {
+    // values set in editor
+    [Tooltip("Pause the game on losing focus - disable for easier debugging.")]
+    public bool PauseOnFocusLoss = false;
+    [Tooltip("Player GameObject - used to keep track of collisions with enemies.")]
+
     // Singleton
     public static GameStateManager Instance { get; private set; }
 
+    /* Constants */
+    public static readonly float ENCOUNTER_DELAY_SECONDS = 1.5f;
     public static readonly float BATTLE_COUNTDOWN_PERIOD_SECONDS = 3f;
-
     private static readonly GameState[] PAUSED_GAME_STATES = {GameState.PAUSED};
 
     public static bool canTurn = true;
 
-    [Tooltip("Pause the game on losing focus - disable for easier debugging.")]
-    public bool pauseOnFocusLoss = false;
 
+    /* Game State Variables */
+    // pausing
     public GameState GameState { get; private set; }
-    private GameState previousGameState;    // used for pausing
-
+    private GameState previousGameState;
     public bool IsPaused 
     {
         get {
@@ -28,6 +33,11 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
+    // encounter
+    private EnemyData currentEncounterEnemy;
+
+    // flounder
+    // TODO: maybe add a ScriptableObject to keep track of player stats, like number of battles so far - allows entering a tutorial state
     public float SecondsUntilBattle {
         get {
             return BattleBeginTime - Time.time;
@@ -37,11 +47,13 @@ public class GameStateManager : MonoBehaviour
 
     private event EventHandler RaisePauseEvent;
     private event EventHandler RaiseUnpauseEvent;
+    private event EventHandler<EnemyEventArgs> RaiseEncounterMainEvent;
     private event EventHandler<EnemyEventArgs> RaisePrepareBattleEvent;
     private event EventHandler RaiseCountdownBattleEvent;   // player has hit the button after the 'get ready' screen
     private event EventHandler RaiseStartBattleEvent;   // this is raised to begin the actual flounder minigame
                                                         // TODO: update to maybe take in some event args with enemy?
     private event EventHandler RaiseEndBattleEvent;
+    private event EventHandler RaiseEndEncounterEvent;  // TODO: placeholder event for use after post-battle dialogue etc.
     
     public static void RegisterPauseHandler(EventHandler handler)
     {
@@ -50,6 +62,10 @@ public class GameStateManager : MonoBehaviour
     public static void RegisterUnpauseHandler(EventHandler handler)
     {
         Instance.RaiseUnpauseEvent += handler;
+    }
+    public static void RegisterEncounterMainHandler(EventHandler<EnemyEventArgs> handler)
+    {
+        Instance.RaiseEncounterMainEvent += handler;
     }
     public static void RegisterPrepareBattleHandler(EventHandler<EnemyEventArgs> handler)
     {
@@ -78,11 +94,17 @@ public class GameStateManager : MonoBehaviour
         Instance = this;
         GameState = GameState.OVERWORLD;    // todo: maybe set this to something else on scene load
         previousGameState = GameState.OVERWORLD;
+        currentEncounterEnemy = null;       // todo: if this causes errors, change to some placeholder enemy
+    }
+
+    void Start()
+    {
+        PlayerRun.RegisterEncounterHandler(OnEnemyEncounter);
     }
 
     void OnApplicationFocus(bool isFocused)
     {
-        if (!isFocused && pauseOnFocusLoss)
+        if (!isFocused && PauseOnFocusLoss)
         {
             PauseGame();
         }
@@ -144,6 +166,14 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
+    private void OnEnemyEncounter(object sender, EnemyEventArgs enemyEventArgs)
+    {
+        // Player has collided with an enemy, begin animations and transition
+        GameState = GameState.ENCOUNTER_START;
+        currentEncounterEnemy = enemyEventArgs.EnemyData;
+        StartCoroutine(RaiseDelayedEncounterMainEvent(ENCOUNTER_DELAY_SECONDS, enemyEventArgs));
+    }
+
     private void PauseGame()
     {
         if (IsPaused) return;
@@ -174,23 +204,17 @@ public class GameStateManager : MonoBehaviour
         RaiseStartBattleEvent?.Invoke(this, EventArgs.Empty);
     }
 
-
-    /**
-     * DEBUG FUNCTIONS
-     * The idea is that these should get called as a result of some easily controllable action, e.g. button press
-    **/
-
-    public void DebugStartPrebattle()
+    private IEnumerator RaiseDelayedEncounterMainEvent(float seconds, EnemyEventArgs enemyEventArgs)
     {
-        GameState = GameState.PRE_BATTLE;
-        RaisePrepareBattleEvent?.Invoke(this, new EnemyEventArgs("shrimpy"));
+        yield return new WaitForSeconds(seconds);
+        GameState = GameState.ENCOUNTER_MAIN;
+        RaiseEncounterMainEvent?.Invoke(this, enemyEventArgs);
     }
 
-    // TODO: remove, used for debugging purposes
-    public void DebugStartBattle()
+    /* Functions called by player input */
+    public void StartFlounder()
     {
-        Debug.Log("debug start battle pressed");
-        GameState = GameState.BATTLING;
-        RaiseStartBattleEvent?.Invoke(this, EventArgs.Empty);
+        GameState = GameState.PRE_BATTLE;
+        RaisePrepareBattleEvent?.Invoke(this, new EnemyEventArgs(currentEncounterEnemy));
     }
 }

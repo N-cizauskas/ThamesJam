@@ -1,4 +1,4 @@
-﻿// Define some variables we will be using
+// Define some variables we will be using
 VAR battlebonus = 0 // This will track the bonus gained for the boss battle
 CONST NPC = "Dirty Father Thames" // This is the character you are talking to.
 VAR current_char = NPC // This variable tracks the currently talking character. It will be passed to the "current talker" box every time dialogue is continued
@@ -127,6 +127,7 @@ The river is better this way! Humans are smart enough to know what's right and w
     {swap_char()}
     If they're not here now, I don't care.
 * ["A warrior."]
+    {swap_char()}
     I'm a warrior, here to defeat you, and return this river to what it once was.
     {swap_char()}
     Defeat me? You, a single fish, think you could defeat a whole river?
@@ -167,6 +168,7 @@ The river is better this way! Humans are smart enough to know what's right and w
    I-
    How dare you!
    I won't let you get away with trying to humiliate me! 
+   ~choicespassed += 1
 {force_char(NPC)} // The NPC will be having the final say
 - /* Flirt decision here (the hyphen acts as a gather - please don't remove)
 I'll assume that passing all three choices is an automatic success,

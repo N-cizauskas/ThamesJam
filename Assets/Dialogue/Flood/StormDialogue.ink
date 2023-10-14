@@ -1,4 +1,4 @@
-﻿// Define some variables we will be using
+// Define some variables we will be using
 VAR battlebonus = 0 // This will track the bonus gained for the boss battle
 CONST NPC = "The Storm" // This is the character you are talking to.
 VAR current_char = NPC // This variable tracks the currently talking character. It will be passed to the "current talker" box every time dialogue is continued

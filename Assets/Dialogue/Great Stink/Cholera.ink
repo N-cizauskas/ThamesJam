@@ -1,4 +1,4 @@
-﻿// Define some variables we will be using
+// Define some variables we will be using
 VAR charm = 0 // The idea is to get the charm from the game stat (somehow)
 CONST threshold1 = 5 // Threshold charm for passing if you passed only one choice
 CONST threshold2 = 3 // The same, but for passing two choices
@@ -68,7 +68,7 @@ Well, well, well, didn't expect to see multi-cellular life down here! Hehehe... 
     {swap_char()}
     We'll see about that in 12-60 hours! Hehehe...
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 1
-- What's your favourite sympton that I cause? // Yes, please do
+- What's your favourite symptom that I cause? // Yes, please do
 * [Refuse to Answer]
     {swap_char()}
     I'm not answering that.

@@ -1,4 +1,4 @@
-﻿// Define some variables we will be using
+// Define some variables we will be using
 VAR charm = 0 // The idea is to get the charm from the game stat (somehow)
 CONST threshold1 = 5 // Threshold charm for passing if you passed only one choice
 CONST threshold2 = 3 // The same, but for passing two choices
@@ -49,7 +49,7 @@ Hey there. What kind of music do you like?// Prompt 1
     Wow, you're the real deal!
     ~ choicespassed += 1
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 1
-What's your favourite instrument? // Prompt 2
+- What's your favourite instrument? // Prompt 2
 * [Hardcore]
     {swap_char()}
     The metal pipe.
@@ -67,7 +67,7 @@ What's your favourite instrument? // Prompt 2
     {swap_char()}
     Ok. I like bass.
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 2
-I'm so glad I can be rocking here again. I sure hope nothing uncool happens. // Prompt 3
+- I'm so glad I can be rocking here again. I sure hope nothing uncool happens. // Prompt 3
 * [Cool]
    {swap_char()}
     Uncool things are so normie.

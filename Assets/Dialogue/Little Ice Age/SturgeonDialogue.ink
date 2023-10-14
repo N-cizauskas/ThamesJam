@@ -36,7 +36,7 @@ Good day! To whom do I have the pleasure of speaking? // Prompt 1
     {swap_char()}
     Hi there! The name’s Tessie!
     {swap_char()}
-    It seems we shall be foregoing pleasantries
+    It seems we shall be foregoing pleasantries.
 * [Quirky]
     {swap_char()}
     Hiya! I’m Tessie the plesi- (osaur)!
@@ -49,21 +49,42 @@ Good day! To whom do I have the pleasure of speaking? // Prompt 1
     I am Sturgeon - the king’s fish, don’t you know?
     ~ choicespassed += 1
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 1
-- Insert dialogue to prompt choice 2 here // Prompt 2
-* [Choice 2a]
-    Dialogue 2a
-* [Choice 2b]
-    Dialogue 2b
-* [Choice 2c]
-    Dialogue 2c
+- I fancy a spot of afternoon tea, I think. What about you? // Prompt 2
+* [Wishful]
+    {swap_char()}
+    Ah, that sounds lovely. May I join you?
+    {swap_char()}
+    Sorry, chum. You seem pleasant enough but as the king's fish I simply don't mingle with commoners.
+* [Curious]
+    {swap_char()}
+    I think I shall have a wonder in your great river.
+    {swap_char()}
+    Ah, yes. A fine idea for such a crisp day.
+    Just take care not to disturb the bottom feeders.
+    ~ choicespassed += 1
+* [Jealous]
+    {swap_char()}
+    Ah, what I would give for a nice afternoon tea...
+    {swap_char()}
+    Hmph. Well, if you're not fit to be the king's fish you're not fit to eat like the king.
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 2
-- Insert dialogue to prompt choice 3 here // Prompt 3
-* [Choice 3a]
-    Dialogue 3a
-* [Choice 3b]
-    Dialogue 3b
-* [Choice 3c]
-   Dialogue 3c
+- What a bothersome situation this ice has caused. // Prompt 3
+* [Sarcasm]
+    {swap_char()}
+    Well, aren't you the king's fish? Can't you command someone to do something about it?
+    {swap_char()}
+    Your cheek doesn't slide past me easily.
+* [Flattery]
+    {swap_char()}
+    Your highness, I shall deal with the problem promptly.
+    {swap_char()}
+    Simply splendid. You shall be heralded as a knight of the realm, no doubt.
+    ~ choicespassed += 1
+* [Dismissal]
+    {swap_char()}
+    It's not so bad, I think. Nice to get a bit of frost in London.
+    {swap_char()}
+    It's been too frosty for too long, I dare say. I'd rather a little bit of respite.
 {force_char(NPC)} // The NPC will be having the final say
 - /* Flirt decision here (the hyphen acts as a gather - please don't remove)
 I'll assume that passing all three choices is an automatic success,
@@ -82,13 +103,13 @@ and ending up in between will leave your chances of success to your charm stat.
 }
 { 
 - flirtpassed:
-    Flirt pass dialogue here
+    Well met.
     ~ charm += choicespassed
     ~ enable_charbox = false // Disable the character box for this message
     {NPC} has been charmed by your flirt!
     Your charm has increased to {charm}!
 - else:
-    Flirt failure dialogue here
+    Get out of my sight.
     ~ enable_charbox = false
     {NPC} has left.
 }

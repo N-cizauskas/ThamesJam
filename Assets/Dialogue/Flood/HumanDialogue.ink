@@ -1,4 +1,4 @@
-﻿// Define some variables we will be using
+// Define some variables we will be using
 VAR charm = 0 // The idea is to get the charm from the game stat (somehow)
 CONST threshold1 = 5 // Threshold charm for passing if you passed only one choice
 CONST threshold2 = 3 // The same, but for passing two choices
@@ -37,6 +37,7 @@ Gluuuug! Glug! \(AAAAAAAAAAA! I'm gonna drown!\) // Prompt 1
     Hey, hey, hey. It's ok. I'm not sure there's anything we can do to save you, but if you panic that will make things worse.
     {swap_char()}
     Glug... Glug? \(You mean... this is really the end?\)
+    ~ choicespassed += 1
 * [Reassure]
     {swap_char()}
     Listen, listen, we'll rescue you, ok? Just stay calm.
@@ -72,6 +73,7 @@ Gluuuug! Glug! \(AAAAAAAAAAA! I'm gonna drown!\) // Prompt 1
     This is it. Just relax and it'll make it easier when you go...
     {swap_char()}
     Glug. \(This really is it, huh. Alright, I'll be calm.\)
+    ~ choicespassed += 1
 * [Practical]
     {swap_char()}
     Maybe you can try grab onto a tree branch or something?!
@@ -79,7 +81,7 @@ Gluuuug! Glug! \(AAAAAAAAAAA! I'm gonna drown!\) // Prompt 1
     Glug. Glug... (It's too late. My strength is gone...)
 * [Sad]
     {swap_char()}
-    No! Just hold your breath a little longer and you'll make it!
+    No! Please don't go! Just hold your breath a little longer and you'll make it!
     {swap_char()}
     Glug... (I don't think I can last...) 
    
