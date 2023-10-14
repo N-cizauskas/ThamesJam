@@ -26,12 +26,16 @@ public class UIManager : MonoBehaviour
     public GameObject EncounterSprite;
 
     [Header("UI Elements - Encounter")]
+    [Tooltip("The parent game object that houses all encounter UI elements.")]
+    public GameObject EncounterRootParent;
     public GameObject PlayerSprite;
     public GameObject EnemySprite;
 
     [Header("UI Elements - Encounter (Main)")]
+    [Tooltip("The parent game object that houses all elements in the main encounter screen.")]
+    public GameObject EncounterMainParent;
     [Tooltip("The parent game object that houses the flirt/flounder/flee buttons.")]
-    public GameObject EncounterButtonParent;
+    public GameObject EncounterButtons;
 
     [Header("UI Elements - Encounter (Flounder)")]
     [Tooltip("The parent game object that houses all the pre-battle UI elements.")]
@@ -70,7 +74,7 @@ public class UIManager : MonoBehaviour
     // constants for encounter scene
     private static readonly UnityEngine.Vector2 PLAYER_ENCOUNTER_INITIAL_SPRITE_POSITION = new UnityEngine.Vector2(-790, -140);
     private static readonly UnityEngine.Vector2 PLAYER_ENCOUNTER_END_SPRITE_POSITION = new UnityEngine.Vector2(-460, -140);
-    private static readonly UnityEngine.Vector2 ENEMY_ENCOUNTER_INITIAL_SPRITE_POSITION = new UnityEngine.Vector2(680, -160);
+    private static readonly UnityEngine.Vector2 ENEMY_ENCOUNTER_INITIAL_SPRITE_POSITION = new UnityEngine.Vector2(900, -160);
 
     // constants for pre-battle screen animation
     private static readonly String CENTER_TITLE_DEFAULT = "Get ready...";
@@ -127,7 +131,8 @@ public class UIManager : MonoBehaviour
         PlayerSprite.SetActive(false);
         EnemySprite.SetActive(false);
         FlounderParent.SetActive(false);
-        EncounterButtonParent.SetActive(false);
+        EncounterButtons.SetActive(false);
+        EncounterRootParent.SetActive(false);
     }
 
     void Update()
@@ -170,19 +175,48 @@ public class UIManager : MonoBehaviour
         PauseBox.SetActive(false);
     }
 
+    void OnEnemyEncounter(object sender, EnemyEventArgs e)
+    {
+        EncounterRootParent.SetActive(true);
+        PlayerSprite.SetActive(true);
+        EnemySprite.SetActive(true);
+        PlayerSprite.GetComponent<AdvancedUIMovement>().MoveTo(PLAYER_ENCOUNTER_INITIAL_SPRITE_POSITION);
+        EnemySprite.GetComponent<AdvancedUIMovement>().MoveTo(ENEMY_ENCOUNTER_INITIAL_SPRITE_POSITION);
+        EnemySprite.GetComponent<Image>().sprite = e.EnemyData.Sprite;
+
+        FlounderParent.SetActive(false);
+        ResetBattleLeverage();
+        // TODO: set animation length values as defined constants based on GameStateManager.ENCOUNTER_DELAY_SECONDS
+        EncounterSprite.GetComponent<AdvancedSpriteMovement>().Pop(e.EnemyData.OverworldPosition, 0.5f, 0.5f);
+        StartCoroutine(StartDelayedScreenFadeInOut(0.5f));
+
+    }
+
+    void OnEncounterStart(object sender, EnemyEventArgs e)
+    {
+        EncounterMainParent.SetActive(true);
+        EncounterButtons.SetActive(true);
+
+        PlayerSprite.GetComponent<AdvancedUIMovement>().MoveTo(
+            PLAYER_ENCOUNTER_END_SPRITE_POSITION, 1f, AdvancedUIMovement.MoveType.EASE_OUT
+        );
+        EnemySprite.GetComponent<AdvancedUIMovement>().MoveTo(
+            e.EnemyData.EncounterSpritePosition, 1f, AdvancedUIMovement.MoveType.EASE_OUT
+        );
+    }
+
     void OnPrepareBattle(object sender, EnemyEventArgs e)
     {
-        EncounterButtonParent.SetActive(false);
+        FlounderParent.SetActive(true);
+        EncounterButtons.SetActive(false);
+        PlayerTugGauge.SetActive(false);
+        PlayerTugPullRange.SetActive(false);
+        PlayerTugCritRange.SetActive(false);
 
         CenterTitle.color = Color.white;
         CenterTitle.text = CENTER_TITLE_DEFAULT;
         CenterSubtitle.text = CENTER_SUBTITLE_DEFAULT;
 
-        PlayerTugGauge.SetActive(false);
-        PlayerTugPullRange.SetActive(false);
-        PlayerTugCritRange.SetActive(false);
-
-        FlounderParent.SetActive(true);
         Overlay.GetComponent<OverlayFlash>().Flash(Color.white, 1);
         EnemyTitleText.GetComponent<TextMeshProUGUI>().text = e.EnemyData.Name;
         EnemySubtitleText.GetComponent<TextMeshProUGUI>().text = e.EnemyData.Subtext;
@@ -222,7 +256,6 @@ public class UIManager : MonoBehaviour
         );
     }
 
-
     void OnStartBattle(object sender, EventArgs e)
     {
         PlayerTugGauge.SetActive(true);
@@ -239,33 +272,6 @@ public class UIManager : MonoBehaviour
     {
         FlounderParent.SetActive(false);
         ResetBattleLeverage();
-    }
-
-    void OnEnemyEncounter(object sender, EnemyEventArgs e)
-    {
-        PlayerSprite.SetActive(true);
-        EnemySprite.SetActive(true);
-        PlayerSprite.GetComponent<AdvancedUIMovement>().MoveTo(PLAYER_ENCOUNTER_INITIAL_SPRITE_POSITION);
-        EnemySprite.GetComponent<AdvancedUIMovement>().MoveTo(ENEMY_ENCOUNTER_INITIAL_SPRITE_POSITION);
-
-        FlounderParent.SetActive(false);
-        ResetBattleLeverage();
-        // TODO: set animation length values as defined constants based on GameStateManager.ENCOUNTER_DELAY_SECONDS
-        EncounterSprite.GetComponent<AdvancedSpriteMovement>().Pop(e.EnemyData.OverworldPosition, 0.5f, 0.5f);
-        StartCoroutine(StartDelayedScreenFadeInOut(0.5f));
-
-    }
-
-    void OnEncounterStart(object sender, EnemyEventArgs e)
-    {
-        PlayerSprite.GetComponent<AdvancedUIMovement>().MoveTo(
-            PLAYER_ENCOUNTER_END_SPRITE_POSITION, 1f, AdvancedUIMovement.MoveType.EASE_OUT
-        );
-        EnemySprite.GetComponent<AdvancedUIMovement>().MoveTo(
-            e.EnemyData.EncounterSpritePosition, 1f, AdvancedUIMovement.MoveType.EASE_OUT
-        );
-
-        EncounterButtonParent.SetActive(true);
     }
 
     private IEnumerator StartDelayedScreenFadeInOut(float delayInSeconds)

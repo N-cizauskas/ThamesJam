@@ -248,4 +248,14 @@ public class PlayerRun : MonoBehaviour
 		SceneManager.LoadScene(Level_5);
 
 	}
+
+	/**
+     * DEBUG FUNCTIONS
+     * The idea is that these should get called as a result of some easily controllable action, e.g. button press
+    **/
+    public void DebugStartEncounter(EnemyData enemy)
+    {
+        RaiseEncounterEvent?.Invoke(this, new EnemyEventArgs(enemy));
+    }
+
 }

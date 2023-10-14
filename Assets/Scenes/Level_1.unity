@@ -5766,7 +5766,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &834739877
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7706,11 +7706,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1407539255}
         m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
-        m_MethodName: DebugStartPrebattle
-        m_Mode: 2
+        m_MethodName: StartFlounder
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: a9ee7ade0d990e64bbaa4cf9bec5d645, type: 2}
-          m_ObjectArgumentAssemblyTypeName: EnemyData, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -9257,7 +9257,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1524119790
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10613,7 +10613,7 @@ GameObject:
   - component: {fileID: 1763343622}
   - component: {fileID: 1763343621}
   m_Layer: 5
-  m_Name: Start Battle Button
+  m_Name: Start Encounter Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10683,12 +10683,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1407539255}
-        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
-        m_MethodName: DebugStartPrebattle
+      - m_Target: {fileID: 2025160548}
+        m_TargetAssemblyTypeName: PlayerRun, Assembly-CSharp
+        m_MethodName: DebugStartEncounter
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: a9ee7ade0d990e64bbaa4cf9bec5d645, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: 6988f4eb76f2595478f5497492e28b9a, type: 2}
           m_ObjectArgumentAssemblyTypeName: EnemyData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -11038,7 +11038,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'debug: start battle'
+  m_text: 'debug: start encounter'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13706,9 +13706,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PauseBox: {fileID: 710739676}
   EncounterSprite: {fileID: 1830370808}
+  EncounterRootParent: {fileID: 1524119789}
   PlayerSprite: {fileID: 1919794013}
   EnemySprite: {fileID: 1190582228}
-  EncounterButtonParent: {fileID: 1625932280}
+  EncounterMainParent: {fileID: 939001566}
+  EncounterButtons: {fileID: 1625932280}
   FlounderParent: {fileID: 834739876}
   PlayerTitleText: {fileID: 583333589}
   EnemyTitleText: {fileID: 974359416}

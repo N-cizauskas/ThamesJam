@@ -14,18 +14,18 @@ public class GameStateManager : MonoBehaviour
     // Singleton
     public static GameStateManager Instance { get; private set; }
 
-    // Constants
+    /* Constants */
     public static readonly float ENCOUNTER_DELAY_SECONDS = 1.5f;
     public static readonly float BATTLE_COUNTDOWN_PERIOD_SECONDS = 3f;
-
     private static readonly GameState[] PAUSED_GAME_STATES = {GameState.PAUSED};
 
     public static bool canTurn = true;
 
 
+    /* Game State Variables */
+    // pausing
     public GameState GameState { get; private set; }
-    private GameState previousGameState;    // used for pausing
-
+    private GameState previousGameState;
     public bool IsPaused 
     {
         get {
@@ -33,6 +33,11 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
+    // encounter
+    private EnemyData currentEncounterEnemy;
+
+    // flounder
+    // TODO: maybe add a ScriptableObject to keep track of player stats, like number of battles so far - allows entering a tutorial state
     public float SecondsUntilBattle {
         get {
             return BattleBeginTime - Time.time;
@@ -89,6 +94,7 @@ public class GameStateManager : MonoBehaviour
         Instance = this;
         GameState = GameState.OVERWORLD;    // todo: maybe set this to something else on scene load
         previousGameState = GameState.OVERWORLD;
+        currentEncounterEnemy = null;       // todo: if this causes errors, change to some placeholder enemy
     }
 
     void Start()
@@ -164,6 +170,7 @@ public class GameStateManager : MonoBehaviour
     {
         // Player has collided with an enemy, begin animations and transition
         GameState = GameState.ENCOUNTER_START;
+        currentEncounterEnemy = enemyEventArgs.EnemyData;
         StartCoroutine(RaiseDelayedEncounterMainEvent(ENCOUNTER_DELAY_SECONDS, enemyEventArgs));
     }
 
@@ -204,22 +211,10 @@ public class GameStateManager : MonoBehaviour
         RaiseEncounterMainEvent?.Invoke(this, enemyEventArgs);
     }
 
-
-    /**
-     * DEBUG FUNCTIONS
-     * The idea is that these should get called as a result of some easily controllable action, e.g. button press
-    **/
-
-    public void DebugStartPrebattle(EnemyData enemy)
+    /* Functions called by player input */
+    public void StartFlounder()
     {
         GameState = GameState.PRE_BATTLE;
-        RaisePrepareBattleEvent?.Invoke(this, new EnemyEventArgs(enemy));
-    }
-
-    public void DebugStartEncounter(EnemyData enemy)
-    {
-        Debug.Log("debug start battle pressed");
-        GameState = GameState.ENCOUNTER_START;
-        RaiseStartBattleEvent?.Invoke(this, new EnemyEventArgs(enemy));
+        RaisePrepareBattleEvent?.Invoke(this, new EnemyEventArgs(currentEncounterEnemy));
     }
 }
