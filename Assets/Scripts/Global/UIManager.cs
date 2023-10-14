@@ -37,6 +37,10 @@ public class UIManager : MonoBehaviour
     [Tooltip("The parent game object that houses the flirt/flounder/flee buttons.")]
     public GameObject EncounterButtons;
 
+    [Header("UI Elements - Encounter (Flirt)")]
+    [Tooltip("The parent game object that houses all the flirt dialogue UI elements.")]
+    public GameObject FlirtParent;  // we shouldn't need finer control than this - the DialogueManager should handle the rest.
+
     [Header("UI Elements - Encounter (Flounder)")]
     [Tooltip("The parent game object that houses all the pre-battle UI elements.")]
     public GameObject FlounderParent;
@@ -115,13 +119,15 @@ public class UIManager : MonoBehaviour
     {
         GameStateManager.RegisterPauseHandler(OnPause);
         GameStateManager.RegisterUnpauseHandler(OnUnpause);
+
+        PlayerRun.RegisterEncounterHandler(OnEnemyEncounter);
+        GameStateManager.RegisterEncounterMainHandler(OnEncounterStart);
+        GameStateManager.RegisterStartFlirtHandler(OnFlirtStart);
+        // TODO: something for OnFlirtEnd
         GameStateManager.RegisterPrepareBattleHandler(OnPrepareBattle);
         GameStateManager.RegisterCountdownBattleHandler(OnCountdownBattle);
         GameStateManager.RegisterStartBattleHandler(OnStartBattle);
         GameStateManager.RegisterEndBattleHandler(OnEndBattle);
-
-        PlayerRun.RegisterEncounterHandler(OnEnemyEncounter);
-        GameStateManager.RegisterEncounterMainHandler(OnEncounterStart);
 
         PlayerTugPullRangeTransform = PlayerTugPullRange.GetComponent<RectTransform>();
         PlayerTugCritRangeTransform = PlayerTugCritRange.GetComponent<RectTransform>();
@@ -133,6 +139,7 @@ public class UIManager : MonoBehaviour
         FlounderParent.SetActive(false);
         EncounterButtons.SetActive(false);
         EncounterRootParent.SetActive(false);
+        FlirtParent.SetActive(false);
     }
 
     void Update()
@@ -203,6 +210,19 @@ public class UIManager : MonoBehaviour
         EnemySprite.GetComponent<AdvancedUIMovement>().MoveTo(
             e.EnemyData.EncounterSpritePosition, 1f, AdvancedUIMovement.MoveType.EASE_OUT
         );
+    }
+
+    void OnFlirtStart(object sender, EventArgs e)
+    {
+        FlirtParent.SetActive(true);
+        EncounterButtons.SetActive(false);
+    }
+
+    void OnFlirtEnd(object sender, EventArgs e)
+    {
+        // TODO: placeholder for now, the 'flirt' encounter button should be disabled
+        EncounterButtons.SetActive(true);
+        FlirtParent.SetActive(false);
     }
 
     void OnPrepareBattle(object sender, EnemyEventArgs e)

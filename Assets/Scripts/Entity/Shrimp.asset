@@ -16,6 +16,7 @@ MonoBehaviour:
   Name: shrimpy
   Subtext: a lil' wimpy
   Sprite: {fileID: 21300000, guid: e259ff400120f274aab0d66b3d984119, type: 3}
+  FlirtDialogue: {fileID: 4900000, guid: 4b6d0378738e74edfb1f699672f7993f, type: 3}
   Strength: 0
   Dexterity: 0
   Finesse: 0

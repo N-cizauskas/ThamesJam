@@ -24,8 +24,6 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject characterPanel;
     [SerializeField] private TextMeshProUGUI characterText;
 
-    // The start and continue dialogue buttons
-    public GameObject startDialogueButton;
     public GameObject continueDialogueButton;
 
     private Story currentStory;
@@ -71,12 +69,11 @@ public class DialogueManager : MonoBehaviour
         // can use an InputManager to check, or just go with keyPressed
     }
 
-    public void BeginDialogue(TextAsset inkJson)
+    public void BeginDialogue(EnemyData enemy)
     {
+        TextAsset inkJson = enemy.FlirtDialogue;
         currentStory = new Story(inkJson.text);
 
-        // Disable the "start dialogue" button
-        startDialogueButton.SetActive(false);
         // Enable the "continue dialogue" button (this may be overridden by choices in ContinueDialogue)
         continueDialogueButton.SetActive(true);
 

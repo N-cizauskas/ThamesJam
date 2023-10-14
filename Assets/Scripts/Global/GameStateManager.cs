@@ -48,6 +48,8 @@ public class GameStateManager : MonoBehaviour
     private event EventHandler RaisePauseEvent;
     private event EventHandler RaiseUnpauseEvent;
     private event EventHandler<EnemyEventArgs> RaiseEncounterMainEvent;
+    private event EventHandler RaiseStartFlirtEvent;
+    private event EventHandler RaiseEndFlirtEvent;
     private event EventHandler<EnemyEventArgs> RaisePrepareBattleEvent;
     private event EventHandler RaiseCountdownBattleEvent;   // player has hit the button after the 'get ready' screen
     private event EventHandler RaiseStartBattleEvent;   // this is raised to begin the actual flounder minigame
@@ -66,6 +68,14 @@ public class GameStateManager : MonoBehaviour
     public static void RegisterEncounterMainHandler(EventHandler<EnemyEventArgs> handler)
     {
         Instance.RaiseEncounterMainEvent += handler;
+    }
+    public static void RegisterStartFlirtHandler(EventHandler handler)
+    {
+        Instance.RaiseStartFlirtEvent += handler;
+    }
+    public static void RegisterEndFlirtHandler(EventHandler handler)
+    {
+        Instance.RaiseEndFlirtEvent += handler;
     }
     public static void RegisterPrepareBattleHandler(EventHandler<EnemyEventArgs> handler)
     {
@@ -212,6 +222,13 @@ public class GameStateManager : MonoBehaviour
     }
 
     /* Functions called by player input */
+    public void StartFlirt()
+    {
+        GameState = GameState.ENCOUNTER_FLIRT;
+        RaiseStartFlirtEvent?.Invoke(this, EventArgs.Empty);
+        DialogueManager.Instance.BeginDialogue(currentEncounterEnemy);
+    }
+
     public void StartFlounder()
     {
         GameState = GameState.PRE_BATTLE;

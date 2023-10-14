@@ -5,7 +5,7 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     [Header("Ink JSON")]
-    [SerializeField] private TextAsset inkJSON;
+    [SerializeField] private EnemyData enemy;
 
     private void Update() 
     {
@@ -15,6 +15,6 @@ public class DialogueTrigger : MonoBehaviour
     // this method should usually be private, I think; making it public for testing purposes
     public void EnterDialogue()
     {
-        DialogueManager.Instance.BeginDialogue(inkJSON);
+        DialogueManager.Instance.BeginDialogue(enemy);
     }
 }
