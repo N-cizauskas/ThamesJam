@@ -37,13 +37,17 @@ Hi! What's going on? // Prompt 1
     There's a flood right now. You've been swept into the river.
     {swap_char()}
     Oh no! What should I do?
+    ~ choicespassed += 1
 * [Gentle]
     {swap_char()}
     Um, I think you may have been displaced...
     {swap_char()}
     Huh? What's that mean?
 * [Aggressive]
+    {swap_char()}
     What do you mean, "what's going on"? What are you, He-man?
+    {swap_char()}
+    ...
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 1
 Why am I wet? // Prompt 2
 * [Meme]
@@ -56,6 +60,7 @@ Why am I wet? // Prompt 2
    Because you're in a body of water right now.
    {swap_char()}
    Oh yeah. Good thing I can swim a little bit.
+   ~ choicespassed += 1
 * [Philosophical]
     {swap_char()}
     Why is anyone wet?
@@ -68,6 +73,7 @@ What should I do now? // Prompt 3
     Swim to land?
     {swap_char()}
     Good point!
+    ~ choicespassed += 1
 * [Encouragement]
     {swap_char()}
     Always do your best, no matter what you're doing!
@@ -96,13 +102,13 @@ and ending up in between will leave your chances of success to your charm stat.
 }
 { 
 - flirtpassed:
-    Thanks for your help!
+    Thank ewe for your help!
     ~ charm += choicespassed
     ~ enable_charbox = false // Disable the character box for this message
     {NPC} has been charmed by your flirt!
     Your charm has increased to {charm}!
 - else:
-    Well, nice seeing you.
+    Well, nice seeing ewe.
     ~ enable_charbox = false
     {NPC} has left.
 }
