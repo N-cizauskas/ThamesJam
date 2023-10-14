@@ -124,6 +124,16 @@ public class GameStateManager : MonoBehaviour
     {
         switch (GameState)
         {
+            case GameState.ENCOUNTER_FLIRT:
+            {
+                if (!DialogueManager.Instance.dialogueIsPlaying)
+                {
+                    Debug.Log("Dialogue end");
+                    GameState = GameState.ENCOUNTER_MAIN;
+                    RaiseEndFlirtEvent?.Invoke(this, EventArgs.Empty);
+                }
+                break;
+            }
             case GameState.BATTLING:
             {
                 if (BattleManager.Instance.IsBattleLeverageAtThreshold)

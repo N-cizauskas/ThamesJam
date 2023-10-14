@@ -122,8 +122,10 @@ public class UIManager : MonoBehaviour
 
         PlayerRun.RegisterEncounterHandler(OnEnemyEncounter);
         GameStateManager.RegisterEncounterMainHandler(OnEncounterStart);
+
         GameStateManager.RegisterStartFlirtHandler(OnFlirtStart);
-        // TODO: something for OnFlirtEnd
+        GameStateManager.RegisterEndFlirtHandler(OnFlirtEnd);
+        
         GameStateManager.RegisterPrepareBattleHandler(OnPrepareBattle);
         GameStateManager.RegisterCountdownBattleHandler(OnCountdownBattle);
         GameStateManager.RegisterStartBattleHandler(OnStartBattle);
