@@ -1058,7 +1058,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &151941672
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3321,7 +3321,7 @@ GameObject:
   - component: {fileID: 458903328}
   - component: {fileID: 458903327}
   m_Layer: 5
-  m_Name: Bar
+  m_Name: Enemy Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3371,7 +3371,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 1
   m_UseSpriteMesh: 0
@@ -9582,10 +9582,12 @@ MonoBehaviour:
   <playerTugCritRangeMin>k__BackingField: 0
   <playerTugCritRangeMax>k__BackingField: 0
   <playerTugging>k__BackingField: 0
+  <enemyTugValue>k__BackingField: 0
   playerStrength: 0
   playerDexterity: 0
   playerFinesse: 0
-  enemyDifficulty: 0
+  enemySpeed: 0
+  enemyStrength: 0
 --- !u!1001 &1424128089
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14884,6 +14886,7 @@ MonoBehaviour:
   PlayerTugGauge: {fileID: 1308463044}
   PlayerTugPullRange: {fileID: 1619424659}
   PlayerTugCritRange: {fileID: 273865287}
+  EnemyTugGauge: {fileID: 458903325}
   BattleLeverageIndicator: {fileID: 692027603}
   GaugeWidth: 334
   LeverageWidth: 800

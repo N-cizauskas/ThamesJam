@@ -58,6 +58,7 @@ public class UIManager : MonoBehaviour
     public GameObject PlayerTugGauge;
     public GameObject PlayerTugPullRange;
     public GameObject PlayerTugCritRange;
+    public GameObject EnemyTugGauge;
     public GameObject BattleLeverageIndicator;
     public int GaugeWidth;
     public int LeverageWidth;
@@ -73,6 +74,7 @@ public class UIManager : MonoBehaviour
     private RectTransform PlayerTugCritRangeTransform;
     private RectTransform BattleLeverageIndicatorTransform;
     private Image PlayerTugGaugeImage;
+    private Image EnemyTugGaugeImage;
     private float leveragePosition;
 
     // constants for encounter scene
@@ -135,6 +137,7 @@ public class UIManager : MonoBehaviour
         PlayerTugCritRangeTransform = PlayerTugCritRange.GetComponent<RectTransform>();
         BattleLeverageIndicatorTransform = BattleLeverageIndicator.GetComponent<RectTransform>();
         PlayerTugGaugeImage = PlayerTugGauge.GetComponent<Image>();
+        EnemyTugGaugeImage = EnemyTugGauge.GetComponent<Image>();
 
         PlayerSprite.SetActive(false);
         EnemySprite.SetActive(false);
@@ -167,7 +170,7 @@ public class UIManager : MonoBehaviour
             case GameState.BATTLING:
             {
                 UpdateCritRange();  // TODO: crit range should only need to run when the player starts a new tug
-                UpdateTugGauge();
+                UpdateTugGauges();
                 UpdateBattleLeverageTarget();
                 break;
             } 
@@ -232,6 +235,7 @@ public class UIManager : MonoBehaviour
         FlounderParent.SetActive(true);
         EncounterButtons.SetActive(false);
         PlayerTugGauge.SetActive(false);
+        EnemyTugGauge.SetActive(false);
         PlayerTugPullRange.SetActive(false);
         PlayerTugCritRange.SetActive(false);
 
@@ -281,6 +285,7 @@ public class UIManager : MonoBehaviour
     void OnStartBattle(object sender, EventArgs e)
     {
         PlayerTugGauge.SetActive(true);
+        EnemyTugGauge.SetActive(true);
         PlayerTugPullRange.SetActive(true);
         PlayerTugCritRange.SetActive(true);
         ResetBattleLeverage();
@@ -373,9 +378,10 @@ public class UIManager : MonoBehaviour
         PlayerTugCritRangeTransform.SetRight(GaugeWidth * (1 - BattleManager.Instance.playerTugCritRangeMax / 100f));
     }
 
-    private void UpdateTugGauge()
+    private void UpdateTugGauges()
     {
         PlayerTugGaugeImage.fillAmount = BattleManager.Instance.playerTugValue / 100f;
+        EnemyTugGaugeImage.fillAmount = BattleManager.Instance.enemyTugValue / 100f;
     }
 
     private void UpdateBattleLeverageTarget()

@@ -13,7 +13,6 @@ public class EnemyData : ScriptableObject
     public String Subtext;
     public Sprite Sprite;
     public TextAsset FlirtDialogue;
-    public int Strength;
-    public int Dexterity;
-    public int Finesse;
+    public int Speed;  // used in BattleManager. How much the enemy's tug value increases each second. 100 means a tug is performed every second.
+    public int Strength;  // used in BattleManager. How much the enemy's tugs decrease leverage by. battle leverage is between 0 and 100.
 }
