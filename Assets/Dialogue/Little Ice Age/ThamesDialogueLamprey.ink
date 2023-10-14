@@ -67,13 +67,23 @@ You're not trying to impede on my territory, are you?// Please do
     You got guts to say that to me, kid.
     ~ choicespassed += 1
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 1
-- Insert dialogue to prompt choice 2 here // Yes, please do
-* [Choice 2a]
-    Dialogue 2a
-* [Choice 2b]
-    Dialogue 2b
-* [Choice 2c]
-    Dialogue 2c
+- How much can you lift, bro? // Yes, please do
+* [Arrogant]
+    {swap_char()}
+    Like, so much. More than you.
+    {swap_char()}
+    I doubt that, kiddo. Where are your gains?
+* [Anxious]
+    {swap_char()}
+    Barely anything. Oh, I'm such a weakling compared to you...
+    {swap_char()}
+    Hmm. Sounds like someone knows what they're talking about!
+    ~ choicespassed += 1
+* [Practical]
+    {swap_char()}
+    Lift? I have flippers, I can't lift anything.
+    {swap_char()}
+    It's just a figure of speech, kid!
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 2
 - All this ice everywhere is so frustrating! What's going on around here!? // Absolutely, please do
 * [Try to explain]
