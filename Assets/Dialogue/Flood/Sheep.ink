@@ -1,4 +1,4 @@
-﻿// Define some variables we will be using
+// Define some variables we will be using
 VAR charm = 0 // The idea is to get the charm from the game stat (somehow)
 CONST threshold1 = 5 // Threshold charm for passing if you passed only one choice
 CONST threshold2 = 3 // The same, but for passing two choices
@@ -49,7 +49,7 @@ Hi! What's going on? // Prompt 1
     {swap_char()}
     ...
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 1
-Why am I wet? // Prompt 2
+- Why am I wet? // Prompt 2
 * [Meme]
     {swap_char()}
     Because water is wet.
@@ -67,7 +67,7 @@ Why am I wet? // Prompt 2
     {swap_char()}
     That's kind of weird to ask.
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 2
-What should I do now? // Prompt 3
+- What should I do now? // Prompt 3
 * [Simple]
     {swap_char()}
     Swim to land?

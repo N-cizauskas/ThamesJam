@@ -1,4 +1,4 @@
-﻿// Define some variables we will be using
+// Define some variables we will be using
 VAR charm = 0 // The idea is to get the charm from the game stat (somehow)
 CONST threshold1 = 5 // Threshold charm for passing if you passed only one choice
 CONST threshold2 = 3 // The same, but for passing two choices
@@ -50,7 +50,7 @@ Woah, woah, woah. What kind of tiny creature are you supposed to be? No offense!
     Hi! I am a seahorse, named after large land animals called horses - probably because I am so large!
 
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 1
-I excerise all the time, to keep my height up.  What's your favourite workout, mate?// Prompt 2
+-I exercise all the time, to keep my height up.  What's your favourite workout, mate?// Prompt 2
 * [Lazy]
     {swap_char()}
     Oh, I don't exercise.  Swimming around and saving the day is enough to keep me fit!
@@ -68,7 +68,7 @@ I excerise all the time, to keep my height up.  What's your favourite workout, m
     {swap_char()}
     I can do 1,000 of those right now.
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 2
-You know, if something happens to this river, I won't be able to keep fit.  Is there anything I can do to help? // Prompt 3
+-You know, if something happens to this river, I won't be able to keep fit.  Is there anything I can do to help? // Prompt 3
 * [Corporate]
     {swap_char()}
     Reuse, Reduce, Recycle! Everyone do your bit! We are all a small part of the solution!

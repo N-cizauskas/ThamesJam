@@ -1,4 +1,4 @@
-﻿// Define some variables we will be using
+// Define some variables we will be using
 VAR charm = 0 // The idea is to get the charm from the game stat (somehow)
 CONST threshold1 = 5 // Threshold charm for passing if you passed only one choice
 CONST threshold2 = 3 // The same, but for passing two choices
@@ -49,7 +49,7 @@ Why, hello there... what brings a charmer like you to these parts?// Prompt 1
     {swap_char()}
     What an egoist.
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 1
-Say... what do you make of me? // Prompt 2
+- Say... what do you make of me? // Prompt 2
 * [Flatter]
     {swap_char()}
     You're the most beautiful eel I've ever seen.
@@ -67,7 +67,7 @@ Say... what do you make of me? // Prompt 2
     {swap_char()}
     What a plain answer.
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 2
-Would a strong plesiosaur like yourself be able to keep me safe in the unsure times ahead? // Prompt 3
+- Would a strong plesiosaur like yourself be able to keep me safe in the unsure times ahead? // Prompt 3
 * [Gaslight]
     {swap_char()}
     What unsure times?

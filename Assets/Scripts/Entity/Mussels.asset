@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1afbed5d2bd3f414099aea6cb3c1bb6a, type: 3}
+  m_Name: Mussels
+  m_EditorClassIdentifier: 
+  EncounterSpritePosition: {x: 360, y: -110}
+  Name: mussels
+  Subtext: hesistant for nuzzles
+  Sprite: {fileID: 21300000, guid: a7a00369438eb3b489b2c9756ed015a4, type: 3}
+  Strength: 1
+  Dexterity: 0
+  Finesse: 0

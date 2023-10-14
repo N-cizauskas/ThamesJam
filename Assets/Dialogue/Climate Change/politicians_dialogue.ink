@@ -1,4 +1,4 @@
-﻿VAR battlebonus = 0 // This will track the bonus gained for the boss battle
+VAR battlebonus = 0 // This will track the bonus gained for the boss battle
 CONST NPC = "The Politicians" // This is the character you are talking to.
 VAR current_char = NPC // This variable tracks the currently talking character. It will be passed to the "current talker" box every time dialogue is continued
 VAR choicespassed = 0 // Flags the number of times we make the correct choice

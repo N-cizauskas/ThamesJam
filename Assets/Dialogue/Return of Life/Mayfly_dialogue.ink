@@ -1,4 +1,4 @@
-﻿// Define some variables we will be using
+// Define some variables we will be using
 VAR charm = 0 // The idea is to get the charm from the game stat (somehow)
 CONST threshold1 = 5 // Threshold charm for passing if you passed only one choice
 CONST threshold2 = 3 // The same, but for passing two choices
@@ -49,7 +49,7 @@ What is up, broski! // Prompt 1
     {swap_char()}
     ... You're ruining the vibe.
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 1
-I am just having such a good time right now. Literally nothing could stop me from having a good time right now. You feel? // Prompt 2
+- I am just having such a good time right now. Literally nothing could stop me from having a good time right now. You feel? // Prompt 2
 * [Relatable]
     {swap_char()}
     I feel you so much, broski.
@@ -67,7 +67,7 @@ I am just having such a good time right now. Literally nothing could stop me fro
     Yeah, now we're talking! Let's get moving!
     ~ choicespassed += 1
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 2
-I'm kinda worried something is vibe checking me lately. You feel? // Prompt 3
+- I'm kinda worried something is vibe checking me lately. You feel? // Prompt 3
 * [Partying]
    {swap_char()}
     Can't hear you, broski. Music is too loud!

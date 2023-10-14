@@ -1,4 +1,4 @@
-﻿// Define some variables we will be using
+// Define some variables we will be using
 VAR charm = 0 // The idea is to get the charm from the game stat (somehow)
 CONST threshold1 = 5 // Threshold charm for passing if you passed only one choice
 CONST threshold2 = 3 // The same, but for passing two choices
@@ -49,7 +49,7 @@ Hello! I'm a salmon! Everyone loves me! They even make special treats for me on 
     {swap_char()}
     Huh? What do you mean? Why wouldn't it be?
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 1
-The humans seem to love it now that I'm back! Although a few of my brothers have been mysteriously disappearing lately. // Prompt 2
+- The humans seem to love it now that I'm back! Although a few of my brothers have been mysteriously disappearing lately. // Prompt 2
 * [Honest]
     {swap_char()}
     They were eaten by humans.
@@ -67,7 +67,7 @@ The humans seem to love it now that I'm back! Although a few of my brothers have
     {swap_char()}
     Oh, you're probably right.
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 2
-I'm so happy to be back in the Thames.  I hope I never have to leave again! // Prompt 3
+- I'm so happy to be back in the Thames.  I hope I never have to leave again! // Prompt 3
 * [Rude]
     {swap_char()}
     Well, soon you'll have no choice. Someone is going to eat you.
