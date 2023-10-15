@@ -26,7 +26,8 @@ public class GameStateManager : MonoBehaviour
         GameState.PRE_BATTLE,
         GameState.BATTLE_COUNTDOWN,
         GameState.BATTLING,
-        GameState.BATTLE_END
+        GameState.BATTLE_END,
+        GameState.ENCOUNTER_END
     };
 
     public static bool canTurn = true;
