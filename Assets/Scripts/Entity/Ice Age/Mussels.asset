@@ -20,6 +20,6 @@ MonoBehaviour:
   Speed: 0
   Strength: 1
   CharmThreshold1: 0
-  CharmThreshold2: 0
+  CharmThreshold2: 1
   IsBoss: 0
   BossCheck: 0

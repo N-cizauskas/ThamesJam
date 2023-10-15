@@ -19,7 +19,7 @@ MonoBehaviour:
   FlirtDialogue: {fileID: 4900000, guid: 4b6d0378738e74edfb1f699672f7993f, type: 3}
   Speed: 25
   Strength: 10
-  CharmThreshold1: 5
-  CharmThreshold2: 3
+  CharmThreshold1: 0
+  CharmThreshold2: 0
   IsBoss: 0
   BossCheck: 0
