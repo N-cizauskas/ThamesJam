@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Seal
   m_EditorClassIdentifier: 
   EncounterSpritePosition: {x: 0, y: 0}
-  Name: 
-  Subtext: 
-  Sprite: {fileID: 0}
-  FlirtDialogue: {fileID: 0}
-  Speed: 0
-  Strength: 0
+  Name: Seal
+  Subtext: let's seal the deal
+  Sprite: {fileID: 21300000, guid: 970caa398c6b289449023e545f8eb8f3, type: 3}
+  FlirtDialogue: {fileID: 4900000, guid: d931d2703efab4e46a2894ba4759ddd7, type: 3}
+  Speed: 25
+  Strength: 10
   CharmThreshold1: 0
-  CharmThreshold2: 0
+  CharmThreshold2: 1
   IsBoss: 0
   BossCheck: 0

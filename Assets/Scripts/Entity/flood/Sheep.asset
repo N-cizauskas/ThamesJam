@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1afbed5d2bd3f414099aea6cb3c1bb6a, type: 3}
-  m_Name: Shark
+  m_Name: Sheep
   m_EditorClassIdentifier: 
   EncounterSpritePosition: {x: 0, y: 0}
-  Name: Shark
-  Subtext: I'll make my mark
-  Sprite: {fileID: 21300000, guid: 9a42727c2955af548b12c70cf72262bd, type: 3}
-  FlirtDialogue: {fileID: 4900000, guid: 0fd0bfda601fb7145aa1a94ef907c843, type: 3}
+  Name: Sheep
+  Subtext: count me to sleep
+  Sprite: {fileID: 21300000, guid: d5476019ed8132448925f62e0bef253b, type: 3}
+  FlirtDialogue: {fileID: 4900000, guid: 1bd62702727af8a4797cd1a1e5a8924f, type: 3}
   Speed: 25
   Strength: 10
   CharmThreshold1: 0

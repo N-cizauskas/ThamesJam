@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1afbed5d2bd3f414099aea6cb3c1bb6a, type: 3}
-  m_Name: Shark
+  m_Name: Chicken
   m_EditorClassIdentifier: 
   EncounterSpritePosition: {x: 0, y: 0}
-  Name: Shark
-  Subtext: I'll make my mark
-  Sprite: {fileID: 21300000, guid: 9a42727c2955af548b12c70cf72262bd, type: 3}
-  FlirtDialogue: {fileID: 4900000, guid: 0fd0bfda601fb7145aa1a94ef907c843, type: 3}
-  Speed: 25
-  Strength: 10
+  Name: Chicken
+  Subtext: winner winner chicken dinner
+  Sprite: {fileID: 21300000, guid: d1d9c8f7ea2f55c4c95ffd8fdb6aeddb, type: 3}
+  FlirtDialogue: {fileID: 4900000, guid: a74899f94408ce54cbfd9d8a2a96dea7, type: 3}
+  Speed: 20
+  Strength: 2
   CharmThreshold1: 0
   CharmThreshold2: 1
   IsBoss: 0

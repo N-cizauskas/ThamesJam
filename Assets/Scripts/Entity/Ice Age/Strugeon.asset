@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1afbed5d2bd3f414099aea6cb3c1bb6a, type: 3}
-  m_Name: Shark
+  m_Name: Strugeon
   m_EditorClassIdentifier: 
   EncounterSpritePosition: {x: 0, y: 0}
-  Name: Shark
-  Subtext: I'll make my mark
-  Sprite: {fileID: 21300000, guid: 9a42727c2955af548b12c70cf72262bd, type: 3}
-  FlirtDialogue: {fileID: 4900000, guid: 0fd0bfda601fb7145aa1a94ef907c843, type: 3}
+  Name: Sturgeon
+  Subtext: (not Nicola)
+  Sprite: {fileID: 21300000, guid: 7d71ca6e879019e40a89dddd59a3a1a5, type: 3}
+  FlirtDialogue: {fileID: 4900000, guid: 9d334a5ea57bca249ad46685db63a87a, type: 3}
   Speed: 25
   Strength: 10
   CharmThreshold1: 0
