@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1afbed5d2bd3f414099aea6cb3c1bb6a, type: 3}
-  m_Name: Shrimp
+  m_Name: leech
   m_EditorClassIdentifier: 
-  EncounterSpritePosition: {x: 360, y: -110}
-  Name: Shrimp
-  Subtext: a lil' wimp
-  Sprite: {fileID: 21300000, guid: 92fc1ce6c27dde54b8a4412f3cc306e1, type: 3}
-  FlirtDialogue: {fileID: 4900000, guid: 4b6d0378738e74edfb1f699672f7993f, type: 3}
-  Speed: 25
-  Strength: 10
+  EncounterSpritePosition: {x: 0, y: 0}
+  Name: Leech
+  Subtext: sucks
+  Sprite: {fileID: 21300000, guid: 84f359bbb353435418e2bc45828e7e40, type: 3}
+  FlirtDialogue: {fileID: 4900000, guid: 7304a227e9d5b034f9653aac90b161e2, type: 3}
+  Speed: 0
+  Strength: 0
   CharmThreshold1: 0
   CharmThreshold2: 0
   IsBoss: 0
