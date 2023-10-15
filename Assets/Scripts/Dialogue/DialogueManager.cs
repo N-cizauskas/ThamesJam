@@ -104,6 +104,33 @@ public class DialogueManager : MonoBehaviour
         ContinueDialogue();
     }
 
+    public void PostBossDialogue(EnemyData enemy)
+    {
+        TextAsset inkJson = enemy.PostBossDialogue;
+        currentStory = new Story(inkJson.text);
+
+        // Enable the "continue dialogue" button (this may be overridden by choices in ContinueDialogue)
+        continueDialogueButton.SetActive(true);
+
+        // Set player charm in the story
+
+        currentStory.variablesState["charm"] = PlayerRun.tessieCharm;
+
+        // Set the NPC's charm thresholds
+
+        currentStory.variablesState["threshold1"] = CThreshold1;
+        currentStory.variablesState["threshold2"] = CThreshold2;
+
+        // Set also the current character to the story's starting character:
+
+        characterText.text = (string)currentStory.variablesState["current_char"];
+
+        dialogueIsPlaying = true;
+        dialoguePanel.SetActive(true);
+        characterPanel.SetActive(true);
+        ContinueDialogue();
+    }
+
     public void ContinueDialogue()
     {
         if (currentStory.canContinue)

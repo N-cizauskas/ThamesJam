@@ -156,7 +156,7 @@ public class PlayerRun : MonoBehaviour
 		
 		if (SceneChange == 5) //Boss
 		{
-			BossScreen.SetActive(true);
+			FlightOrFlirt.SetActive(true);
 			MvmOk = false;
 			RB.velocity = new Vector2(0, 0);
 		}

@@ -89,6 +89,7 @@ public class BattleManager : MonoBehaviour
         GameStateManager.RegisterPrepareBattleHandler(OnPrepareBattle);
         GameStateManager.RegisterStartBattleHandler(OnStartBattle);
         GameStateManager.RegisterEndBattleHandler(OnEndBattle);
+        GameStateManager.RegisterEndBossHandler(OnEndBossBattle);
 
         UpdatePlayerTugRange();
         UpdatePlayerCritPosition();
@@ -149,12 +150,13 @@ public class BattleManager : MonoBehaviour
 
         Destroy(gameObject);
         battleOngoing = false;
-        // Joe: Boss state trigger here
-        if (BossCheck > 0)
-        {
-            OnEndBossBattle();
-        }
+        // // Joe: Boss state trigger here
+        // if (BossCheck > 0)
+        // {
+        //     OnEndBossBattle();
+        // }
     }
+
 
     void OnPause(object sender, EventArgs e)
     {
@@ -216,8 +218,9 @@ public class BattleManager : MonoBehaviour
         }
     }
 
-    private void OnEndBossBattle()
+    private void OnEndBossBattle(object sender, EventArgs e)
     {
+
         if (BossCheck == 1)
         {
             SceneManager.LoadScene("Stink_Intro");

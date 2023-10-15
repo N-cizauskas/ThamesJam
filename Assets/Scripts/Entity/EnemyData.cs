@@ -19,4 +19,6 @@ public class EnemyData : ScriptableObject
     public int CharmThreshold2; // used in DialogueManager. How much charm is needed to pass if only two correct options have been given
     public bool IsBoss; // Determines if enemy is a boss and if anything special should happen
     public int BossCheck; //From Joe, Boss only so that Ending battles work.       Non Boss = 0
+
+    public TextAsset PostBossDialogue;
 }

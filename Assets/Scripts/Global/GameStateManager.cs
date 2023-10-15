@@ -27,7 +27,8 @@ public class GameStateManager : MonoBehaviour
         GameState.BATTLE_COUNTDOWN,
         GameState.BATTLING,
         GameState.BATTLE_END,
-        GameState.ENCOUNTER_END
+        GameState.ENCOUNTER_END,
+        GameState.POST_BOSS_DIALOGUE
     };
 
     public static bool canTurn = true;
@@ -76,6 +77,8 @@ public class GameStateManager : MonoBehaviour
                                                         // TODO: update to maybe take in some event args with enemy?
     private event EventHandler RaiseEndBattleEvent;
     private event EventHandler RaiseEndEncounterEvent;  // TODO: placeholder event for use after post-battle dialogue etc.
+
+    private event EventHandler RaiseEndBossEvent;
     
     public static void RegisterPauseHandler(EventHandler handler)
     {
@@ -116,6 +119,11 @@ public class GameStateManager : MonoBehaviour
     public static void RegisterEndEncounterHandler(EventHandler handler)
     {
         Instance.RaiseEndEncounterEvent += handler;
+    }
+
+    public static void RegisterEndBossHandler(EventHandler handler)
+    {
+        Instance.RaiseEndBossEvent += handler;
     }
 
     void Awake()
@@ -167,6 +175,17 @@ public class GameStateManager : MonoBehaviour
                 }
                 break;
             }
+            case GameState.POST_BOSS_DIALOGUE:
+            {
+                if (!DialogueManager.Instance.dialogueIsPlaying)
+                {
+                    
+                    Debug.Log("Dialogue end");
+                    GameState = GameState.OVERWORLD;
+                    RaiseEndBossEvent?.Invoke(this, EventArgs.Empty);
+                }
+                break;
+            }
             case GameState.BATTLING:
             {
                 if (BattleManager.Instance.IsBattleLeverageAtThreshold)
@@ -179,6 +198,7 @@ public class GameStateManager : MonoBehaviour
             }
             case GameState.ENCOUNTER_END:
             {
+
                 GameState = GameState.OVERWORLD;
                 break;
             }
@@ -296,8 +316,11 @@ public class GameStateManager : MonoBehaviour
         RaiseEndEncounterEvent?.Invoke(this, new EnemyEventArgs(currentEncounterEnemy));
     }
 
-    public void RemoveEnemy()
-    {
-    
-    }
+   public void StartPostBossDialogue()
+   {
+        GameState = GameState.POST_BOSS_DIALOGUE;
+        RaiseStartFlirtEvent?.Invoke(this, new EnemyEventArgs(currentEncounterEnemy));
+        DialogueManager.Instance.PostBossDialogue(currentEncounterEnemy);
+
+   }
 }

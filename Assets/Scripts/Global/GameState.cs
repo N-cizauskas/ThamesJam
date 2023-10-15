@@ -16,4 +16,6 @@ public enum GameState
     /* Miscellaneous states */
     PAUSED,      // paused state
     CUTSCENE,    // scene transitions, dialogue
+
+    POST_BOSS_DIALOGUE,
 }

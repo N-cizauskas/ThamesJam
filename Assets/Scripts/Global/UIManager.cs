@@ -127,6 +127,7 @@ public class UIManager : MonoBehaviour
 
         GameStateManager.RegisterStartFlirtHandler(OnFlirtStart);
         GameStateManager.RegisterEndFlirtHandler(OnFlirtEnd);
+        GameStateManager.RegisterEndBossHandler(OnBossEnd);
         
         GameStateManager.RegisterPrepareBattleHandler(OnPrepareBattle);
         GameStateManager.RegisterCountdownBattleHandler(OnCountdownBattle);
@@ -232,6 +233,13 @@ public class UIManager : MonoBehaviour
         FlirtParent.SetActive(false);
         EnemySprite.SetActive(false);
         PlayerSprite.SetActive(false);
+    }
+
+    void OnBossEnd(object sender, EventArgs e)
+    {
+        EnemySprite.SetActive(false);
+        PlayerSprite.SetActive(false);
+        FlirtParent.SetActive(false);
     }
 
     void OnPrepareBattle(object sender, EnemyEventArgs e)
