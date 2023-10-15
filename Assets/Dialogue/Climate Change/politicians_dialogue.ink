@@ -12,10 +12,11 @@ Set it to true whenever you need a character talking.
 */
 VAR enable_charbox = true
 // Individual Politicians' names
-CONST BORIS = ""
-CONST LIZ = ""
-CONST RISHI = ""
-CONST MAY = ""
+CONST BORIS = "Thoris"
+CONST LIZ = "Thiz"
+CONST RISHI = "Thishi"
+CONST MAY = "Ththeresa"
+const THATCHER = "Ththatcher"
 -> main
 == function swap_char() ==
 // Toggles between "Tessie" and the character being talked to
@@ -123,45 +124,142 @@ We hear your concerns. // Prompt 1
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 1
 - We have concerns that taking action would negatively affect the economy. // Prompt 2
 * ["So what?"]
-    
-    
+    So what if the economy is negatively affected?
+    A healthy economy won't mean much if London is flooded.
+    {swap_char()}
+    How can you say that?
+    The economy is our upmost priority as leaders of the country.
+    To simply throw it away would mean losing the election!
+    {swap_char()}
+    What about people's lives? People could die. 
+    Most of London could be uninhabitable for humans.
+    Thousands of buildings unusable.
+    How will that affect the economy?
+    {swap_char()}
+    We can't simply adopt long-term thinking at the cost of short-term gains!
+    That would hurt shareholders, party donors, and business owners!
+    {swap_char()}
+    ...
+    {swap_char()}
+    But only large business owners.
+    {swap_char()}
+    This sucks.
 * ["It won't."]
-
-* [""]
-    
+    {swap_char()}
+    You say it'll hurt the economy, but that's because the economy is built to rely on carbon emissions.
+    We can reduce our fossil fuel usage, and build a new green energy sector.
+    {swap_char()}
+    Go on?
+    {swap_char()}
+    This country could become a global leader of green and renewable energy manufacturing and design.
+    Our place in the global economy is stabilised as other countries realise take the lead we set.
+    Thousands and thousands of jobs in industrial manufacture and research stimulates the local economy.
+    Plus, international trade becomes more important, and our trade relations improve after Thexit.
+    {swap_char()}
+    May I interject?
+    {swap_char()}
+    Go on...
+    {swap_char()}
+    Our analysts drew a graph of a prediction of the economy based on your plan.
+    As you can see, the line goes down quite far.
+    That's not good.
+    {swap_char()}
+    Argh! Why am I even trying?
+* ["It can recover."]
+    {swap_char()}
+    It may hurt the economy, but it can recover.
+    And one of you can lead the country in a period of healthy recover.
+    {swap_char()}
+    One of us?
+    {swap_char()}
+    Whichever of you is best suited to that once-in-a-lifetime situation.
+    {force_char(BORIS)}
+    Well, that would be me, of course.
+    I had to deal with two once-in-a-lifetime situations while I was PM.
+    {force_char(MAY)}
+    Just don't ask a member of public how well you handled them...
+    {force_char(LIZ)}
+    I could-
+    {force_char(RISHI)}
+    No.
+    {force_char(BORIS)}
+    No.
+    {force_char(MAY)}
+    No.
+    {force_char(RISHI)}
+    I imagine that the job would fall to me, as I'm the current leader.
+    {force_char(NPC)}
+    Not you! You couldn't do it! I'd be much better.
+    {swap_char()}
+    They really can't help it, can they?
+    ~ choicespassed += 1
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 2
-- This is your last chance to turn back, Tessie. // Prompt 3
-* ["I'm ready to fight."]
+- But what about our legacies as great Prime Ministers?! // Prompt 3
+* ["Look at yourselves."]
+    Look at yourselves.
+    Three of the four of you have left office already.
+    Your time to make a legacy has already gone.
+    On top of that, your tenures were filled with failure and scandal as is.
     {swap_char()}
-    I'm not backing down. I'm ready to fight you.
-    I will save this river.
+    We still have time to fix that, though!
     {swap_char()}
-    I doubt that. Say your last words.
-* ["This is your last chance."]
+    Fix it? I doubt it.
+    None of you could be a Thurchill or a Ththatcher.
+    No matter how hard you tried.
+    {force_char(RISHI)}
+    I'm still in power, though! I can make my mark!
+    {force_char(MAY)}
+    If you can survive the election, that is.
+    {force_char(BORIS)}
+    The people still love me! You should've seen what they said about me!
+    {force_char(LIZ)}
+    I set records, you know! I made a monumental impact!
+    {force_char(MAY)}
+    It's not exactly a record to be proud of...
+    {force_char(LIZ)}
+    But my name! It'll be in history books.
+    {force_char(NPC)}
+    No! Mine will! I'll be remembered forever.
     {swap_char()}
-    No, this is YOUR last chance! 
-    Go back to the way you once were, or I'll make you.
+    How can they be so selfish?
+    It's time to end this.
+    ~ choicespassed += 1
+* ["This will be it."]
+   {swap_char()}
+   You can make saving the climate your legacy.
+   At the last moment, from the jaws of extinction, humanity's survival ensured!
+   Marine life in the Thames spared from being wiped out by pollution.
+   Again.
+   {swap_char()}
+   We're not so sure...
+   {swap_char()}
+   What do you mean?
+   {swap_char()}
+   Well, the people we're trying to please...
+   The people who would enshrine our monumental legacies among those of the greats...
+   They wouldn't like it!
+   {swap_char()}
+   Oh for goodness' sake.
+* ["Not worth it."]
     {swap_char()}
-    Ahahaha. 
-    That's cute, Tessie. Am I supposed to be intimidated?
-    You don't scare me at all.
-* ["I won't give up."]
-   {swap_char()}
-   I won't give up on you.
-   I know you need help, and you're isolating yourself because you're scared.
-   It's okay to hurt. It's okay to be in pain.
-   {swap_char()}
-   I'm not-
-   I'm not-
-   {swap_char()}
-   I'm here for you. 
-   Even if it's one small thing I can do, that's so important.
-   The journey of a thousand miles starts with a single step.
-   {swap_char()}
-   I-
-   How dare you!
-   I won't let you get away with trying to humiliate me! 
-   ~choicespassed += 1
+    But what is the point of having a legacy when there will be no-one around to observe it?
+    It's not worth it to worry about how you will be remembered.
+    When the climate changes drastically, it could be that all of this, and all of you, are forgotten.
+    Because humanity is driven to the brink of collapse.
+    And because remembering you is the least of people's worries.
+    {swap_char()}
+    What is there worth governing for if our names won't be in the history books?
+    {swap_char()}
+    Is that all you care about? 
+    Your own self-image, and a selfish desire for something that you will never get to see?
+    {swap_char()}
+    It's not all we care about!
+    But it's a big part of it.
+    {swap_char()}
+    You're all pathetic.
+    And evil.
+    {swap_char()}
+    How could you put our dreams down like that?!
 {force_char(NPC)} // The NPC will be having the final say
 - /* Flirt decision here (the hyphen acts as a gather - please don't remove)
 I'll assume that passing all three choices is an automatic success,
@@ -172,12 +270,12 @@ and ending up in between will leave your chances of success to your charm stat.
 ~ enable_charbox = false
 { 
 - choicespassed == 3: // If you decide that some options are worth more than others
-    {NPC}'s guard is down!
+    {NPC}'s guards are down!
 - choicespassed == 2:
-    {NPC} is off balance!
+    {NPC} are off balance!
 - choicespassed == 1:
-    {NPC} is looking distracted!
+    {NPC} are looking distracted!
 - else:
-    {NPC} steels himself for battle!
+    {NPC} steel themselves for battle!
 }
 -> END
