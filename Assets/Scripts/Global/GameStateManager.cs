@@ -110,6 +110,10 @@ public class GameStateManager : MonoBehaviour
     {
         Instance.RaiseEndBattleEvent += handler;
     }
+    public static void RegisterEndEncounterHandler(EventHandler handler)
+    {
+        Instance.RaiseEndEncounterEvent += handler;
+    }
 
     void Awake()
     {
@@ -155,7 +159,7 @@ public class GameStateManager : MonoBehaviour
                 if (!DialogueManager.Instance.dialogueIsPlaying)
                 {
                     Debug.Log("Dialogue end");
-                    GameState = GameState.ENCOUNTER_MAIN;
+                    GameState = GameState.ENCOUNTER_END;
                     RaiseEndFlirtEvent?.Invoke(this, EventArgs.Empty);
                 }
                 break;
@@ -274,6 +278,7 @@ public class GameStateManager : MonoBehaviour
     public void StartFlee()
     {
         //TODO: Remove the object and reset the gamestate
-        GameState = GameState.OVERWORLD;
+        GameState = GameState.ENCOUNTER_END;
+        RaiseEndEncounterEvent?.Invoke(this, new EnemyEventArgs(currentEncounterEnemy));
     }
 }
