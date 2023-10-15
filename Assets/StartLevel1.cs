@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Menu_Logic : MonoBehaviour
+public class StartLevel1 : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,29 +16,10 @@ public class Menu_Logic : MonoBehaviour
     {
         
     }
-
-
-    public void QuitGame()
-    {
-        Application.Quit();
-
-    }
-
     public void StartGame()
-
-    {
-        SceneManager.LoadScene("Open_comic");
-
-    }
-
-
-    public void PlayCredits()
     {
 
-        SceneManager.LoadScene("end_credits");
+        SceneManager.LoadScene("Level_1");
 
     }
-
-
-
 }

@@ -14,4 +14,13 @@ public class Enemy : MonoBehaviour
 
     [field: SerializeField]
     public EnemyData EnemyData {get; private set;}
+
+    
+        private void OnTriggerEnter2D(Collider2D collision)
+
+    {
+        Destroy(gameObject);
+
+    }
+    
 }

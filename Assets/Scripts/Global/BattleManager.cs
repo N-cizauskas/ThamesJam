@@ -69,7 +69,7 @@ public class BattleManager : MonoBehaviour
     [SerializeField] private int enemyStrength;
     [SerializeField] private int BossCheck;
 
-    
+    public GameObject THIS;
 
 
     void Awake()
@@ -147,7 +147,7 @@ public class BattleManager : MonoBehaviour
     {
 
 
-        Destroy(gameObject);
+        //Destroy(sender);
         battleOngoing = false;
         // Joe: Boss state trigger here
         if (BossCheck > 0)
