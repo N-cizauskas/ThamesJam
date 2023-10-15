@@ -44,7 +44,8 @@ public class BattleManager : MonoBehaviour
     [field: SerializeField] public int playerTugRangeMax { get; private set; }
     [field: SerializeField] public int playerTugCritRangeMin { get; private set; }  // 0 - 100. critical tug range on the tug range (this should jump around)
     [field: SerializeField] public int playerTugCritRangeMax { get; private set; }
-    [field: SerializeField] public bool playerTugging { get; private set; }         // for the UI to hide the critical range
+    [field: SerializeField] public bool playerTugging { get; private set; }        // for the UI to hide the critical range until tug starts
+    [field: SerializeField] public float enemyTugValue { get; private set; }         // for 0 - 100. the enemy's current position on the tug gauge
 
     public bool IsBattleLeverageAtThreshold
     {
@@ -63,7 +64,8 @@ public class BattleManager : MonoBehaviour
     [SerializeField] private int playerFinesse;     // affects how wide the tug zones are - both normal and crit
 
     [Header("Enemy Stats")]
-    [SerializeField] private int enemyDifficulty;   // TODO: placeholder; some value or values that determine battle difficulty
+    [SerializeField] private int enemySpeed;
+    [SerializeField] private int enemyStrength;
 
     void Awake()
     {
@@ -79,6 +81,7 @@ public class BattleManager : MonoBehaviour
         GameStateManager.RegisterPauseHandler(OnPause);
         GameStateManager.RegisterUnpauseHandler(OnUnpause);
         GameStateManager.RegisterCountdownBattleHandler(OnCountdownBattle);
+        GameStateManager.RegisterPrepareBattleHandler(OnPrepareBattle);
         GameStateManager.RegisterStartBattleHandler(OnStartBattle);
         GameStateManager.RegisterEndBattleHandler(OnEndBattle);
 
@@ -90,6 +93,7 @@ public class BattleManager : MonoBehaviour
     {
         if (!battleOngoing) return;
 
+        UpdateEnemyTugState();
         if (Input.GetButton("Submit") && GameStateManager.Instance.GameState == GameState.BATTLING)
         {
             if (!playerTugging) // if this is the first frame of the pull
@@ -114,10 +118,17 @@ public class BattleManager : MonoBehaviour
         // At any point if the leverage value hits the threshold, battle manager will update state and broadcast the EndBattle event
     }
 
+    void OnPrepareBattle(object sender, EnemyEventArgs e)
+    {
+        enemySpeed = e.EnemyData.Speed;
+        enemyStrength = e.EnemyData.Strength;
+    }
+
     void OnCountdownBattle(object sender, EventArgs e)
     {
         battleLeverage = 50;
         playerTugValue = 0;
+        enemyTugValue = 0;
     }
 
     void OnStartBattle(object sender, EventArgs e)
@@ -177,6 +188,17 @@ public class BattleManager : MonoBehaviour
         else
         {
             // TODO: broadcast event on failed tug for UI/sound changes - and maybe add a cooldown?
+        }
+    }
+
+    private void UpdateEnemyTugState()
+    {
+        enemyTugValue += Time.deltaTime * enemySpeed;
+
+        if (enemyTugValue >= 100)
+        {
+            enemyTugValue = 0;
+            battleLeverage -= enemyStrength;
         }
     }
 }

@@ -16,6 +16,7 @@ MonoBehaviour:
   Name: mussels
   Subtext: hesistant for nuzzles
   Sprite: {fileID: 21300000, guid: a7a00369438eb3b489b2c9756ed015a4, type: 3}
+  FlirtDialogue: {fileID: 4900000, guid: 02c274159831a4fa99420632b5b18a71, type: 3}
   Strength: 1
   Dexterity: 0
   Finesse: 0
