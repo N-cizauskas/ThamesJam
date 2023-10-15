@@ -1336,6 +1336,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6764578432072978204, guid: c2278e1ffb6c8ec48b354b80f312b222, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7401970192318756196, guid: c2278e1ffb6c8ec48b354b80f312b222, type: 3}
       propertyPath: m_Name
       value: Tories
@@ -1343,8 +1347,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7401970192318756196, guid: c2278e1ffb6c8ec48b354b80f312b222, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 623735268}
   m_SourcePrefab: {fileID: 100100000, guid: c2278e1ffb6c8ec48b354b80f312b222, type: 3}
+--- !u!1 &623735267 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7401970192318756196, guid: c2278e1ffb6c8ec48b354b80f312b222, type: 3}
+  m_PrefabInstance: {fileID: 623735266}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &623735268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623735267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03cc551b88942ac4aa8d9b6fd99093d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <EnemyData>k__BackingField: {fileID: 11400000, guid: 6de897ba657f5154b98a6f08d6381644, type: 2}
 --- !u!1 &702680300
 GameObject:
   m_ObjectHideFlags: 0
