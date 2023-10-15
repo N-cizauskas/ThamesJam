@@ -133,6 +133,8 @@ public class UIManager : MonoBehaviour
         GameStateManager.RegisterStartBattleHandler(OnStartBattle);
         GameStateManager.RegisterEndBattleHandler(OnEndBattle);
 
+        GameStateManager.RegisterEndEncounterHandler(OnEndEncounter);
+
         PlayerTugPullRangeTransform = PlayerTugPullRange.GetComponent<RectTransform>();
         PlayerTugCritRangeTransform = PlayerTugCritRange.GetComponent<RectTransform>();
         BattleLeverageIndicatorTransform = BattleLeverageIndicator.GetComponent<RectTransform>();
@@ -226,7 +228,7 @@ public class UIManager : MonoBehaviour
     void OnFlirtEnd(object sender, EventArgs e)
     {
         // TODO: placeholder for now, the 'flirt' encounter button should be disabled
-        EncounterButtons.SetActive(true);
+        // EncounterButtons.SetActive(true);
         FlirtParent.SetActive(false);
     }
 
@@ -299,6 +301,11 @@ public class UIManager : MonoBehaviour
     {
         FlounderParent.SetActive(false);
         ResetBattleLeverage();
+    }
+
+    void OnEndEncounter(object sender, EventArgs e)
+    {
+        //TODO: We could use this to remove the enemy
     }
 
     private IEnumerator StartDelayedScreenFadeInOut(float delayInSeconds)

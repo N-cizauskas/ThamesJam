@@ -17,5 +17,6 @@ public class EnemyData : ScriptableObject
     public int Strength;  // used in BattleManager. How much the enemy's tugs decrease leverage by. battle leverage is between 0 and 100.
     public int CharmThreshold1; // used in DialogueManager. How much charm is needed to pass if only one correct option has been given
     public int CharmThreshold2; // used in DialogueManager. How much charm is needed to pass if only two correct options have been given
+    public bool IsBoss; // Determines if enemy is a boss and if anything special should happen
     public int BossCheck; //From Joe, Boss only so that Ending battles work.       Non Boss = 0
 }
