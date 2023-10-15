@@ -145,6 +145,9 @@ public class BattleManager : MonoBehaviour
 
     void OnEndBattle(object sender, EventArgs e)
     {
+
+
+        Destroy(gameObject);
         battleOngoing = false;
         // Joe: Boss state trigger here
         if (BossCheck > 0)
