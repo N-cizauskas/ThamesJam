@@ -15,4 +15,6 @@ public class EnemyData : ScriptableObject
     public TextAsset FlirtDialogue;
     public int Speed;  // used in BattleManager. How much the enemy's tug value increases each second. 100 means a tug is performed every second.
     public int Strength;  // used in BattleManager. How much the enemy's tugs decrease leverage by. battle leverage is between 0 and 100.
+    public int CharmThreshold1; // used in DialogueManager. How much charm is needed to pass if only one correct option has been given
+    public int CharmThreshold2; // used in DialogueManager. How much charm is needed to pass if only two correct options have been given
 }

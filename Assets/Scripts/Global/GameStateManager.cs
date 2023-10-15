@@ -65,7 +65,7 @@ public class GameStateManager : MonoBehaviour
     private event EventHandler RaisePauseEvent;
     private event EventHandler RaiseUnpauseEvent;
     private event EventHandler<EnemyEventArgs> RaiseEncounterMainEvent;
-    private event EventHandler RaiseStartFlirtEvent;
+    private event EventHandler<EnemyEventArgs> RaiseStartFlirtEvent;
     private event EventHandler RaiseEndFlirtEvent;
     private event EventHandler<EnemyEventArgs> RaisePrepareBattleEvent;
     private event EventHandler RaiseCountdownBattleEvent;   // player has hit the button after the 'get ready' screen
@@ -86,7 +86,7 @@ public class GameStateManager : MonoBehaviour
     {
         Instance.RaiseEncounterMainEvent += handler;
     }
-    public static void RegisterStartFlirtHandler(EventHandler handler)
+    public static void RegisterStartFlirtHandler(EventHandler<EnemyEventArgs> handler)
     {
         Instance.RaiseStartFlirtEvent += handler;
     }
@@ -261,7 +261,7 @@ public class GameStateManager : MonoBehaviour
     public void StartFlirt()
     {
         GameState = GameState.ENCOUNTER_FLIRT;
-        RaiseStartFlirtEvent?.Invoke(this, EventArgs.Empty);
+        RaiseStartFlirtEvent?.Invoke(this, new EnemyEventArgs(currentEncounterEnemy));
         DialogueManager.Instance.BeginDialogue(currentEncounterEnemy);
     }
 

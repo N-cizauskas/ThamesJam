@@ -5,6 +5,10 @@ VAR choicespassed = 0 // Flags the number of times we make the correct choice
 // VAR charmgain = 0 // Tracks the amount of charm gained in the flirt
 // And this one tells us if the flirt has been passed
 VAR flirtpassed = false
+/* These variables likely do nothing here but they are here as a fail-safe to ensure that the code doesn't break upon loading this script */
+VAR charm = 0
+VAR threshold1 = 0
+VAR threshold2 = 0
 /* This variable determines whether the character box is displayed
 Set it to false whenever you need the character box to be hidden.
 e.g. for narrating a scene.
@@ -16,7 +20,7 @@ CONST BORIS = "Thoris"
 CONST LIZ = "Thiz"
 CONST RISHI = "Thishi"
 CONST MAY = "Ththeresa"
-const THATCHER = "Ththatcher"
+CONST THATCHER = "Ththatcher"
 -> main
 == function swap_char() ==
 // Toggles between "Tessie" and the character being talked to
@@ -110,11 +114,11 @@ We hear your concerns. // Prompt 1
     This country did great things - and I can do them again.
     {force_char(LIZ)}
     You may have been great, but I set records as Prime Minister.
-    force_char(RISHI)
+    {force_char(RISHI)}
     I don't think "Shortest Tenure Ever" is a comforting record for voters.
-    force_char(LIZ)
+    {force_char(LIZ)}
     But I made big changes! I could do so again!
-    force_char(BORIS)
+    {force_char(BORIS)}
     God help this country if that ever happens. Vote for me, instead!
     {force_char(NPC)}
     No, me! Vote for me! Not them!

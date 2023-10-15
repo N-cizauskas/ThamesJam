@@ -1,5 +1,7 @@
-﻿// Define some variables we will be using
+// Define some variables we will be using
 VAR charm = 0 // The idea is to get the charm from the game stat (somehow)
+VAR threshold1 = 0
+VAR threshold2 = 0
 /* I don't think it's used in cutscene dialogues (if we are implementing that in VN),
 but I think it's worth leaving in so as to not break the dialogue manager script
 */

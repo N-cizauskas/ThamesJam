@@ -1,4 +1,4 @@
-﻿// Define some variables we will be using
+// Define some variables we will be using
 VAR battlebonus = 0 // This will track the bonus gained for the boss battle
 CONST NPC = "Iceberg" // This is the character you are talking to.
 VAR current_char = NPC // This variable tracks the currently talking character. It will be passed to the "current talker" box every time dialogue is continued
@@ -6,6 +6,10 @@ VAR choicespassed = 0 // Flags the number of times we make the correct choice
 // VAR charmgain = 0 // Tracks the amount of charm gained in the flirt
 // And this one tells us if the flirt has been passed
 VAR flirtpassed = false
+/* These variables likely do nothing here but they are here as a fail-safe to ensure that the code doesn't break upon loading this script */
+VAR charm = 0
+VAR threshold1 = 0
+VAR threshold2 = 0
 /* This variable determines whether the character box is displayed
 Set it to false whenever you need the character box to be hidden.
 e.g. for narrating a scene.

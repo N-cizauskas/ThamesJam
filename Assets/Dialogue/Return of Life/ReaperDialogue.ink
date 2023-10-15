@@ -1,8 +1,8 @@
 // Define some variables we will be using
 VAR battlebonus = 0 // Tracks the bonus gained for the following battle
 VAR charm = 0 // The idea is to get the charm from the game stat (somehow)
-CONST threshold1 = 5 // Threshold charm for passing if you passed only one choice
-CONST threshold2 = 3 // The same, but for passing two choices
+VAR threshold1 = 0 // Threshold charm for passing if you passed only one choice
+VAR threshold2 = 0 // The same, but for passing two choices
 CONST NPC = "Death" // This is the character you are talking to.
 VAR current_char = NPC // This variable tracks the currently talking character. It will be passed to the "current talker" box every time dialogue is continued
 VAR choicespassed = 0 // Flags the number of times we make the correct choice

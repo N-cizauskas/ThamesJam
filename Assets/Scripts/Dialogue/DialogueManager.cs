@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
@@ -32,6 +33,10 @@ public class DialogueManager : MonoBehaviour
 
     private int playerCharm; // Test to see if this can be integrated with the ink script's variable
 
+    [Header("NPC Stats")]
+    [SerializeField] private int CThreshold1;
+    [SerializeField] private int CThreshold2; // Two charm thresholds if the player has gotten only one or two answers correct
+
     private void Awake()
     {
         if (Instance != null)
@@ -56,6 +61,9 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(false);
         characterPanel.SetActive(false);
         playerCharm = PlayerRun.tessieCharm; // Take this from a global tracker or something
+
+        // Register events from GSM
+        GameStateManager.RegisterStartFlirtHandler(OnStartFlirt);
     }
     
     private void Update() 
@@ -80,6 +88,11 @@ public class DialogueManager : MonoBehaviour
         // Set player charm in the story
 
         currentStory.variablesState["charm"] = PlayerRun.tessieCharm;
+
+        // Set the NPC's charm thresholds
+
+        currentStory.variablesState["threshold1"] = CThreshold1;
+        currentStory.variablesState["threshold2"] = CThreshold2;
 
         // Set also the current character to the story's starting character:
 
@@ -173,5 +186,11 @@ public class DialogueManager : MonoBehaviour
     private void UpdateCharbox()
     {
         characterPanel.SetActive((bool)currentStory.variablesState["enable_charbox"]);
+    }
+
+    void OnStartFlirt(object sender, EnemyEventArgs e)
+    {
+        CThreshold1 = e.EnemyData.CharmThreshold1;
+        CThreshold2 = e.EnemyData.CharmThreshold2;
     }
 }
