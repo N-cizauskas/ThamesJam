@@ -23,7 +23,7 @@ public class Spinnn : MonoBehaviour
     void Update()
     {
 
-        AnimCounter += 1f * AnimType * Time.deltaTime;
+        AnimCounter += 0.1f * AnimType;
         RB.rotation = AnimCounter;
         if (AnimCounter > 10)
         {
