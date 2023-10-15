@@ -15,7 +15,7 @@ MonoBehaviour:
   EncounterSpritePosition: {x: 0, y: 0}
   Name: Chicken
   Subtext: winner winner chicken dinner
-  Sprite: {fileID: 21300000, guid: d1d9c8f7ea2f55c4c95ffd8fdb6aeddb, type: 3}
+  Sprite: {fileID: 21300000, guid: 1b5172086c8bbb949b33d251c12135ad, type: 3}
   FlirtDialogue: {fileID: 4900000, guid: a74899f94408ce54cbfd9d8a2a96dea7, type: 3}
   Speed: 20
   Strength: 2

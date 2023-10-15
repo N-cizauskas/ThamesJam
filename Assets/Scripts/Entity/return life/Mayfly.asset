@@ -15,7 +15,7 @@ MonoBehaviour:
   EncounterSpritePosition: {x: 0, y: 0}
   Name: Mayfly
   Subtext: hates June
-  Sprite: {fileID: 21300000, guid: a61d0e9541914e04885ab8c92eb62c53, type: 3}
+  Sprite: {fileID: 21300000, guid: b3714784e1ba4ed4da01870db121a6bd, type: 3}
   FlirtDialogue: {fileID: 4900000, guid: 7b2d833aa30f7c34b89c9939d13171d8, type: 3}
   Speed: 25
   Strength: 10

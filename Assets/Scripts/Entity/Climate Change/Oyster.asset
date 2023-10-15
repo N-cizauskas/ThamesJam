@@ -15,7 +15,7 @@ MonoBehaviour:
   EncounterSpritePosition: {x: 0, y: 0}
   Name: Oyster
   Subtext: 
-  Sprite: {fileID: 21300000, guid: a37b02d5c3e512249a778d30c99db80d, type: 3}
+  Sprite: {fileID: 21300000, guid: 2ca74b5a24318674a9e8e8ff189fa95f, type: 3}
   FlirtDialogue: {fileID: 4900000, guid: d806e9c7719c21d4289cb1d9180c2fb9, type: 3}
   Speed: 25
   Strength: 10

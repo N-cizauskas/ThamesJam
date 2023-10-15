@@ -15,7 +15,7 @@ MonoBehaviour:
   EncounterSpritePosition: {x: 0, y: 0}
   Name: Bass
   Subtext: metalhead at heart
-  Sprite: {fileID: 21300000, guid: 1ef123325f5f1584480ba19fdbc04f07, type: 3}
+  Sprite: {fileID: 21300000, guid: f0dfc76647ea4b744acc3ec120f20402, type: 3}
   FlirtDialogue: {fileID: 4900000, guid: d2314e622042c7e48851faef8539ed52, type: 3}
   Speed: 25
   Strength: 10

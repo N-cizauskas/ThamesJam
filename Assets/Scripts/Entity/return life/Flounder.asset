@@ -15,7 +15,7 @@ MonoBehaviour:
   EncounterSpritePosition: {x: 0, y: 0}
   Name: Flounder
   Subtext: flop flop flop
-  Sprite: {fileID: 21300000, guid: 413ff2d60ee90be42b6329dc8cc2985b, type: 3}
+  Sprite: {fileID: 21300000, guid: 977cc70220a71894aa5fb38f485048fa, type: 3}
   FlirtDialogue: {fileID: 4900000, guid: 301c49defa6c7ed4dbe9d4b18f23f153, type: 3}
   Speed: 25
   Strength: 10

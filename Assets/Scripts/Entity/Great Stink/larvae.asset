@@ -15,7 +15,7 @@ MonoBehaviour:
   EncounterSpritePosition: {x: 0, y: 0}
   Name: Larvae
   Subtext: hatches into something awful
-  Sprite: {fileID: 21300000, guid: 6185247de04d4c242a4d27f119641824, type: 3}
+  Sprite: {fileID: 21300000, guid: 8cdf8999e4ac9ca4481f58dd33e8a46b, type: 3}
   FlirtDialogue: {fileID: 4900000, guid: 8b6faec8b1aa5744f93d523d96ee31f4, type: 3}
   Speed: 25
   Strength: 10

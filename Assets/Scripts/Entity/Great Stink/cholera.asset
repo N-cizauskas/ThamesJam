@@ -15,7 +15,7 @@ MonoBehaviour:
   EncounterSpritePosition: {x: 0, y: 0}
   Name: Cholera
   Subtext: absolutely horrible little man
-  Sprite: {fileID: 21300000, guid: 7356eb94af1a84842b65e75ed038affb, type: 3}
+  Sprite: {fileID: 21300000, guid: 6f5199a62dbc34441b75d156d1951d65, type: 3}
   FlirtDialogue: {fileID: 4900000, guid: e8c15faade63eb049a5a326eeb321490, type: 3}
   Speed: 25
   Strength: 15

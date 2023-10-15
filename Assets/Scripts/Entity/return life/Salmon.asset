@@ -15,7 +15,7 @@ MonoBehaviour:
   EncounterSpritePosition: {x: 0, y: 0}
   Name: Salmon
   Subtext: goes well with cucumber
-  Sprite: {fileID: 21300000, guid: 42acf1026b9cd4b4794248afd17f3c6d, type: 3}
+  Sprite: {fileID: 21300000, guid: 15c5aa37311380b48986a94c82ef36c4, type: 3}
   FlirtDialogue: {fileID: 4900000, guid: ab6aa66319a121d498757e86e2838ee5, type: 3}
   Speed: 25
   Strength: 10

@@ -15,7 +15,7 @@ MonoBehaviour:
   EncounterSpritePosition: {x: 0, y: 0}
   Name: Human
   Subtext: don't be this guy
-  Sprite: {fileID: 21300000, guid: b1fadb57f98de9d42ab1f43a259aaf56, type: 3}
+  Sprite: {fileID: 21300000, guid: afd1fff6bf1f4344ca10e9076b8f73be, type: 3}
   FlirtDialogue: {fileID: 4900000, guid: fdbd272fe74c1e14eb504ed227b33829, type: 3}
   Speed: 25
   Strength: 10

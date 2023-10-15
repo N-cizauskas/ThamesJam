@@ -15,7 +15,7 @@ MonoBehaviour:
   EncounterSpritePosition: {x: 0, y: 0}
   Name: Seal
   Subtext: let's seal the deal
-  Sprite: {fileID: 21300000, guid: 970caa398c6b289449023e545f8eb8f3, type: 3}
+  Sprite: {fileID: 21300000, guid: 8b00c5dd7b8cf934183a5b348dee1be5, type: 3}
   FlirtDialogue: {fileID: 4900000, guid: d931d2703efab4e46a2894ba4759ddd7, type: 3}
   Speed: 25
   Strength: 10

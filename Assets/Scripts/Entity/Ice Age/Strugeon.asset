@@ -15,7 +15,7 @@ MonoBehaviour:
   EncounterSpritePosition: {x: 0, y: 0}
   Name: Sturgeon
   Subtext: (not Nicola)
-  Sprite: {fileID: 21300000, guid: 7d71ca6e879019e40a89dddd59a3a1a5, type: 3}
+  Sprite: {fileID: 21300000, guid: 5ecdd353094bf9b4c9f59dbf084d52a1, type: 3}
   FlirtDialogue: {fileID: 4900000, guid: 9d334a5ea57bca249ad46685db63a87a, type: 3}
   Speed: 25
   Strength: 10
