@@ -57,5 +57,6 @@ They used to call me Clean Timothy.  Do you think I could ever become him again?
 {swap_char()}
 Let’s go rinse off that grime and advocate for some proper sewers, Clean Timothy.  
 Everything will be okay.
-// The "walking to the ocean" I assume can be animated?
+~ enable_charbox = false
+Dirty Father Thames has retreated!
 -> END

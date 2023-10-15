@@ -59,4 +59,6 @@ It’s hard to be okay when things around you are rough, but you shouldn’t tak
 I know. I just didn’t know what else to do.
 {swap_char()}
 Come take a swim with me to cool off, and once you feel better, we can send you back up to the sky as a regular cloud.
+~ enable_charbox = false
+The Storm has retreated!
 -> END

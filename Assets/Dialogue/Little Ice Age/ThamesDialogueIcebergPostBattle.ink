@@ -65,5 +65,6 @@ Even if you melt, you will still be you - just in the form of a liquid.
 Can you walk me to the ocean and be with me while I melt?
 {swap_char()}
 Of course.
-// The "walking to the ocean" I assume can be animated?
+~ enable_charbox = false
+The Iceberg has retreated!
 -> END

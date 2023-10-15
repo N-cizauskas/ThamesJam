@@ -63,4 +63,6 @@ Just go away, I’m going to register to vote just to spite you.
 Fish can’t vote, silly.
 {swap_char()}
 Yeah, otherwise you wouldn’t be in office.  Now go!
+~ enable_charbox = false
+The Politicians have retreated!
 -> END

@@ -40,5 +40,6 @@ But that day is not today.
 YOU WOULD BE A GREAT REAPER.
 {swap_char()}
 Get out of here, scum.
-// The "walking to the ocean" I assume can be animated?
+~ enable_charbox = false
+Death has retreated!
 -> END
