@@ -79,7 +79,7 @@ public class DialogueManager : MonoBehaviour
 
         // Set player charm in the story
 
-        currentStory.variablesState["charm"] = playerCharm;
+        currentStory.variablesState["charm"] = PlayerRun.tessieCharm;
 
         // Set also the current character to the story's starting character:
 
@@ -118,7 +118,7 @@ public class DialogueManager : MonoBehaviour
 
         // Update the player charm after story
         PlayerRun.tessieCharm = (int) currentStory.variablesState["charm"];
-        Debug.Log("current playerCharm: " + playerCharm);
+        Debug.Log("current playerCharm: " + PlayerRun.tessieCharm);
 
         // End the "battle"
         // var PR = new PlayerRun();
