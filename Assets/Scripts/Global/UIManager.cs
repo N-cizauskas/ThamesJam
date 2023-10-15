@@ -230,6 +230,8 @@ public class UIManager : MonoBehaviour
         // TODO: placeholder for now, the 'flirt' encounter button should be disabled
         // EncounterButtons.SetActive(true);
         FlirtParent.SetActive(false);
+        EnemySprite.SetActive(false);
+        PlayerSprite.SetActive(false);
     }
 
     void OnPrepareBattle(object sender, EnemyEventArgs e)
@@ -300,12 +302,18 @@ public class UIManager : MonoBehaviour
     void OnEndBattle(object sender, EventArgs e)
     {
         FlounderParent.SetActive(false);
+        EnemySprite.SetActive(false);
+        PlayerSprite.SetActive(false);
+        EncounterMainParent.SetActive(false);
         ResetBattleLeverage();
     }
 
     void OnEndEncounter(object sender, EventArgs e)
     {
-        //TODO: We could use this to remove the enemy
+        EnemySprite.SetActive(false);
+        PlayerSprite.SetActive(false);
+        EncounterButtons.SetActive(false);
+        EncounterMainParent.SetActive(false);
     }
 
     private IEnumerator StartDelayedScreenFadeInOut(float delayInSeconds)

@@ -54,6 +54,8 @@ public class GameStateManager : MonoBehaviour
     // encounter
     private EnemyData currentEncounterEnemy;
 
+    private GameObject currentEnemyObject;
+
     // flounder
     // TODO: maybe add a ScriptableObject to keep track of player stats, like number of battles so far - allows entering a tutorial state
     public float SecondsUntilBattle {
@@ -175,6 +177,17 @@ public class GameStateManager : MonoBehaviour
                 }
                 break;
             }
+            case GameState.ENCOUNTER_END:
+            {
+                GameState = GameState.OVERWORLD;
+                break;
+            }
+            case GameState.BATTLE_END:
+            {
+                //Boss battle check
+                GameState = GameState.OVERWORLD;
+                break;
+            }
         }
 
         if (Input.GetButtonDown("Submit"))
@@ -279,7 +292,12 @@ public class GameStateManager : MonoBehaviour
     public void StartFlee()
     {
         //TODO: Remove the object and reset the gamestate
-        GameState = GameState.ENCOUNTER_END;
+        GameState = GameState.OVERWORLD;
         RaiseEndEncounterEvent?.Invoke(this, new EnemyEventArgs(currentEncounterEnemy));
+    }
+
+    public void RemoveEnemy()
+    {
+    
     }
 }
