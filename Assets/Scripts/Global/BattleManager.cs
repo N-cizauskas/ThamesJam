@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BattleManager : MonoBehaviour
 {
@@ -66,6 +67,10 @@ public class BattleManager : MonoBehaviour
     [Header("Enemy Stats")]
     [SerializeField] private int enemySpeed;
     [SerializeField] private int enemyStrength;
+    [SerializeField] private int BossCheck;
+
+    
+
 
     void Awake()
     {
@@ -122,6 +127,7 @@ public class BattleManager : MonoBehaviour
     {
         enemySpeed = e.EnemyData.Speed;
         enemyStrength = e.EnemyData.Strength;
+        BossCheck = e.EnemyData.BossCheck;
     }
 
     void OnCountdownBattle(object sender, EventArgs e)
@@ -140,6 +146,11 @@ public class BattleManager : MonoBehaviour
     void OnEndBattle(object sender, EventArgs e)
     {
         battleOngoing = false;
+        // Joe: Boss state trigger here
+        if (BossCheck > 0)
+        {
+            OnEndBossBattle();
+        }
     }
 
     void OnPause(object sender, EventArgs e)
@@ -199,6 +210,30 @@ public class BattleManager : MonoBehaviour
         {
             enemyTugValue = 0;
             battleLeverage -= enemyStrength;
+        }
+    }
+
+    private void OnEndBossBattle()
+    {
+        if (BossCheck == 1)
+        {
+            SceneManager.LoadScene("Stink_Intro");
+        }
+        if (BossCheck == 2)
+        {
+            SceneManager.LoadScene("flood_intro");
+        }
+        if (BossCheck == 3)
+        {
+            SceneManager.LoadScene("Returnlife_intro");
+        }
+        if (BossCheck == 4)
+        {
+            SceneManager.LoadScene("Modern_intro");
+        }
+        if (BossCheck == 5)
+        {
+            SceneManager.LoadScene("end_credits");
         }
     }
 }
