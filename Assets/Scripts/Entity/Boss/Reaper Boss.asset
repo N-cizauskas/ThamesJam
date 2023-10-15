@@ -18,7 +18,7 @@ MonoBehaviour:
   Sprite: {fileID: 0}
   FlirtDialogue: {fileID: 0}
   Speed: 50
-  Strength: 10
+  Strength: 1
   CharmThreshold1: 0
   CharmThreshold2: 0
   IsBoss: 1
