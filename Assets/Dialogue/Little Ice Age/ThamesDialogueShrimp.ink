@@ -29,19 +29,19 @@ VAR enable_charbox = true
 }
 == main ==
 H-Hi. Don’t think I’ve seen you around here before.
-* [Act flattered]
+* [Flattered]
     {swap_char()}
     Why thank you! I'm kinda new around here.
     {swap_char()}
     Hopefully the Thames is treating you well - I love it here!
     ~ choicespassed += 1 // Choice passed
-* [Act confident]
+* [Confident]
     {swap_char()}
     Yeah, I’m a plesiosaur. Not many of us around nowadays.
     {swap_char()}
     I’ve never heard of a plesiosaur - that’s so cool!
     ~ choicespassed += 1 // Choice passed
-* [Try to make a joke]
+* [Joking]
     {swap_char()}
     I’m shrimply here to have a good time!
     {swap_char()}
@@ -65,18 +65,18 @@ H-Hi. Don’t think I’ve seen you around here before.
     Eek! Sorry for asking!
 {force_char(NPC)} // No guarantee that the current character is the NPC after choice 2
 - All this ice in the river is so strange. I wonder what’s causing it?
-* [Reassure the shrimp]
+* [Reassuring]
     {swap_char()}
     I’m not so sure, but I’ll get to the bottom of it soon.
     {swap_char()}
     I’m glad someone’s on the case - I feel better knowing that someone is doing something about it.
     ~ choicespassed += 1 // Choice passed
-* [Advise the shrimp to be careful]
+* [Cautionary]
     {swap_char()}
     I’m worried too - we should probably be careful.
     {swap_char()}
     Careful? I feel like I’m about to have a panic attack!
-* [Be optimistic about the situation]
+* [Optimistic]
     {swap_char()}
     It’ll blow over in no time - nothing to worry about!
     {swap_char()}
