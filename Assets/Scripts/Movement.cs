@@ -176,6 +176,12 @@ public class PlayerRun : MonoBehaviour
 	
 	private void Run()
 	{
+		if (GameStateManager.inEncounter == true)
+        {
+			// Halt current movement
+			RB.velocity = new Vector2(0, 0);
+			return;
+        }
 		if(	MvmOk == true )
 		{ 
 			float targetSpeedx = _moveInput.x * runMaxSpeed;

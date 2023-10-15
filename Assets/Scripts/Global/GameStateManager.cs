@@ -18,9 +18,19 @@ public class GameStateManager : MonoBehaviour
     public static readonly float ENCOUNTER_DELAY_SECONDS = 1.5f;
     public static readonly float BATTLE_COUNTDOWN_PERIOD_SECONDS = 3f;
     private static readonly GameState[] PAUSED_GAME_STATES = {GameState.PAUSED};
+    private static readonly GameState[] ENCOUNTER_GAME_STATES =
+    {
+        GameState.ENCOUNTER_START,
+        GameState.ENCOUNTER_MAIN,
+        GameState.ENCOUNTER_FLIRT,
+        GameState.PRE_BATTLE,
+        GameState.BATTLE_COUNTDOWN,
+        GameState.BATTLING,
+        GameState.BATTLE_END
+    };
 
     public static bool canTurn = true;
-
+    public static bool inEncounter = false;
 
     /* Game State Variables */
     // pausing
@@ -30,6 +40,13 @@ public class GameStateManager : MonoBehaviour
     {
         get {
             return PAUSED_GAME_STATES.Contains(GameState);
+        }
+    }
+    public bool IsEncounter
+    {
+        get
+        {
+            return ENCOUNTER_GAME_STATES.Contains(GameState);
         }
     }
 
@@ -122,6 +139,15 @@ public class GameStateManager : MonoBehaviour
 
     void Update()
     {
+        if (IsEncounter)
+        {
+            inEncounter = true;
+            canTurn = false;
+        } else
+        {
+            inEncounter = false;
+            canTurn = true;
+        }
         switch (GameState)
         {
             case GameState.ENCOUNTER_FLIRT:
@@ -243,5 +269,11 @@ public class GameStateManager : MonoBehaviour
     {
         GameState = GameState.PRE_BATTLE;
         RaisePrepareBattleEvent?.Invoke(this, new EnemyEventArgs(currentEncounterEnemy));
+    }
+
+    public void StartFlee()
+    {
+        //TODO: Remove the object and reset the gamestate
+        GameState = GameState.OVERWORLD;
     }
 }
