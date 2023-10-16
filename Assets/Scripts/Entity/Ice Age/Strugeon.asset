@@ -23,5 +23,5 @@ MonoBehaviour:
   CharmThreshold2: 1
   IsBoss: 0
   BossCheck: 0
-  SpriteScale: 0.8
+  SpriteScale: 0.9
   PostBossDialogue: {fileID: 0}
