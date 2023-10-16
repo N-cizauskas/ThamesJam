@@ -2700,7 +2700,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 649684941}
         m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
         m_MethodName: StartFlounder
         m_Mode: 1
@@ -5058,7 +5058,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 649684941}
         m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
         m_MethodName: StartFlee
         m_Mode: 1
@@ -8488,7 +8488,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 649684941}
         m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
         m_MethodName: StartFlirt
         m_Mode: 1
