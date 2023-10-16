@@ -115,6 +115,7 @@ I AM HERE TO TAKE WHAT IS MINE. // Prompt 1
     AND THEN YOU WILL SUBMIT TO ME, TOO.
     NO ONE CAN BEAT DEATH.
 * ["Nice act."]
+    {swap_char()}
     This is a nice act you've got going, but you aren't going to intimidate me.
     I am hardier than you think.
     {swap_char()}
