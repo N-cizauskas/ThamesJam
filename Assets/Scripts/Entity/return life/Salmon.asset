@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1afbed5d2bd3f414099aea6cb3c1bb6a, type: 3}
   m_Name: Salmon
   m_EditorClassIdentifier: 
-  EncounterSpritePosition: {x: 0, y: 0}
+  EncounterSpritePosition: {x: 300, y: -50}
   Name: Salmon
   Subtext: goes well with cucumber
   Sprite: {fileID: 21300000, guid: 15c5aa37311380b48986a94c82ef36c4, type: 3}
@@ -23,3 +23,5 @@ MonoBehaviour:
   CharmThreshold2: 1
   IsBoss: 0
   BossCheck: 0
+  SpriteScale: 1
+  PostBossDialogue: {fileID: 0}
