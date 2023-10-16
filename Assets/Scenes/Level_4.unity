@@ -11328,6 +11328,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 221498953287552695, guid: 0f0856eed3893354f8205c87ed1095d0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 632281102346181448, guid: 0f0856eed3893354f8205c87ed1095d0, type: 3}
       propertyPath: m_Name
       value: Reaper

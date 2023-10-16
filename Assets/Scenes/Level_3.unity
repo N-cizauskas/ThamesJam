@@ -1006,6 +1006,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5912680472638920283, guid: 4725209520e65204d88aa14129104b41, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6348586581008405991, guid: 4725209520e65204d88aa14129104b41, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5137235
@@ -1057,6 +1061,10 @@ PrefabInstance:
     - target: {fileID: 6665948067509829283, guid: 4725209520e65204d88aa14129104b41, type: 3}
       propertyPath: m_Name
       value: Storm
+      objectReference: {fileID: 0}
+    - target: {fileID: 6665948067509829283, guid: 4725209520e65204d88aa14129104b41, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2510,7 +2518,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1623668122}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: ContinueDialogue
         m_Mode: 1
@@ -2894,7 +2902,7 @@ PrefabInstance:
     - target: {fileID: 7043957326844365870, guid: 76b5fd2fa83564f4bb1f952c24d41600, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1623668122}
     - target: {fileID: 7043957326844365870, guid: 76b5fd2fa83564f4bb1f952c24d41600, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: MakeChoice
@@ -5536,7 +5544,7 @@ PrefabInstance:
     - target: {fileID: 7043957326844365870, guid: 76b5fd2fa83564f4bb1f952c24d41600, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1623668122}
     - target: {fileID: 7043957326844365870, guid: 76b5fd2fa83564f4bb1f952c24d41600, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: MakeChoice
@@ -6748,6 +6756,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9197836129274277818, guid: 034c0795ae5144e27afd71d661bd6ecc, type: 3}
   m_PrefabInstance: {fileID: 1623668120}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1623668122 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6685059942807389338, guid: 034c0795ae5144e27afd71d661bd6ecc, type: 3}
+  m_PrefabInstance: {fileID: 1623668120}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ef59ac6e985fe4cb4b293dc1828903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1633740094
 GameObject:
   m_ObjectHideFlags: 0
@@ -9978,7 +9997,7 @@ PrefabInstance:
     - target: {fileID: 7043957326844365870, guid: 76b5fd2fa83564f4bb1f952c24d41600, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1623668122}
     - target: {fileID: 7043957326844365870, guid: 76b5fd2fa83564f4bb1f952c24d41600, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: MakeChoice
@@ -10468,7 +10487,7 @@ MonoBehaviour:
   PlayerTugGauge: {fileID: 232828700}
   PlayerTugPullRange: {fileID: 1875465546}
   PlayerTugCritRange: {fileID: 494526638}
-  EnemyTugGauge: {fileID: 1244073151}
+  EnemyTugGauge: {fileID: 217292633}
   BattleLeverageIndicator: {fileID: 776000524}
   GaugeWidth: 334
   LeverageWidth: 800
