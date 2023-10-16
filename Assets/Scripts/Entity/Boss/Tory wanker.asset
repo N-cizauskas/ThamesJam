@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1afbed5d2bd3f414099aea6cb3c1bb6a, type: 3}
   m_Name: Tory wanker
   m_EditorClassIdentifier: 
-  EncounterSpritePosition: {x: 0, y: 0}
-  Name: 
-  Subtext: 
-  Sprite: {fileID: 0}
-  FlirtDialogue: {fileID: 0}
+  EncounterSpritePosition: {x: 300, y: 0}
+  Name: The Politicians
+  Subtext: Strong and stable
+  Sprite: {fileID: 21300000, guid: c03e50d1d11787a4a939833d02384085, type: 3}
+  FlirtDialogue: {fileID: 4900000, guid: b1606eed8ada26e498ce679ecfcd29b3, type: 3}
   Speed: 30
   Strength: 15
   CharmThreshold1: 0
   CharmThreshold2: 0
   IsBoss: 1
   BossCheck: 5
+  SpriteScale: 1
+  PostBossDialogue: {fileID: 4900000, guid: 8512aa3923e0e8d4aa52cb0e4a103f6b, type: 3}

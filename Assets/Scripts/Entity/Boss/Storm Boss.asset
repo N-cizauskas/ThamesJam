@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1afbed5d2bd3f414099aea6cb3c1bb6a, type: 3}
   m_Name: Storm Boss
   m_EditorClassIdentifier: 
-  EncounterSpritePosition: {x: 0, y: 0}
-  Name: 
-  Subtext: 
-  Sprite: {fileID: 0}
-  FlirtDialogue: {fileID: 0}
-  Speed: 30
+  EncounterSpritePosition: {x: 300, y: 0}
+  Name: The Storm
+  Subtext: It rages
+  Sprite: {fileID: 21300000, guid: 8f64799262047034ca7f3b9b9c9b0d7c, type: 3}
+  FlirtDialogue: {fileID: 4900000, guid: b3eebc5c90eac064c9cbd6433356bbe9, type: 3}
+  Speed: 50
   Strength: 10
   CharmThreshold1: 0
   CharmThreshold2: 0
   IsBoss: 1
   BossCheck: 3
+  SpriteScale: 1
+  PostBossDialogue: {fileID: 4900000, guid: 4360aac9b66676c439639d936f55d244, type: 3}
