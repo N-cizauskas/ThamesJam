@@ -123,16 +123,20 @@ public class UIManager : MonoBehaviour
         GameStateManager.RegisterUnpauseHandler(OnUnpause);
 
         PlayerRun.RegisterEncounterHandler(OnEnemyEncounter);
+        PlayerRun.RegisterBossEncounterHandler(OnBossEncounter);
         GameStateManager.RegisterEncounterMainHandler(OnEncounterStart);
+        GameStateManager.RegisterBossEncounterHandler(OnBossEncounterStart);
 
         GameStateManager.RegisterStartFlirtHandler(OnFlirtStart);
         GameStateManager.RegisterEndFlirtHandler(OnFlirtEnd);
+        GameStateManager.RegisterEndBossFlirtHandler(OnBossFlirtEnd);
         GameStateManager.RegisterEndBossHandler(OnBossEnd);
         
         GameStateManager.RegisterPrepareBattleHandler(OnPrepareBattle);
         GameStateManager.RegisterCountdownBattleHandler(OnCountdownBattle);
         GameStateManager.RegisterStartBattleHandler(OnStartBattle);
         GameStateManager.RegisterEndBattleHandler(OnEndBattle);
+        GameStateManager.RegisterEndBossBattleHandler(OnEndBossBattle);
 
         GameStateManager.RegisterEndEncounterHandler(OnEndEncounter);
 
@@ -208,11 +212,41 @@ public class UIManager : MonoBehaviour
 
     }
 
+    void OnBossEncounter(object sender, EnemyEventArgs e)
+    {
+        EncounterRootParent.SetActive(true);
+        PlayerSprite.SetActive(true);
+        EnemySprite.SetActive(true);
+        PlayerSprite.GetComponent<AdvancedUIMovement>().MoveTo(PLAYER_ENCOUNTER_INITIAL_SPRITE_POSITION);
+        EnemySprite.GetComponent<AdvancedUIMovement>().MoveTo(ENEMY_ENCOUNTER_INITIAL_SPRITE_POSITION);
+        EnemySprite.GetComponent<Image>().sprite = e.EnemyData.Sprite;
+        EnemySprite.transform.localScale = new UnityEngine.Vector3(e.EnemyData.SpriteScale, e.EnemyData.SpriteScale, e.EnemyData.SpriteScale);
+
+        FlounderParent.SetActive(false);
+        ResetBattleLeverage();
+        // TODO: set animation length values as defined constants based on GameStateManager.ENCOUNTER_DELAY_SECONDS
+        EncounterSprite.GetComponent<AdvancedSpriteMovement>().Pop(e.EnemyData.OverworldPosition, 0.5f, 0.5f);
+        StartCoroutine(StartDelayedScreenFadeInOut(0.5f));
+    }
+
     void OnEncounterStart(object sender, EnemyEventArgs e)
     {
         EncounterMainParent.SetActive(true);
         EncounterButtons.SetActive(true);
 
+        PlayerSprite.GetComponent<AdvancedUIMovement>().MoveTo(
+            PLAYER_ENCOUNTER_END_SPRITE_POSITION, 1f, AdvancedUIMovement.MoveType.EASE_OUT
+        );
+        EnemySprite.GetComponent<AdvancedUIMovement>().MoveTo(
+            e.EnemyData.EncounterSpritePosition, 1f, AdvancedUIMovement.MoveType.EASE_OUT
+        );
+    }
+
+    void OnBossEncounterStart(object sender, EnemyEventArgs e)
+    {
+        Debug.Log(PLAYER_ENCOUNTER_END_SPRITE_POSITION);
+        Debug.Log(e.EnemyData.EncounterSpritePosition);
+        EncounterMainParent.SetActive(true);
         PlayerSprite.GetComponent<AdvancedUIMovement>().MoveTo(
             PLAYER_ENCOUNTER_END_SPRITE_POSITION, 1f, AdvancedUIMovement.MoveType.EASE_OUT
         );
@@ -234,6 +268,11 @@ public class UIManager : MonoBehaviour
         FlirtParent.SetActive(false);
         EnemySprite.SetActive(false);
         PlayerSprite.SetActive(false);
+    }
+
+    void OnBossFlirtEnd(object sender, EventArgs e)
+    {
+        FlirtParent.SetActive(false);
     }
 
     void OnBossEnd(object sender, EventArgs e)
@@ -310,12 +349,20 @@ public class UIManager : MonoBehaviour
 
     void OnEndBattle(object sender, EventArgs e)
     {
+       
         FlounderParent.SetActive(false);
         EnemySprite.SetActive(false);
         PlayerSprite.SetActive(false);
         EncounterMainParent.SetActive(false);
+        
         ResetBattleLeverage();
     }
+
+    void OnEndBossBattle(object sender, EventArgs e)
+    {
+        FlounderParent.SetActive(false);
+    }
+
 
     void OnEndEncounter(object sender, EventArgs e)
     {

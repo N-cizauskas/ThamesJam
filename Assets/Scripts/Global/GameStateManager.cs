@@ -56,8 +56,6 @@ public class GameStateManager : MonoBehaviour
     // encounter
     private EnemyData currentEncounterEnemy;
 
-    private GameObject currentEnemyObject;
-
     // flounder
     // TODO: maybe add a ScriptableObject to keep track of player stats, like number of battles so far - allows entering a tutorial state
     public float SecondsUntilBattle {
@@ -77,8 +75,10 @@ public class GameStateManager : MonoBehaviour
     private event EventHandler RaiseStartBattleEvent;   // this is raised to begin the actual flounder minigame
                                                         // TODO: update to maybe take in some event args with enemy?
     private event EventHandler RaiseEndBattleEvent;
+    private event EventHandler RaiseEndBossBattleEvent;
     private event EventHandler RaiseEndEncounterEvent;  // TODO: placeholder event for use after post-battle dialogue etc.
-
+    private event EventHandler<EnemyEventArgs> RaiseBossEncounterEvent;
+    private event EventHandler RaiseEndBossFlirtEvent;
     private event EventHandler RaiseEndBossEvent;
     
     public static void RegisterPauseHandler(EventHandler handler)
@@ -92,6 +92,10 @@ public class GameStateManager : MonoBehaviour
     public static void RegisterEncounterMainHandler(EventHandler<EnemyEventArgs> handler)
     {
         Instance.RaiseEncounterMainEvent += handler;
+    }
+    public static void RegisterBossEncounterHandler(EventHandler<EnemyEventArgs> handler)
+    {
+        Instance.RaiseBossEncounterEvent += handler;
     }
     public static void RegisterStartFlirtHandler(EventHandler<EnemyEventArgs> handler)
     {
@@ -116,6 +120,14 @@ public class GameStateManager : MonoBehaviour
     public static void RegisterEndBattleHandler(EventHandler handler)
     {
         Instance.RaiseEndBattleEvent += handler;
+    }
+    public static void RegisterEndBossBattleHandler(EventHandler handler)
+    {
+        Instance.RaiseEndBossBattleEvent += handler;
+    }
+    public static void RegisterEndBossFlirtHandler(EventHandler handler)
+    {
+        Instance.RaiseEndBossFlirtEvent += handler;
     }
     public static void RegisterEndEncounterHandler(EventHandler handler)
     {
@@ -143,6 +155,7 @@ public class GameStateManager : MonoBehaviour
     void Start()
     {
         PlayerRun.RegisterEncounterHandler(OnEnemyEncounter);
+        PlayerRun.RegisterBossEncounterHandler(OnBossEncounter);
     }
 
     void OnApplicationFocus(bool isFocused)
@@ -170,9 +183,18 @@ public class GameStateManager : MonoBehaviour
             {
                 if (!DialogueManager.Instance.dialogueIsPlaying)
                 {
-                    Debug.Log("Dialogue end");
-                    GameState = GameState.ENCOUNTER_END;
-                    RaiseEndFlirtEvent?.Invoke(this, EventArgs.Empty);
+                    if (currentEncounterEnemy.IsBoss)
+                    {
+                        RaiseEndBossFlirtEvent?.Invoke(this, EventArgs.Empty);
+                        Debug.Log("Boss Dialogue End: Start battle");
+                        GameState = GameState.PRE_BATTLE;
+                        RaisePrepareBattleEvent?.Invoke(this, new EnemyEventArgs(currentEncounterEnemy));                      
+                    }
+                    else {
+                        Debug.Log("Dialogue end");
+                        GameState = GameState.ENCOUNTER_END;
+                        RaiseEndFlirtEvent?.Invoke(this, EventArgs.Empty);
+                    }
                 }
                 break;
             }
@@ -180,7 +202,6 @@ public class GameStateManager : MonoBehaviour
             {
                 if (!DialogueManager.Instance.dialogueIsPlaying)
                 {
-                    
                     Debug.Log("Dialogue end");
                     GameState = GameState.OVERWORLD;
                     RaiseEndBossEvent?.Invoke(this, EventArgs.Empty);
@@ -191,9 +212,16 @@ public class GameStateManager : MonoBehaviour
             {
                 if (BattleManager.Instance.IsBattleLeverageAtThreshold)
                 {
-                    Debug.Log("Battle end");
-                    GameState = GameState.BATTLE_END;
-                    RaiseEndBattleEvent?.Invoke(this, EventArgs.Empty);
+                    if (currentEncounterEnemy.IsBoss)
+                    {
+                        GameState = GameState.POST_BOSS_DIALOGUE;
+                        RaiseEndBossBattleEvent?.Invoke(this, EventArgs.Empty);
+                    }
+                    else {
+                        Debug.Log("Battle end");
+                        GameState = GameState.BATTLE_END;
+                        RaiseEndBattleEvent?.Invoke(this, EventArgs.Empty);
+                    }
                 }
                 break;
             }
@@ -207,6 +235,13 @@ public class GameStateManager : MonoBehaviour
             {
                 //Boss battle check
                 GameState = GameState.OVERWORLD;
+                break;
+            }
+            case GameState.BOSS_MAIN:
+            {
+                GameState = GameState.ENCOUNTER_FLIRT;
+                RaiseStartFlirtEvent?.Invoke(this, new EnemyEventArgs(currentEncounterEnemy));
+                DialogueManager.Instance.BeginDialogue(currentEncounterEnemy);
                 break;
             }
         }
@@ -263,7 +298,7 @@ public class GameStateManager : MonoBehaviour
     {
         GameState = GameState.BOSS_START;
         currentEncounterEnemy = enemyEventArgs.EnemyData;
-        StartCoroutine(RaiseDelayedEncounterMainEvent(ENCOUNTER_DELAY_SECONDS, enemyEventArgs));
+        StartCoroutine(RaiseDelayedBossMainEvent(ENCOUNTER_DELAY_SECONDS, enemyEventArgs));
     }
 
     private void PauseGame()
@@ -301,6 +336,13 @@ public class GameStateManager : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         GameState = GameState.ENCOUNTER_MAIN;
         RaiseEncounterMainEvent?.Invoke(this, enemyEventArgs);
+    }
+
+    private IEnumerator RaiseDelayedBossMainEvent(float seconds, EnemyEventArgs enemyEventArgs)
+    {
+        yield return new WaitForSeconds(seconds);
+        GameState = GameState.BOSS_MAIN;
+        RaiseBossEncounterEvent?.Invoke(this, enemyEventArgs);
     }
 
     /* Functions called by player input */

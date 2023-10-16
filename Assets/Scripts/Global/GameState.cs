@@ -18,6 +18,8 @@ public enum GameState
     CUTSCENE,    // scene transitions, dialogue
 
     /* Boss fight states */
-    BOSS_START,
+    BOSS_START, // upon collision with boss
+
+    BOSS_MAIN, // transitions immediately into flirt
     POST_BOSS_DIALOGUE,
 }
