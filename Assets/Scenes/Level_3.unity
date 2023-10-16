@@ -4242,6 +4242,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2990624107905179177, guid: 7546e5bfc6db67a428fa3d1053573ccf, type: 3}
+      propertyPath: Anime
+      value: 
+      objectReference: {fileID: 1794951211}
+    - target: {fileID: 2990624107905179177, guid: 7546e5bfc6db67a428fa3d1053573ccf, type: 3}
       propertyPath: anime
       value: 
       objectReference: {fileID: 1794951211}
