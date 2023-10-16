@@ -8,22 +8,27 @@ public class PlayerRun : MonoBehaviour
 {
     private static event EventHandler<EnemyEventArgs> RaiseEncounterEvent;     // Event raised upon colliding with an enemy
 
+	private static event EventHandler<EnemyEventArgs> RaiseBossEncounterEvent;
+
 	public static void RegisterEncounterHandler(EventHandler<EnemyEventArgs> handler)
     {
         RaiseEncounterEvent += handler;
     }
 
+	public static void RegisterBossEncounterHandler(EventHandler<EnemyEventArgs> handler)
+	{
+		RaiseBossEncounterEvent += handler;
+	}
+
 
 
 	public Rigidbody2D RB { get; private set; }
-	public Animator anime;
 	public bool IsFacingRight { get; private set; }
 	private Vector2 _moveInput;
 	public float runAccelAmount = 0.1F;
 	public float runDeccelAmount = 0.05F;
 	public float runMaxSpeed = 5F;
 	public float CurrentStrength = 1f;
-	public float horiMove;
 	public bool MvmOk = false;
 	public int SceneChange = 1;
 	public int LogicChange;
@@ -104,7 +109,7 @@ public class PlayerRun : MonoBehaviour
 			if (GameStateManager.Instance.GameState == GameState.OVERWORLD)
 			{
 				EnemyData enemyData = collision.gameObject.GetComponent<Enemy>().EnemyData;
-				RaiseEncounterEvent?.Invoke(this, new EnemyEventArgs(enemyData));
+				RaiseBossEncounterEvent?.Invoke(this, new EnemyEventArgs(enemyData));
 			}
 			//SceneChange = 5;
 		}
@@ -135,8 +140,7 @@ public class PlayerRun : MonoBehaviour
 
     void Update()
 	{
-		horiMove = Input.GetAxisRaw("Horizontal") * runMaxSpeed;
-		anime.SetFloat("Speed", Mathf.Abs(horiMove));
+     
 		
 
 		if (SceneChange == 0) //Menu

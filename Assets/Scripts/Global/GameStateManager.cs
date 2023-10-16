@@ -28,7 +28,8 @@ public class GameStateManager : MonoBehaviour
         GameState.BATTLING,
         GameState.BATTLE_END,
         GameState.ENCOUNTER_END,
-        GameState.POST_BOSS_DIALOGUE
+        GameState.POST_BOSS_DIALOGUE,
+        GameState.BOSS_START
     };
 
     public static bool canTurn = true;
@@ -254,6 +255,13 @@ public class GameStateManager : MonoBehaviour
     {
         // Player has collided with an enemy, begin animations and transition
         GameState = GameState.ENCOUNTER_START;
+        currentEncounterEnemy = enemyEventArgs.EnemyData;
+        StartCoroutine(RaiseDelayedEncounterMainEvent(ENCOUNTER_DELAY_SECONDS, enemyEventArgs));
+    }
+
+    private void OnBossEncounter(object sender, EnemyEventArgs enemyEventArgs)
+    {
+        GameState = GameState.BOSS_START;
         currentEncounterEnemy = enemyEventArgs.EnemyData;
         StartCoroutine(RaiseDelayedEncounterMainEvent(ENCOUNTER_DELAY_SECONDS, enemyEventArgs));
     }
