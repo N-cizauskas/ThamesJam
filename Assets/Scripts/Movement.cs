@@ -16,12 +16,14 @@ public class PlayerRun : MonoBehaviour
 
 
 	public Rigidbody2D RB { get; private set; }
+	public Animator anime;
 	public bool IsFacingRight { get; private set; }
 	private Vector2 _moveInput;
 	public float runAccelAmount = 0.1F;
 	public float runDeccelAmount = 0.05F;
 	public float runMaxSpeed = 5F;
 	public float CurrentStrength = 1f;
+	public float horiMove;
 	public bool MvmOk = false;
 	public int SceneChange = 1;
 	public int LogicChange;
@@ -133,7 +135,8 @@ public class PlayerRun : MonoBehaviour
 
     void Update()
 	{
-     
+		horiMove = Input.GetAxisRaw("Horizontal") * runMaxSpeed;
+		anime.SetFloat("Speed", Mathf.Abs(horiMove));
 		
 
 		if (SceneChange == 0) //Menu
