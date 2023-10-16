@@ -142,11 +142,14 @@ public class GameStateManager : MonoBehaviour
 
     void Awake()
     {
-        if (Instance != null)
+        if (Instance != null && Instance != this)
         {
-            Debug.LogError("More than one GameStateManager should not exist - it is a singleton");
+            Destroy(this);
         }
-
+        else {
+            Instance = this;
+        }
+        DontDestroyOnLoad(this.gameObject);
         Instance = this;
         GameState = GameState.OVERWORLD;    // todo: maybe set this to something else on scene load
         previousGameState = GameState.OVERWORLD;
@@ -157,6 +160,8 @@ public class GameStateManager : MonoBehaviour
     {
         PlayerRun.RegisterEncounterHandler(OnEnemyEncounter);
         PlayerRun.RegisterBossEncounterHandler(OnBossEncounter);
+        GameState = GameState.OVERWORLD;
+        currentEncounterEnemy = null;
     }
 
     void OnApplicationFocus(bool isFocused)
