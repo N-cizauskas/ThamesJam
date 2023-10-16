@@ -134,10 +134,65 @@ public class GameStateManager : MonoBehaviour
     {
         Instance.RaiseEndEncounterEvent += handler;
     }
-
     public static void RegisterEndBossHandler(EventHandler handler)
     {
         Instance.RaiseEndBossEvent += handler;
+    }
+    public static void UnregisterPauseHandler(EventHandler handler)
+    {
+        Instance.RaisePauseEvent -= handler;
+    }
+    public static void UnregisterUnpauseHandler(EventHandler handler)
+    {
+        Instance.RaiseUnpauseEvent -= handler;
+    }
+    public static void UnregisterEncounterMainHandler(EventHandler<EnemyEventArgs> handler)
+    {
+        Instance.RaiseEncounterMainEvent -= handler;
+    }
+    public static void UnregisterBossEncounterHandler(EventHandler<EnemyEventArgs> handler)
+    {
+        Instance.RaiseBossEncounterEvent -= handler;
+    }
+    public static void UnregisterStartFlirtHandler(EventHandler<EnemyEventArgs> handler)
+    {
+        Instance.RaiseStartFlirtEvent -= handler;
+    }
+    public static void UnregisterEndFlirtHandler(EventHandler handler)
+    {
+        Instance.RaiseEndFlirtEvent -= handler;
+    }
+    public static void UnregisterPrepareBattleHandler(EventHandler<EnemyEventArgs> handler)
+    {
+        Instance.RaisePrepareBattleEvent -= handler;
+    }
+    public static void UnregisterCountdownBattleHandler(EventHandler handler)
+    {
+        Instance.RaiseCountdownBattleEvent -= handler;
+    }
+    public static void UnregisterStartBattleHandler(EventHandler handler)
+    {
+        Instance.RaiseStartBattleEvent -= handler;
+    }
+    public static void UnregisterEndBattleHandler(EventHandler handler)
+    {
+        Instance.RaiseEndBattleEvent -= handler;
+    }
+    public static void UnregisterEndBossBattleHandler(EventHandler handler)
+    {
+        Instance.RaiseEndBossBattleEvent -= handler;
+    }
+    public static void UnregisterEndBossFlirtHandler(EventHandler handler)
+    {
+        Instance.RaiseEndBossFlirtEvent -= handler;
+    }
+    public static void UnregisterEndEncounterHandler(EventHandler handler)
+    {
+        Instance.RaiseEndEncounterEvent -= handler;
+    }
+    public static void UnregisterEndBossHandler(EventHandler handler)
+    {
+        Instance.RaiseEndBossEvent -= handler;
     }
 
     void Awake()
@@ -161,6 +216,11 @@ public class GameStateManager : MonoBehaviour
         PlayerRun.RegisterBossEncounterHandler(OnBossEncounter);
         GameState = GameState.OVERWORLD;
         currentEncounterEnemy = null;
+    }
+    void OnDestroy()
+    {
+        PlayerRun.UnregisterEncounterHandler(OnEnemyEncounter);
+        PlayerRun.UnregisterBossEncounterHandler(OnBossEncounter);
     }
 
     void OnApplicationFocus(bool isFocused)

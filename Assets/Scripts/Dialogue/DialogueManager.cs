@@ -65,6 +65,11 @@ public class DialogueManager : MonoBehaviour
         // Register events from GSM
         GameStateManager.RegisterStartFlirtHandler(OnStartFlirt);
     }
+
+    private void OnDestroy()
+    {
+        GameStateManager.UnregisterStartFlirtHandler(OnStartFlirt);
+    }
     
     private void Update() 
     {

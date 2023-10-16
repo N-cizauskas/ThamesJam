@@ -14,10 +14,18 @@ public class PlayerRun : MonoBehaviour
     {
         RaiseEncounterEvent += handler;
     }
-
 	public static void RegisterBossEncounterHandler(EventHandler<EnemyEventArgs> handler)
 	{
 		RaiseBossEncounterEvent += handler;
+	}
+
+	public static void UnregisterEncounterHandler(EventHandler<EnemyEventArgs> handler)
+    {
+        RaiseEncounterEvent -= handler;
+    }
+	public static void UnregisterBossEncounterHandler(EventHandler<EnemyEventArgs> handler)
+	{
+		RaiseBossEncounterEvent -= handler;
 	}
 
 
@@ -35,17 +43,13 @@ public class PlayerRun : MonoBehaviour
 	public float AllMove;
 	public bool MvmOk = false;
 	public int SceneChange = 1;
-	public int LogicChange;
-	public GameObject FlightOrFlirt; //2 (Scene Change number) Normal game play is 1
-	public GameObject FightScreen; //3
-	public GameObject FlirtScreen; //4
-	public GameObject BossScreen; //5
-	public string Level_2;
-	public string Level_3;
-	public string Level_4;
-	public string Level_5;
-	public float SlowTimer = 0f;
-	public bool Slowed = false;
+	// public int LogicChange;
+	// public GameObject FlightOrFlirt; //2 (Scene Change number) Normal game play is 1
+	// public GameObject FightScreen; //3
+	// public GameObject FlirtScreen; //4
+	// public GameObject BossScreen; //5
+	// public float SlowTimer = 0f;
+	// public bool Slowed = false;
 	public static int tessieCharm = 0; // Used for flirt? Possible?
 	public static string collidedMob;
 
@@ -58,36 +62,25 @@ public class PlayerRun : MonoBehaviour
 	{
 		IsFacingRight = true;
 		SceneChange = 1;
-		FlightOrFlirt.SetActive(false);
-		FightScreen.SetActive(false);
-		FlirtScreen.SetActive(false);
 	}
 
 	public void EndBattle() //Send all battle ending functions here
 	{
 		SceneChange = 1;
-		FlightOrFlirt.SetActive(false);
-		FightScreen.SetActive(false);
-		FlirtScreen.SetActive(false);
 	}
 
 	public void FightBattle()
 	{
 		SceneChange = 3;
-		FlightOrFlirt.SetActive(false);
-		FightScreen.SetActive(true);
 	}
 
 	public void FlirtBattle()
 	{
 		SceneChange = 4;
-		FlightOrFlirt.SetActive(false);
-		FlirtScreen.SetActive(true);
 	}
 	public void BossBattle()
 	{
 		SceneChange = 1; //Replace These 2 lines with 5 when completed
-		FlightOrFlirt.SetActive(false);
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision) //This solves collision with non enemy objects
@@ -170,7 +163,6 @@ public class PlayerRun : MonoBehaviour
 		}
 		if (SceneChange == 2) //Enemy
 		{
-			FlightOrFlirt.SetActive(true);
 			MvmOk = false;
 			RB.velocity = new Vector2(0, 0);
 		}
@@ -179,7 +171,6 @@ public class PlayerRun : MonoBehaviour
 		
 		if (SceneChange == 5) //Boss
 		{
-			FlightOrFlirt.SetActive(true);
 			MvmOk = false;
 			RB.velocity = new Vector2(0, 0);
 		}
@@ -250,32 +241,6 @@ public class PlayerRun : MonoBehaviour
 			{
 				Turn();
             }
-	}
-
-	public void NextLevel_2()
-    {
-		
-		SceneManager.LoadScene(Level_2);
-
-    }
-	public void NextLevel_3()
-	{
-
-		SceneManager.LoadScene(Level_3);
-
-	}
-	public void NextLevel_4()
-	{
-
-		SceneManager.LoadScene(Level_4);
-
-	}
-
-	public void NextLevel_5()
-	{
-
-		SceneManager.LoadScene(Level_5);
-
 	}
 
 	/**

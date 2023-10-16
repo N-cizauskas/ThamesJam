@@ -95,6 +95,17 @@ public class BattleManager : MonoBehaviour
         UpdatePlayerCritPosition();
     }
 
+    void OnDestroy()
+    {
+        GameStateManager.UnregisterPauseHandler(OnPause);
+        GameStateManager.UnregisterUnpauseHandler(OnUnpause);
+        GameStateManager.UnregisterCountdownBattleHandler(OnCountdownBattle);
+        GameStateManager.UnregisterPrepareBattleHandler(OnPrepareBattle);
+        GameStateManager.UnregisterStartBattleHandler(OnStartBattle);
+        GameStateManager.UnregisterEndBattleHandler(OnEndBattle);
+        GameStateManager.UnregisterEndBossHandler(OnEndBossBattle);
+    }
+
     void Update()
     {
         if (!battleOngoing) return;

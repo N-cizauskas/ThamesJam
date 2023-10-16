@@ -155,6 +155,30 @@ public class UIManager : MonoBehaviour
         FlirtParent.SetActive(false);
     }
 
+    void OnDestroy()
+    {
+        GameStateManager.UnregisterPauseHandler(OnPause);
+        GameStateManager.UnregisterUnpauseHandler(OnUnpause);
+
+        PlayerRun.UnregisterEncounterHandler(OnEnemyEncounter);
+        PlayerRun.UnregisterBossEncounterHandler(OnBossEncounter);
+        GameStateManager.UnregisterEncounterMainHandler(OnEncounterStart);
+        GameStateManager.UnregisterBossEncounterHandler(OnBossEncounterStart);
+
+        GameStateManager.UnregisterStartFlirtHandler(OnFlirtStart);
+        GameStateManager.UnregisterEndFlirtHandler(OnFlirtEnd);
+        GameStateManager.UnregisterEndBossFlirtHandler(OnBossFlirtEnd);
+        GameStateManager.UnregisterEndBossHandler(OnBossEnd);
+        
+        GameStateManager.UnregisterPrepareBattleHandler(OnPrepareBattle);
+        GameStateManager.UnregisterCountdownBattleHandler(OnCountdownBattle);
+        GameStateManager.UnregisterStartBattleHandler(OnStartBattle);
+        GameStateManager.UnregisterEndBattleHandler(OnEndBattle);
+        GameStateManager.UnregisterEndBossBattleHandler(OnEndBossBattle);
+
+        GameStateManager.UnregisterEndEncounterHandler(OnEndEncounter);
+    }
+
     void Update()
     {
         GameStateText.GetComponent<TextMeshProUGUI>().text = "Game State: " + GameStateManager.Instance.GameState.ToString();

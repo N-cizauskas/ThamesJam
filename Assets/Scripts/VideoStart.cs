@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,17 +7,27 @@ using UnityEngine.Video;
 
 public class VideoStart : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private VideoPlayer videoPlayer;
+
+    void Awake()
+    {
+        videoPlayer = GetComponent<VideoPlayer>();
+    }
+
     void Start()
     {
-        var videoPlayer = GetComponent<VideoPlayer>();
         videoPlayer.loopPointReached += ChangeScene;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetButton("Submit"))
+        {
+            videoPlayer.playbackSpeed = 10;
+        } else {
+            videoPlayer.playbackSpeed = 1;
+        }
     }
 
     // Changes the scene to the next level after the video has ended
