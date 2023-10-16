@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1afbed5d2bd3f414099aea6cb3c1bb6a, type: 3}
   m_Name: Dirt Father
   m_EditorClassIdentifier: 
-  EncounterSpritePosition: {x: 0, y: 0}
-  Name: 
-  Subtext: 
-  Sprite: {fileID: 0}
-  FlirtDialogue: {fileID: 0}
+  EncounterSpritePosition: {x: 300, y: 0}
+  Name: Dirty Father Thames
+  Subtext: (he stinks...)
+  Sprite: {fileID: 21300000, guid: 9b327eedae036244eaad734cb452d58b, type: 3}
+  FlirtDialogue: {fileID: 4900000, guid: d42bfdad012a117478e4aab7de2ea3a6, type: 3}
   Speed: 20
   Strength: 20
   CharmThreshold1: 0
   CharmThreshold2: 0
   IsBoss: 1
   BossCheck: 2
+  SpriteScale: 1.5
+  PostBossDialogue: {fileID: 4900000, guid: 92821abb9111856488c4ca4b87929c79, type: 3}

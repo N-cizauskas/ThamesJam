@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1afbed5d2bd3f414099aea6cb3c1bb6a, type: 3}
   m_Name: Reaper Boss
   m_EditorClassIdentifier: 
-  EncounterSpritePosition: {x: 0, y: 0}
-  Name: 
+  EncounterSpritePosition: {x: 300, y: 0}
+  Name: Death
   Subtext: 
-  Sprite: {fileID: 0}
-  FlirtDialogue: {fileID: 0}
-  Speed: 50
-  Strength: 1
+  Sprite: {fileID: 21300000, guid: 433b4f39dc33cf445b5df544ae2c24dc, type: 3}
+  FlirtDialogue: {fileID: 4900000, guid: 3d60b8c393a52d041b7ef3ba44d95157, type: 3}
+  Speed: 10
+  Strength: 150
   CharmThreshold1: 0
   CharmThreshold2: 0
   IsBoss: 1
   BossCheck: 4
+  SpriteScale: 1
+  PostBossDialogue: {fileID: 4900000, guid: 303c80ea3d7a1954ea65312e857fddba, type: 3}
