@@ -5516,6 +5516,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2990624107905179177, guid: 7546e5bfc6db67a428fa3d1053573ccf, type: 3}
+      propertyPath: anime
+      value: 
+      objectReference: {fileID: 1874170264}
+    - target: {fileID: 2990624107905179177, guid: 7546e5bfc6db67a428fa3d1053573ccf, type: 3}
       propertyPath: Level_2
       value: Level_2
       objectReference: {fileID: 0}
@@ -5598,6 +5602,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5448035441444586036, guid: 7546e5bfc6db67a428fa3d1053573ccf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1874170258}
+    - targetCorrespondingSourceObject: {fileID: 5448035441444586036, guid: 7546e5bfc6db67a428fa3d1053573ccf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1874170264}
   m_SourcePrefab: {fileID: 100100000, guid: 7546e5bfc6db67a428fa3d1053573ccf, type: 3}
 --- !u!1 &1874170257 stripped
 GameObject:
@@ -5833,6 +5840,28 @@ MonoBehaviour:
   enemySpeed: 0
   enemyStrength: 0
   BossCheck: 0
+  THIS: {fileID: 0}
+--- !u!95 &1874170264
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874170257}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f9c25fdffa45c644087aef7cc0b593f4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1894483843
 PrefabInstance:
   m_ObjectHideFlags: 0
