@@ -47,7 +47,6 @@ public class DialogueManager : MonoBehaviour
         Instance = this;
         choicesText = new TextMeshProUGUI[choiceObjects.Length];
         dialogueIsPlaying = false;
-        DontDestroyOnLoad(gameObject);
 
         for(int i = 0; i < choiceObjects.Length; i++)
         {

@@ -149,7 +149,6 @@ public class GameStateManager : MonoBehaviour
         else {
             Instance = this;
         }
-        DontDestroyOnLoad(this.gameObject);
         Instance = this;
         GameState = GameState.OVERWORLD;    // todo: maybe set this to something else on scene load
         previousGameState = GameState.OVERWORLD;
