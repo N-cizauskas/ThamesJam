@@ -231,11 +231,11 @@ public class BattleManager : MonoBehaviour
         }
         if (BossCheck == 3)
         {
-            SceneManager.LoadScene("Returnlife_intro");
+            SceneManager.LoadScene("returnlife_intro");
         }
         if (BossCheck == 4)
         {
-            SceneManager.LoadScene("Modern_intro");
+            SceneManager.LoadScene("modern_intro");
         }
         if (BossCheck == 5)
         {

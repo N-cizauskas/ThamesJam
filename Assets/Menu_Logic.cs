@@ -27,7 +27,7 @@ public class Menu_Logic : MonoBehaviour
     public void StartGame()
 
     {
-        SceneManager.LoadScene("Open_comic");
+        SceneManager.LoadScene("Open_Comic");
 
     }
 
