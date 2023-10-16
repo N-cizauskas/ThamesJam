@@ -372,4 +372,11 @@ public class GameStateManager : MonoBehaviour
         GameState = GameState.OVERWORLD;
         RaiseEndEncounterEvent?.Invoke(this, new EnemyEventArgs(currentEncounterEnemy));
     }
+
+    /* DEBUG functions */
+    public void DebugRaiseEndBossEvent(EnemyData enemy)
+    {
+        BattleManager.Instance.DebugSetBossCheck(enemy);
+        RaiseEndBossEvent?.Invoke(this, EventArgs.Empty);
+    }
 }

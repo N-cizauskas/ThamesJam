@@ -242,4 +242,10 @@ public class BattleManager : MonoBehaviour
             SceneManager.LoadScene("End_Comic");
         }
     }
+
+    /* DEBUG functions */
+    public void DebugSetBossCheck(EnemyData enemy)
+    {
+        BossCheck = enemy.BossCheck;
+    }
 }
