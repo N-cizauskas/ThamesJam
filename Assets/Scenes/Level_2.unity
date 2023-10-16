@@ -1852,6 +1852,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Leech
       objectReference: {fileID: 0}
+    - target: {fileID: 8713193232300254457, guid: a5bae82da7c079d42b56ff19e24e42e7, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
