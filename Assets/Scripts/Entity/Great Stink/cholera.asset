@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1afbed5d2bd3f414099aea6cb3c1bb6a, type: 3}
   m_Name: cholera
   m_EditorClassIdentifier: 
-  EncounterSpritePosition: {x: 0, y: 0}
+  EncounterSpritePosition: {x: 300, y: -50}
   Name: Cholera
   Subtext: absolutely horrible little man
   Sprite: {fileID: 21300000, guid: 6f5199a62dbc34441b75d156d1951d65, type: 3}
@@ -23,3 +23,5 @@ MonoBehaviour:
   CharmThreshold2: 1
   IsBoss: 0
   BossCheck: 0
+  SpriteScale: 1
+  PostBossDialogue: {fileID: 0}
