@@ -55,7 +55,7 @@ public class VideoStart : MonoBehaviour
                 break;
             case "end_credits":
                 // TODO ADD MAIN MENU AND MAKE CREDITS SEND TO MENU
-                nextScene = "Level_1";
+                nextScene = "Main Menu";
                 break;
         }
 
