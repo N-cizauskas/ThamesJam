@@ -28,6 +28,7 @@ public class GameStateManager : MonoBehaviour
         GameState.BATTLING,
         GameState.BATTLE_END,
         GameState.ENCOUNTER_END,
+        GameState.POST_BOSS_START,
         GameState.POST_BOSS_DIALOGUE,
         GameState.BOSS_START
     };
@@ -216,6 +217,8 @@ public class GameStateManager : MonoBehaviour
                     {
                         GameState = GameState.POST_BOSS_DIALOGUE;
                         RaiseEndBossBattleEvent?.Invoke(this, EventArgs.Empty);
+                        RaiseStartFlirtEvent?.Invoke(this, new EnemyEventArgs(currentEncounterEnemy));
+                        DialogueManager.Instance.PostBossDialogue(currentEncounterEnemy);
                     }
                     else {
                         Debug.Log("Battle end");
@@ -365,12 +368,4 @@ public class GameStateManager : MonoBehaviour
         GameState = GameState.OVERWORLD;
         RaiseEndEncounterEvent?.Invoke(this, new EnemyEventArgs(currentEncounterEnemy));
     }
-
-   public void StartPostBossDialogue()
-   {
-        GameState = GameState.POST_BOSS_DIALOGUE;
-        RaiseStartFlirtEvent?.Invoke(this, new EnemyEventArgs(currentEncounterEnemy));
-        DialogueManager.Instance.PostBossDialogue(currentEncounterEnemy);
-
-   }
 }

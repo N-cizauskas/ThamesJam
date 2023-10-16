@@ -6,6 +6,45 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Test-Sai.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Main Menu.unity
+    guid: 365408e102a0b0a4391bd682d38c55a4
+  - enabled: 1
+    path: Assets/Scenes/Open_Comic.unity
+    guid: 922db256d8346e54e8a75dbb4545d94b
+  - enabled: 1
+    path: Assets/Scenes/IceAge_Intro.unity
+    guid: 7e35792ee5964bb4d91698edd8386215
+  - enabled: 1
+    path: Assets/Scenes/Level_1.unity
+    guid: ccbc4aa479d329a429d3730d0cdfb208
+  - enabled: 1
+    path: Assets/Scenes/Level_5.unity
+    guid: ee5e61e702c8dac46bf0994e5bd20544
+  - enabled: 1
+    path: Assets/Scenes/returnlife_intro.unity
+    guid: 486780e7ba9600b41966128200e7aad4
+  - enabled: 1
+    path: Assets/Scenes/End_Comic.unity
+    guid: 372f3d528dff8af4aaa5a2a25a5b5416
+  - enabled: 1
+    path: Assets/Scenes/Level_3.unity
+    guid: 8fd9f52b198f36e428940cb9fa6ea52a
+  - enabled: 1
+    path: Assets/Scenes/modern_intro.unity
+    guid: ad91a526374e1ab469218d02897aedc7
+  - enabled: 1
+    path: Assets/Scenes/end_credits.unity
+    guid: c3acefd8b5658c644bc907502849cb86
+  - enabled: 1
+    path: Assets/Scenes/Stink_intro.unity
+    guid: 47a70fd0172482442a1d8ff9a6e7b4d8
+  - enabled: 1
+    path: Assets/Scenes/Level_2.unity
+    guid: b5a054baf1755fc469f1d91548f264a9
+  - enabled: 1
+    path: Assets/Scenes/Level_4.unity
+    guid: b1d91fc04c4d8834fb16e52f8037a00b
+  - enabled: 1
+    path: Assets/Scenes/flood_intro.unity
+    guid: 1c67e394c1d3a9b44a7b4fcde3a87690
   m_configObjects: {}

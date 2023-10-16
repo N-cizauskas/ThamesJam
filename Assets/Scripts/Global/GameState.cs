@@ -21,5 +21,6 @@ public enum GameState
     BOSS_START, // upon collision with boss
 
     BOSS_MAIN, // transitions immediately into flirt
+    POST_BOSS_START, // starts post boss dialogue
     POST_BOSS_DIALOGUE,
 }
