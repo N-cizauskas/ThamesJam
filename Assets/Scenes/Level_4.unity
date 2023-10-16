@@ -5576,11 +5576,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2821354166583497377, guid: 7546e5bfc6db67a428fa3d1053573ccf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.15
+      value: -8.28
       objectReference: {fileID: 0}
     - target: {fileID: 2821354166583497377, guid: 7546e5bfc6db67a428fa3d1053573ccf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.51
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2821354166583497377, guid: 7546e5bfc6db67a428fa3d1053573ccf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7602,7 +7602,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5226f8f4cebaf8647b01e31521134284, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3a4ef3f7e526bb143ae6a99c301c8451, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -9580,7 +9580,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -9.722265, y: -0.18040276}
+  m_Offset: {x: -8.804904, y: -0.18040276}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -9591,7 +9591,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7851448, y: 12.597326}
+  m_Size: {x: 2.6198673, y: 12.597326}
   m_EdgeRadius: 0
 --- !u!1001 &1688376586
 PrefabInstance:
