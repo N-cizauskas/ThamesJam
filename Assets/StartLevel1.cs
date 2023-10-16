@@ -19,7 +19,7 @@ public class StartLevel1 : MonoBehaviour
     public void StartGame()
     {
 
-        SceneManager.LoadScene("Level_1");
+        SceneManager.LoadScene("IceAge_intro");
 
     }
 }
