@@ -37,11 +37,12 @@ public class PlayerRun : MonoBehaviour
 	public float runAccelAmount = 0.1F;
 	public float runDeccelAmount = 0.05F;
 	public float runMaxSpeed = 5F;
-	public float CurrentStrength = 1f;
+	public static float CurrentStrength = 0.05f;
 	public float HoriMove;
 	public float VertMove;
 	public float AllMove;
 	public bool MvmOk = false;
+	public bool isInCurrent = false;
 	public int SceneChange = 1;
 	// public int LogicChange;
 	// public GameObject FlightOrFlirt; //2 (Scene Change number) Normal game play is 1
@@ -110,27 +111,22 @@ public class PlayerRun : MonoBehaviour
 			}
 			//SceneChange = 5;
 		}
-		if (collision.gameObject.layer == 8 == true) //Slow terrain
+		if (collision.gameObject.layer == 8) //Slow terrain
 		{
 
 			runMaxSpeed = 0.5F;
 
+		}
+		if (collision.gameObject.layer == 9) // Current
+		{
+			isInCurrent = true;
 		}
 		
 	}
 	private void OnTriggerExit2D(Collider2D collision)
     {
 			runMaxSpeed = 5F;
-	}
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-		if (collision.gameObject.layer == 9 == true) //Slow terrain
-		{
-
-			RB.velocity = Vector2.left * CurrentStrength;
-
-		}
+			isInCurrent = false;
 	}
 
 
@@ -219,8 +215,13 @@ public class PlayerRun : MonoBehaviour
 
 			Vector2 acceleration = new Vector2(movementx, movementy);
 
-
 			RB.velocity = new Vector2(RB.velocity.x + (Time.deltaTime * movementx), RB.velocity.y + (Time.deltaTime * movementy));
+
+
+			if (isInCurrent) //If we're in a current, add some acceleration
+			{
+				RB.AddForce(Vector2.left * CurrentStrength * Time.deltaTime);
+			}
 		}
 	}
 
