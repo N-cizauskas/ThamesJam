@@ -198,6 +198,7 @@ public class UIManager : MonoBehaviour
         PlayerSprite.GetComponent<AdvancedUIMovement>().MoveTo(PLAYER_ENCOUNTER_INITIAL_SPRITE_POSITION);
         EnemySprite.GetComponent<AdvancedUIMovement>().MoveTo(ENEMY_ENCOUNTER_INITIAL_SPRITE_POSITION);
         EnemySprite.GetComponent<Image>().sprite = e.EnemyData.Sprite;
+        EnemySprite.transform.localScale = new UnityEngine.Vector3(e.EnemyData.SpriteScale, e.EnemyData.SpriteScale, e.EnemyData.SpriteScale);
 
         FlounderParent.SetActive(false);
         ResetBattleLeverage();
