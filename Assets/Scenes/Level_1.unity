@@ -1534,6 +1534,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4046262529979166072, guid: 748ec69bcfbca6541a55d6b05ca751f1, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5209222819266694056, guid: 748ec69bcfbca6541a55d6b05ca751f1, type: 3}
       propertyPath: m_Name
       value: Sturgeon
@@ -2875,6 +2879,10 @@ PrefabInstance:
     - target: {fileID: 3949140272473332715, guid: 9737726dca1e53049823de009d866ee7, type: 3}
       propertyPath: m_Name
       value: Trout
+      objectReference: {fileID: 0}
+    - target: {fileID: 6067586947422152543, guid: 9737726dca1e53049823de009d866ee7, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15390,6 +15398,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6433678202493874777, guid: 270e8a08f0b725741a08aeeb3d7ee4bf, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15645,7 +15657,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: eabfbe748cef9694a8eb54909496eaa3, type: 3}
     - target: {fileID: 7232434114054526716, guid: ed299563a3b9ebd4caea9c68b36e5533, type: 3}
       propertyPath: m_Mass
-      value: 0.1
+      value: 0.005
       objectReference: {fileID: 0}
     - target: {fileID: 8151516185018105062, guid: ed299563a3b9ebd4caea9c68b36e5533, type: 3}
       propertyPath: anime
