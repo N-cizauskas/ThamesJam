@@ -97,7 +97,14 @@ public class PlayerRun : MonoBehaviour
 
 		if (collision.gameObject.layer == 7) //All boss to be layer 7
 		{
-			SceneChange = 5;
+			collidedMob = collision.gameObject.name;
+
+			if (GameStateManager.Instance.GameState == GameState.OVERWORLD)
+			{
+				EnemyData enemyData = collision.gameObject.GetComponent<Enemy>().EnemyData;
+				RaiseEncounterEvent?.Invoke(this, new EnemyEventArgs(enemyData));
+			}
+			//SceneChange = 5;
 		}
 		if (collision.gameObject.layer == 8 == true) //Slow terrain
 		{
