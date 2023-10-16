@@ -239,7 +239,7 @@ public class BattleManager : MonoBehaviour
         }
         if (BossCheck == 5)
         {
-            SceneManager.LoadScene("end_credits");
+            SceneManager.LoadScene("End_Comic");
         }
     }
 }
