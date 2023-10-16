@@ -1008,6 +1008,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1026434563379586318, guid: 76b5fd2fa83564f4bb1f952c24d41600, type: 3}
   m_PrefabInstance: {fileID: 174096760}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &174096762 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5784344204852183069, guid: 76b5fd2fa83564f4bb1f952c24d41600, type: 3}
+  m_PrefabInstance: {fileID: 174096760}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &176053151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1023,19 +1028,19 @@ PrefabInstance:
     - target: {fileID: 6685059942807389338, guid: 034c0795ae5144e27afd71d661bd6ecc, type: 3}
       propertyPath: dialogueText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 68361247}
     - target: {fileID: 6685059942807389338, guid: 034c0795ae5144e27afd71d661bd6ecc, type: 3}
       propertyPath: characterText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1452773507}
     - target: {fileID: 6685059942807389338, guid: 034c0795ae5144e27afd71d661bd6ecc, type: 3}
       propertyPath: dialoguePanel
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1961093752}
     - target: {fileID: 6685059942807389338, guid: 034c0795ae5144e27afd71d661bd6ecc, type: 3}
       propertyPath: characterPanel
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1773769347}
     - target: {fileID: 6685059942807389338, guid: 034c0795ae5144e27afd71d661bd6ecc, type: 3}
       propertyPath: startDialogueButton
       value: 
@@ -1043,19 +1048,19 @@ PrefabInstance:
     - target: {fileID: 6685059942807389338, guid: 034c0795ae5144e27afd71d661bd6ecc, type: 3}
       propertyPath: continueDialogueButton
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2003889665}
     - target: {fileID: 6685059942807389338, guid: 034c0795ae5144e27afd71d661bd6ecc, type: 3}
       propertyPath: choiceObjects.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1164288204}
     - target: {fileID: 6685059942807389338, guid: 034c0795ae5144e27afd71d661bd6ecc, type: 3}
       propertyPath: choiceObjects.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1989720871}
     - target: {fileID: 6685059942807389338, guid: 034c0795ae5144e27afd71d661bd6ecc, type: 3}
       propertyPath: choiceObjects.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 174096762}
     - target: {fileID: 9197836129274277818, guid: 034c0795ae5144e27afd71d661bd6ecc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5909,6 +5914,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1026434563379586318, guid: 76b5fd2fa83564f4bb1f952c24d41600, type: 3}
   m_PrefabInstance: {fileID: 1164288202}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1164288204 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5784344204852183069, guid: 76b5fd2fa83564f4bb1f952c24d41600, type: 3}
+  m_PrefabInstance: {fileID: 1164288202}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1176322975
 GameObject:
   m_ObjectHideFlags: 0
@@ -9964,6 +9974,11 @@ PrefabInstance:
 --- !u!224 &1989720870 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1026434563379586318, guid: 76b5fd2fa83564f4bb1f952c24d41600, type: 3}
+  m_PrefabInstance: {fileID: 1989720869}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1989720871 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5784344204852183069, guid: 76b5fd2fa83564f4bb1f952c24d41600, type: 3}
   m_PrefabInstance: {fileID: 1989720869}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1991035206
